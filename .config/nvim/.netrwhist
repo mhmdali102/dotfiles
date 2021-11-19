@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/home/mhmdali102/.config/nvim'
+let g:netrw_dirhist_8='/home/mhmdali102/mhmdali102/flask/templates'
+let g:netrw_dirhist_7='/home/mhmdali102/mhmdali102/flask'
+let g:netrw_dirhist_6='/home/mhmdali102/mhmdali102/ReactJS/movies-app/src'
+let g:netrw_dirhist_5='/home/mhmdali102/mhmdali102/ReactJS/movies-app'
+let g:netrw_dirhist_4='/home/mhmdali102/mhmdali102/ReactJS/movies-app/src'
+let g:netrw_dirhist_3='/home/mhmdali102/mhmdali102/ReactJS/movies-app'
+let g:netrw_dirhist_2='/home/mhmdali102/mhmdali102/ReactJS/movies-app/src/routes'
+let g:netrw_dirhist_1='/home/mhmdali102/mhmdali102/ReactJS/movies-app/src'

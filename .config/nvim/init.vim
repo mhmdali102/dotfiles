@@ -57,6 +57,8 @@ call plug#begin('~/.vim/autoload/plugged')
   Plug 'tjdevries/colorbuddy.vim'
   Plug 'RishabhRD/nvim-rdark'
   Plug 'morhetz/gruvbox'
+  Plug 'romgrk/doom-one.vim'
+
 
 call plug#end()
 

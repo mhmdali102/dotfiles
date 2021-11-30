@@ -1,25 +1,24 @@
 "BASIC CONFIG
 syntax on
+set enc=utf-8
 set nu rnu
 set nowrap
 set expandtab
 set tabstop=2 softtabstop=2
 set shiftwidth=2
 set smartindent
+set ignorecase
 set smartcase
 set noswapfile
 set background=dark 
-
-"CLIPBOARD EVERYWHERE
-set clipboard=unnamedplus
-
-"YANK TO THE END OF A LINE
-nnoremap Y yg_
 
 call plug#begin('~/.vim/autoload/plugged')
 
   "COC
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+  "TYPESCRIPT SYNTAX
+  Plug 'herringtondarkholme/yats.vim'
 
   "NEOVIM VIFM
   Plug 'vifm/neovim-vifm'
@@ -47,6 +46,9 @@ call plug#begin('~/.vim/autoload/plugged')
 
   "CSS HEX COLORS
   Plug 'ap/vim-css-color'
+  
+  "Markdown preview
+  Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
   "THEMES
   Plug 'tomasiser/vim-code-dark'
@@ -55,12 +57,16 @@ call plug#begin('~/.vim/autoload/plugged')
   Plug 'tanvirtin/monokai.nvim'
   Plug 'dracula/vim', { 'as': 'dracula' }
   Plug 'tjdevries/colorbuddy.vim'
-  Plug 'RishabhRD/nvim-rdark'
   Plug 'morhetz/gruvbox'
-  Plug 'romgrk/doom-one.vim'
 
 
 call plug#end()
+
+"CLIPBOARD EVERYWHERE
+set clipboard=unnamedplus
+
+"YANK TO THE END OF A LINE
+nnoremap Y yg_
 
 "COMMENT SHORTCUT
 vmap <A-x> <plug>NERDCommenterToggle
@@ -91,6 +97,10 @@ source $HOME/.config/nvim/CocConfig.vim
 "COC-CSS | SASS
 autocmd FileType scss setl iskeyword+=@-@
 
+"CONFIG COC-SNIPPET
+let g:coc_snippet_next = '<Tab>'
+let g:coc_snippet_prev = '<S-Tab>'
+
 "EMMET FOR JS
 augroup filetype_jsx
     autocmd!
@@ -111,6 +121,12 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+"MOVE WINDOWS
+nnoremap <A-h> <C-w>H
+nnoremap <A-j> <C-w>J
+nnoremap <A-k> <C-w>K
+nnoremap <A-l> <C-w>L
+
 "RESIZE WINDOWS
 noremap <silent> <C-Left> :vertical resize +3<CR>
 noremap <silent> <C-Right> :vertical resize -3<CR>
@@ -124,17 +140,13 @@ map <Leader>tk <C-w>t<C-w>K
 "FORCE SPLIT DIRECTRION
 set splitbelow splitright
 
-"OPEN NEW TAB
-nnoremap <A-t> :tabedit .<CR>
-
-"MAP CAPSLOCK TO ESCAPE
-au VimEnter * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
-au VimLeave * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
+"OPEN TERMINAL
+command! -nargs=* VT vsplit | terminal <args>
+command! -nargs=* T split | terminal <args>
 
 "KEEP CURSOR CENTERED
 nnoremap n nzz
 nnoremap N Nzz
-nnoremap J mzJ'z
 
 "TOGGLE WRAP
 nnoremap <A-z> :set wrap!<CR>
@@ -144,6 +156,9 @@ map <Leader>ev :tabnew $MYVIMRC<CR>
 
 "SOURCE VIM CONFIG FILE
 map <Leader>sv :source $MYVIMRC<CR>
+
+"Markdown Preview
+map <Leader>p :MarkdownPreview<CR>
 
 "AUTO-RESIZE SPLITS
 autocmd VimResized * wincmd =

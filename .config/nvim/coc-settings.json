@@ -21,5 +21,7 @@
   "explorer.keyMappings.global": {
     "<cr>": ["expandable?", "expand", "open"],
     "v": "open:vsplit"
-  }
+  },
+  "git.enableGutters": true,
+  "git.conflict.enabled": false
 }

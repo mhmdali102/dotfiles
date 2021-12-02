@@ -20,9 +20,6 @@ call plug#begin('~/.vim/autoload/plugged')
   "TYPESCRIPT SYNTAX
   Plug 'herringtondarkholme/yats.vim'
 
-  "NEOVIM VIFM
-  "Plug 'vifm/neovim-vifm'
-
   "NERD COMMENTER
   Plug 'preservim/nerdcommenter'
 
@@ -90,10 +87,7 @@ let g:sneak#use_ic_scs = 1
 let g:sneak#s_next = 1
 let g:sneak#prompt = '🔎 '
 
-
-"VIFM SHORTCUT
-":nnoremap <C-t> :VifmToggle .<CR>
-
+"CONFIG COC-EXPLORER
 nmap <C-t> :CocCommand explorer<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 

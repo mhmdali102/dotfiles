@@ -61,6 +61,8 @@ call plug#begin('~/.vim/autoload/plugged')
   Plug 'dracula/vim', { 'as': 'dracula' }
   Plug 'tjdevries/colorbuddy.vim'
   Plug 'morhetz/gruvbox'
+  Plug 'Murtaza-Udaipurwala/gruvqueen'
+  Plug 'ayu-theme/ayu-vim'
 
 call plug#end()
 
@@ -126,9 +128,15 @@ augroup END
 let g:indentLine_color_term = 238
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
-"CONFIG MATERIAL THEME
-"darker | lighter | oceanic | palenight | deep ocean
+"CONFIG MATERIAL THEME = darker | lighter | oceanic | palenight | deep ocean
 let g:material_style = 'darker'
+
+"CONFIG GRUVQUEEN THEME = original | mix | material
+let g:gruvqueen_style = 'original'
+
+"CONFIG AYU THEME = light | mirage | dark
+let ayucolor="mirage" 
+set termguicolors     
 
 "NAVIGATE WINDOWS"
 nnoremap <C-h> <C-w>h
@@ -178,4 +186,4 @@ map <Leader>p :MarkdownPreview<CR>
 "AUTO-RESIZE SPLITS
 autocmd VimResized * wincmd =
 
-colorscheme gruvbox
+colorscheme gruvqueen

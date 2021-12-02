@@ -10,7 +10,9 @@ set smartindent
 set ignorecase
 set smartcase
 set noswapfile
+set nobackup
 set background=dark 
+set noshowmode
 
 call plug#begin('~/.vim/autoload/plugged')
 
@@ -69,8 +71,13 @@ call plug#end()
 "CLIPBOARD EVERYWHERE
 set clipboard=unnamedplus
 
-"YANK TO THE END OF A LINE
+"YANK TO THE END OF THE LINE
 nnoremap Y yg_
+
+"GO TO START /END OF THE LINE
+nnoremap H g^
+nnoremap L g$
+
 
 "COMMENT SHORTCUT
 vmap <A-x> <plug>NERDCommenterToggle
@@ -145,23 +152,60 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 "MOVE WINDOWS
-nnoremap <A-h> <C-w>H
-nnoremap <A-j> <C-w>J
-nnoremap <A-k> <C-w>K
-nnoremap <A-l> <C-w>L
+nnoremap <A-Left> <C-w>H
+nnoremap <A-Down> <C-w>J
+nnoremap <A-Up> <C-w>K
+nnoremap <A-Right> <C-w>L
 
 "RESIZE WINDOWS
-noremap <silent> <C-Left> :vertical resize +3<CR>
-noremap <silent> <C-Right> :vertical resize -3<CR>
-noremap <silent> <C-Up> :resize +3<CR>
-noremap <silent> <C-Down> :resize -3<CR>
+nnoremap _ <C-W>-
+nnoremap + <C-W>+
+nnoremap <S-Right> <C-W>>
+nnoremap <S-Left>  <C-W><
+nnoremap <S-Down>  <C-W>-
+nnoremap <S-Up>    <C-W>+
+
+"SPLIT WINDOWS
+nnoremap <A-M-Bslash> :vs<CR>
+nnoremap <A-_> :sp<CR>
+
+"EXIT INSERT MODE
+inoremap jk <ESC>
+
+"COMMA IS THE <Leader> KEY
+let mapleader=','
+let maplocalleader=','
 
 "SWITCH WINDOWS DIRECTION
 map <Leader>th <C-w>t<C-w>H
 map <Leader>tk <C-w>t<C-w>K
 
+"NEW TAB
+nnoremap <A-t> :tabedit .<CR>
+set showtabline=2
+
+"TAB NAVIGATION
+nnoremap <A-h> gT
+nnoremap <A-l> gt
+nnoremap 1 1gt
+nnoremap 2 2gt
+nnoremap 3 3gt
+nnoremap 4 4gt
+nnoremap 5 5gt
+nnoremap 6 6gt
+nnoremap 7 7gt
+nnoremap 8 8gt
+nnoremap 9 9gt
+
+"KEEP IN VISUAL MODE WHEN SHIFTING
+vnoremap < <gv
+vnoremap > >gv
+
 "FORCE SPLIT DIRECTRION
 set splitbelow splitright
+
+"SAVE IN INSERT MODE
+inoremap <C-s> <ESC>:w<CR>a
 
 "OPEN TERMINAL
 command! -nargs=* VT vsplit | terminal <args>

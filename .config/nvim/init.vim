@@ -21,10 +21,16 @@ call plug#begin('~/.vim/autoload/plugged')
   Plug 'herringtondarkholme/yats.vim'
 
   "NEOVIM VIFM
-  Plug 'vifm/neovim-vifm'
+  "Plug 'vifm/neovim-vifm'
 
   "NERD COMMENTER
   Plug 'preservim/nerdcommenter'
+
+  "QUICK SCOPE
+  Plug 'unblevable/quick-scope'
+
+  "SNEAK
+  Plug 'justinmk/vim-sneak'
 
   "AUTO PAIRS
   Plug 'jiangmiao/auto-pairs'
@@ -59,7 +65,6 @@ call plug#begin('~/.vim/autoload/plugged')
   Plug 'tjdevries/colorbuddy.vim'
   Plug 'morhetz/gruvbox'
 
-
 call plug#end()
 
 "CLIPBOARD EVERYWHERE
@@ -73,8 +78,24 @@ vmap <A-x> <plug>NERDCommenterToggle
 nmap <A-x> <plug>NERDCommenterToggle
 nnoremap <silent> <leader>c{ V{:call NERDComment('x', 'toggle')<CR>
 
+"CONFIG QUICK SCOPE
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+highlight QuickScopePrimary guifg='#00C7DF' gui=underline ctermfg=155 cterm=underline
+highlight QuickScopeSecondary guifg='#afff5f' gui=underline ctermfg=81 cterm=underline
+let g:qs_max_chars=150
+
+"CONFIG SNEAK
+let g:sneak#label = 1
+let g:sneak#use_ic_scs = 1
+let g:sneak#s_next = 1
+let g:sneak#prompt = '🔎 '
+
+
 "VIFM SHORTCUT
-:nnoremap <C-t> :VifmToggle .<CR>
+":nnoremap <C-t> :VifmToggle .<CR>
+
+nmap <C-t> :CocCommand explorer<CR>
+autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 
 "Telescope CONFIG
 nmap <C-p> :Telescope find_files<CR>

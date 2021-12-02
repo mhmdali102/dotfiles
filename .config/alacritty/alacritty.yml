@@ -27,21 +27,18 @@ colors:
     cyan: "#56b6c2"
     white: "#ECEFF4"
 
-#background_opacity: 1.0
+background_opacity: .95
 
 font:
   normal:
-    family: "FiraMono Nerd Font"
+    family: "FiraCode Nerd Font Mono"
     style: Regular
-  #bold:
-    #family: "Fira"
-    #style: Bold
-  #italic:
-    #family: "Fira"
-    #style: Italic
-  #bold_italic:
-    #family: "Fira"
-    #style: Bold Italic
+  bold:
+    family: "FiraCode Nerd Font Mono"
+    style: Bold
+  light:
+    family: "FiraMono Nerd Font Mono"
+    style: Light
 
   # Point size
   #size: 22.0
@@ -55,8 +52,8 @@ font:
 
 window:
   padding:
-    x: 2
-    y: 2
+    x: 0
+    y: 0
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.

@@ -65,6 +65,7 @@ call plug#begin('~/.vim/autoload/plugged')
   Plug 'morhetz/gruvbox'
   Plug 'Murtaza-Udaipurwala/gruvqueen'
   Plug 'ayu-theme/ayu-vim'
+  Plug 'joshdick/onedark.vim'
 
 call plug#end()
 
@@ -230,4 +231,4 @@ map <Leader>p :MarkdownPreview<CR>
 "AUTO-RESIZE SPLITS
 autocmd VimResized * wincmd =
 
-colorscheme gruvqueen
+colorscheme default

@@ -7,12 +7,14 @@ set expandtab
 set tabstop=2 softtabstop=2
 set shiftwidth=2
 set smartindent
+set smarttab
 set ignorecase
 set smartcase
 set noswapfile
 set nobackup
 set background=dark 
 set noshowmode
+set fillchars+=vert:\ 
 
 call plug#begin('~/.vim/autoload/plugged')
 
@@ -36,6 +38,9 @@ call plug#begin('~/.vim/autoload/plugged')
 
   "AUTO PAIRS
   Plug 'jiangmiao/auto-pairs'
+
+  "VIM RAINBOW
+  Plug 'frazrepo/vim-rainbow'
   
   "SURROUND
   Plug 'tpope/vim-surround'
@@ -105,7 +110,7 @@ let g:sneak#prompt = '🔎 '
 nmap <C-t> :CocCommand explorer<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 
-"Telescope CONFIG
+"TELESCOPE CONFIG
 nmap <C-p> :Telescope find_files<CR>
 lua << EOF
 require('telescope').setup{
@@ -120,7 +125,7 @@ EOF
 "SETUP COC PRETTIER
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
-"CocConfig
+"COCCONFIG
 source $HOME/.config/nvim/CocConfig.vim
 
 "COC-CSS | SASS
@@ -150,6 +155,9 @@ let g:gruvqueen_style = 'original'
 let ayucolor="mirage" 
 set termguicolors     
 
+"DISABLE HIGHLIGHT AFTER SEARCH
+nnoremap <esc><esc> :silent! nohls<cr>
+
 "NAVIGATE WINDOWS"
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -174,7 +182,7 @@ nnoremap <S-Up>    <C-W>+
 nnoremap <A-M-Bslash> :vs<CR>
 nnoremap <A-_> :sp<CR>
 
-"EXIT INSERT MODE
+"REMAP ESC TO jk
 inoremap jk <ESC>
 
 "COMMA IS THE <Leader> KEY
@@ -213,8 +221,8 @@ set splitbelow splitright
 inoremap <C-s> <ESC>:w<CR>a
 
 "OPEN TERMINAL
-command! -nargs=* VT vsplit | terminal <args>
-command! -nargs=* T split | terminal <args>
+map <Leader>ht :new term://fish<CR>
+map <Leader>vt :vnew term://fish<CR>
 
 "KEEP CURSOR CENTERED
 nnoremap n nzz
@@ -229,8 +237,13 @@ map <Leader>ev :tabnew $MYVIMRC<CR>
 "SOURCE VIM CONFIG FILE
 map <Leader>sv :source $MYVIMRC<CR>
 
-"Markdown Preview
+"MARKDOWN PREVIEW
 map <Leader>p :MarkdownPreview<CR>
+let g:mkdp_auto_start = 1
+let g:mkdp_refresh_slow = 1
+
+"ENABLE RAINBOW
+let g:rainbow_active = 1
 
 "AUTO-RESIZE SPLITS
 autocmd VimResized * wincmd =

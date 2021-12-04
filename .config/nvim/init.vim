@@ -18,6 +18,9 @@ call plug#begin('~/.vim/autoload/plugged')
 
   "COC
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  
+  "VIFM
+  Plug 'vifm/vifm.vim'
 
   "TYPESCRIPT SYNTAX
   Plug 'herringtondarkholme/yats.vim'
@@ -231,4 +234,4 @@ map <Leader>p :MarkdownPreview<CR>
 "AUTO-RESIZE SPLITS
 autocmd VimResized * wincmd =
 
-colorscheme default
+colorscheme dracula

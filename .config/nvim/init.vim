@@ -69,6 +69,7 @@ call plug#begin('~/.vim/autoload/plugged')
   Plug 'Murtaza-Udaipurwala/gruvqueen'
   Plug 'ayu-theme/ayu-vim'
   Plug 'joshdick/onedark.vim'
+  Plug 'tomasr/molokai'
 
 call plug#end()
 

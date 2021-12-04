@@ -27,7 +27,7 @@ colors:
     cyan: "#56b6c2"
     white: "#ECEFF4"
 
-background_opacity: .92
+background_opacity: .95
 
 font:
   normal:
@@ -78,6 +78,7 @@ live_config_reload: true
 colors:
   primary:
     background: '#282a36'
+    #background: '#080a14'
     foreground: '#f8f8f2'
     bright_foreground: '#ffffff'
   cursor:

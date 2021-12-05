@@ -255,6 +255,12 @@ inoremap <C-s> <ESC>:w<CR>a
 map <Leader>ht :new term://fish<CR>
 map <Leader>vt :vnew term://fish<CR>
 
+"CONFIG VIFM
+map <Leader>ve :EditVifm<CR>
+map <Leader>vs :VsplitVifm<CR>
+map <Leader>sp :SplitVifm<CR>
+map <Leader>vt :TabVifm<CR>
+
 "KEEP CURSOR CENTERED
 nnoremap n nzz
 nnoremap N Nzz
@@ -279,4 +285,4 @@ let g:rainbow_active = 1
 "AUTO-RESIZE SPLITS
 autocmd VimResized * wincmd =
 
-colorscheme dracula
+colorscheme gruvbox

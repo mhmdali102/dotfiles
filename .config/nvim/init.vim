@@ -47,6 +47,7 @@ call plug#begin('~/.vim/autoload/plugged')
 
   "STATUS LINE
   Plug 'itchyny/lightline.vim'
+  Plug 'itchyny/vim-gitbranch'
 
   "INDENT LINE
   Plug 'Yggdroot/indentLine'
@@ -75,6 +76,7 @@ call plug#begin('~/.vim/autoload/plugged')
   Plug 'ayu-theme/ayu-vim'
   Plug 'joshdick/onedark.vim'
   Plug 'tomasr/molokai'
+  Plug 'catppuccin/nvim'
 
 call plug#end()
 
@@ -144,6 +146,35 @@ augroup END
 "CONFIG INDENT LINE
 let g:indentLine_color_term = 238
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+
+"CONFIG LIGHTLINE
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ] ],
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+      \ },
+      \ 'component': {
+      \   'charvaluehex': '0x%B',
+      \   'gitbranch':  ':' . gitbranch#name(),
+      \ },
+      \ 'mode_map': {
+        \ 'n' : 'N',
+        \ 'i' : 'I',
+        \ 'R' : 'R',
+        \ 'v' : 'V',
+        \ 'V' : 'VL',
+        \ "\<C-v>": 'VB',
+        \ 'c' : 'C',
+        \ 's' : 'S',
+        \ 'S' : 'SL',
+        \ "\<C-s>": 'SB',
+        \ 't': 'T',
+        \ },
+      \ }
 
 "CONFIG MATERIAL THEME = darker | lighter | oceanic | palenight | deep ocean
 let g:material_style = 'darker'

@@ -489,7 +489,7 @@ schemes:
 # *solarized-dark
 # *tomorrow-night
 
-colors: *doom-one
+colors: *tomorrow-night
 
 #######################################
 ##       END OF COLOR SCHEMES        ##

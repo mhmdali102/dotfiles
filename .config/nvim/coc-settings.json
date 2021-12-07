@@ -13,7 +13,8 @@
     "javascript",
     "javascriptreact",
     "json",
-    "python"
+    "python",
+    "java"
   ],
   "explorer.width": 30,
   "explorer.icon.enableNerdfont": true,

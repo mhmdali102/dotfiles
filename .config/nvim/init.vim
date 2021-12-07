@@ -15,6 +15,7 @@ set nobackup
 set background=dark 
 set noshowmode
 set fillchars+=vert:\ 
+set nocompatible
 
 call plug#begin('~/.vim/autoload/plugged')
 
@@ -26,6 +27,9 @@ call plug#begin('~/.vim/autoload/plugged')
 
   "TYPESCRIPT SYNTAX
   Plug 'herringtondarkholme/yats.vim'
+
+  "LANGUAGE PACK
+  "Plug 'sheerun/vim-polyglot'
 
   "NERD COMMENTER
   Plug 'preservim/nerdcommenter'
@@ -59,7 +63,8 @@ call plug#begin('~/.vim/autoload/plugged')
   Plug 'fannheyward/telescope-coc.nvim'
 
   "CSS HEX COLORS
-  Plug 'ap/vim-css-color'
+  "Plug 'ap/vim-css-color'
+  Plug 'KabbAmine/vCoolor.vim'
   
   "Markdown preview
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
@@ -89,7 +94,6 @@ nnoremap Y yg_
 "GO TO START /END OF THE LINE
 nnoremap H g^
 nnoremap L g$
-
 
 "COMMENT SHORTCUT
 vmap <A-x> <plug>NERDCommenterToggle
@@ -149,32 +153,32 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 "CONFIG LIGHTLINE
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'active': {
-      \   'right': [ [ 'lineinfo' ],
-      \              [ 'percent' ],
-      \              [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ] ],
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+    \ 'colorscheme': 'wombat',
+    \ 'active': {
+    \   'right': [ [ 'lineinfo' ],
+    \              [ 'percent' ],
+    \              [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ] ],
+    \   'left': [ [ 'mode', 'paste' ],
+    \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+    \ },
+    \ 'component': {
+    \   'charvaluehex': '0x%B',
+    \   'gitbranch':  ':' . gitbranch#name(),
+    \ },
+    \ 'mode_map': {
+      \ 'n' : 'N',
+      \ 'i' : 'I',
+      \ 'R' : 'R',
+      \ 'v' : 'V',
+      \ 'V' : 'VL',
+      \ "\<C-v>": 'VB',
+      \ 'c' : 'C',
+      \ 's' : 'S',
+      \ 'S' : 'SL',
+      \ "\<C-s>": 'SB',
+      \ 't': 'T',
       \ },
-      \ 'component': {
-      \   'charvaluehex': '0x%B',
-      \   'gitbranch':  ':' . gitbranch#name(),
-      \ },
-      \ 'mode_map': {
-        \ 'n' : 'N',
-        \ 'i' : 'I',
-        \ 'R' : 'R',
-        \ 'v' : 'V',
-        \ 'V' : 'VL',
-        \ "\<C-v>": 'VB',
-        \ 'c' : 'C',
-        \ 's' : 'S',
-        \ 'S' : 'SL',
-        \ "\<C-s>": 'SB',
-        \ 't': 'T',
-        \ },
-      \ }
+    \ }
 
 "CONFIG MATERIAL THEME = darker | lighter | oceanic | palenight | deep ocean
 let g:material_style = 'darker'
@@ -185,9 +189,6 @@ let g:gruvqueen_style = 'original'
 "CONFIG AYU THEME = light | mirage | dark
 let ayucolor="mirage" 
 set termguicolors     
-
-"DISABLE HIGHLIGHT AFTER SEARCH
-nnoremap <esc><esc> :silent! nohls<cr>
 
 "NAVIGATE WINDOWS"
 nnoremap <C-h> <C-w>h
@@ -259,7 +260,7 @@ map <Leader>vt :vnew term://fish<CR>
 map <Leader>ve :EditVifm<CR>
 map <Leader>vs :VsplitVifm<CR>
 map <Leader>sp :SplitVifm<CR>
-map <Leader>vt :TabVifm<CR>
+map <Leader>tv :TabVifm<CR>
 
 "KEEP CURSOR CENTERED
 nnoremap n nzz
@@ -276,7 +277,6 @@ map <Leader>sv :source $MYVIMRC<CR>
 
 "MARKDOWN PREVIEW
 map <Leader>p :MarkdownPreview<CR>
-let g:mkdp_auto_start = 1
 let g:mkdp_refresh_slow = 1
 
 "ENABLE RAINBOW

@@ -12,7 +12,7 @@ font:
     style: Light
 
   # Point size
-  #size: 22.0
+  #size: 7.9
 
   offset:
     x: 0
@@ -405,7 +405,7 @@ schemes:
 # *solarized-dark
 # *tomorrow-night
 
-colors: *gruvbox-dark
+colors: *doom-one
 
 #######################################
 ##       END OF COLOR SCHEMES        ##

@@ -16,9 +16,12 @@ set background=dark
 set noshowmode
 set fillchars+=vert:\ 
 set nocompatible
+set splitbelow splitright
+set showtabline=2
+set clipboard=unnamedplus
+set ttyfast
 
 call plug#begin('~/.vim/autoload/plugged')
-
   "COC
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   
@@ -85,26 +88,26 @@ call plug#begin('~/.vim/autoload/plugged')
 
 call plug#end()
 
-"CLIPBOARD EVERYWHERE
-set clipboard=unnamedplus
-
 "YANK TO THE END OF THE LINE
 nnoremap Y yg_
 
 "GO TO START /END OF THE LINE
 nnoremap H g^
-nnoremap L g$
+nnoremap L g_
 
 "COMMENT SHORTCUT
 vmap <A-x> <plug>NERDCommenterToggle
 nmap <A-x> <plug>NERDCommenterToggle
-nnoremap <silent> <leader>c{ V{:call NERDComment('x', 'toggle')<CR>
 
 "CONFIG QUICK SCOPE
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 highlight QuickScopePrimary guifg='#00C7DF' gui=underline ctermfg=155 cterm=underline
 highlight QuickScopeSecondary guifg='#afff5f' gui=underline ctermfg=81 cterm=underline
 let g:qs_max_chars=150
+
+"CONFIG POLYGLOT
+"let g:polyglot_disabled = ['markdown']
+"let g:polyglot_disabled = ['markdown.plugin']
 
 "CONFIG SNEAK
 let g:sneak#label = 1
@@ -141,7 +144,7 @@ autocmd FileType scss setl iskeyword+=@-@
 let g:coc_snippet_next = '<Tab>'
 let g:coc_snippet_prev = '<S-Tab>'
 
-"EMMET FOR JS
+"EMMET FOR JSX
 augroup filetype_jsx
     autocmd!
     autocmd FileType javascript set filetype=javascriptreact
@@ -149,7 +152,7 @@ augroup END
 
 "CONFIG INDENT LINE
 let g:indentLine_color_term = 238
-let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_char_list = ['│', '¦', '┆', '┊', '|']
 
 "CONFIG LIGHTLINE
 let g:lightline = {
@@ -187,7 +190,7 @@ let g:material_style = 'darker'
 let g:gruvqueen_style = 'original'
 
 "CONFIG AYU THEME = light | mirage | dark
-let ayucolor="mirage" 
+let ayucolor="dark" 
 set termguicolors     
 
 "NAVIGATE WINDOWS"
@@ -212,7 +215,7 @@ nnoremap <S-Up>    <C-W>+
 
 "SPLIT WINDOWS
 nnoremap <A-M-Bslash> :vs<CR>
-nnoremap <A-_> :sp<CR>
+nnoremap <A--> :sp<CR>
 
 "REMAP ESC TO jk
 inoremap jk <ESC>
@@ -227,7 +230,6 @@ map <Leader>tk <C-w>t<C-w>K
 
 "NEW TAB
 nnoremap <A-t> :tabedit .<CR>
-set showtabline=2
 
 "TAB NAVIGATION
 nnoremap <A-h> gT
@@ -245,9 +247,6 @@ nnoremap 9 9gt
 "KEEP IN VISUAL MODE WHEN SHIFTING
 vnoremap < <gv
 vnoremap > >gv
-
-"FORCE SPLIT DIRECTRION
-set splitbelow splitright
 
 "SAVE IN INSERT MODE
 inoremap <C-s> <ESC>:w<CR>a
@@ -269,14 +268,12 @@ nnoremap N Nzz
 "TOGGLE WRAP
 nnoremap <A-z> :set wrap!<CR>
 
-"EDIT VIM CONFIG FILE
+"EDIT & SOURCE VIM CONFIG FILE
 map <Leader>ev :tabnew $MYVIMRC<CR>
-
-"SOURCE VIM CONFIG FILE
 map <Leader>sv :source $MYVIMRC<CR>
 
 "MARKDOWN PREVIEW
-map <Leader>p :MarkdownPreview<CR>
+map <Leader>mp :MarkdownPreview<CR>
 let g:mkdp_refresh_slow = 1
 
 "ENABLE RAINBOW
@@ -286,3 +283,4 @@ let g:rainbow_active = 1
 autocmd VimResized * wincmd =
 
 colorscheme gruvbox
+"nvim dap

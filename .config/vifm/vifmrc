@@ -234,17 +234,20 @@ fileviewer *.[1-8] man ./%c | col -b
 
 " Images
 filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
-        \ {View in sxiv}
-        \ sxiv %f,
-        \ {View in gpicview}
-        \ gpicview %c,
-        \ {View in shotwell}
-        \ shotwell,
-fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.xpm
-         \ identify %f
-        \ vifmimg draw %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
+        "\ {View in sxiv}
+        "\ sxiv %f,
+        "\ {View in gpicview}
+        "\ gpicview %c,
+        "\ {View in shotwell}
+        "\ shotwell,
+fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.xpm,*.webp
+    \ kitty +icat --silent --transfer-mode=stream --place=%pwx%ph@%pxx%py %c %N
+    \ %pc
+    \ kitty icat --clear --silent %pd
+         "\ identify %f
+        "\ vifmimg draw %px %py %pw %ph %c
+        "\ %pc
+        "\ vifmimg clear
 fileviewer *.gif
          \ identify %f
         \ vifmimg gifpreview %px %py %pw %ph %c

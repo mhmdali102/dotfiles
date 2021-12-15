@@ -32,7 +32,7 @@ call plug#begin('~/.vim/autoload/plugged')
   Plug 'herringtondarkholme/yats.vim'
 
   "LANGUAGE PACK
-  "Plug 'sheerun/vim-polyglot'
+  Plug 'sheerun/vim-polyglot'
 
   "NERD COMMENTER
   Plug 'preservim/nerdcommenter'
@@ -51,6 +51,10 @@ call plug#begin('~/.vim/autoload/plugged')
   
   "SURROUND
   Plug 'tpope/vim-surround'
+
+  "XMLATTR
+  Plug 'kana/vim-textobj-user'
+  Plug 'whatyouhide/vim-textobj-xmlattr'
 
   "STATUS LINE
   Plug 'itchyny/lightline.vim'

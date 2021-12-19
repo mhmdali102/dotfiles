@@ -64,8 +64,8 @@ set norunexec
 
 " Selected color scheme
 
-" colorscheme Default
-colorscheme gruvbox
+ "colorscheme Default
+colorscheme palenight
 
 " Format for displaying time in file list. For example:
 " TIME_STAMP_FORMAT=%m/%d-%H:%M
@@ -515,4 +515,4 @@ set classify+=' ::*.avi,,*.ts,,*.axv,,*.divx,,*.m2v,,*.m4p,,*.m4v,,.mka,,*.mk
 set classify+=' ::*.doc,,*.docx::, ::*.xls,,*.xls[mx]::, ::*.pptx,,*.ppt::'
 
 " OPEN FILES WITH DEFAULT APPLICATIONS
-filetype *.mp4, *.mp3, *.jpg,*.jpeg,*.png xdg-open
+filetype *.mp4, *.mp3 xdg-open

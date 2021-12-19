@@ -76,6 +76,9 @@ call plug#begin('~/.vim/autoload/plugged')
   "Markdown preview
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
+  "NVIM TRANSPARENT
+  Plug 'xiyaowong/nvim-transparent'
+
   "THEMES
   Plug 'tomasiser/vim-code-dark'
   Plug 'marko-cerovac/material.nvim'
@@ -196,6 +199,26 @@ let g:gruvqueen_style = 'original'
 "CONFIG AYU THEME = light | mirage | dark
 let ayucolor="dark" 
 set termguicolors     
+
+"CONFIG NVIM TRANSPARENT
+map <Leader>tr :TransparentToggle<CR>
+lua << EOF
+require("transparent").setup({
+  enable = true, -- boolean: enable transparent
+  extra_groups = { -- table/string: additional groups that should be clear
+    -- In particular, when you set it to 'all', that means all avaliable groups
+
+    -- example of akinsho/nvim-bufferline.lua
+    "BufferLineTabClose",
+    "BufferlineBufferSelected",
+    "BufferLineFill",
+    "BufferLineBackground",
+    "BufferLineSeparator",
+    "BufferLineIndicatorSelected",
+  },
+  exclude = {}, -- table: groups you don't want to clear
+})
+EOF
 
 "NAVIGATE WINDOWS"
 nnoremap <C-h> <C-w>h

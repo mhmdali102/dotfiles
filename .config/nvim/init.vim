@@ -112,10 +112,6 @@ highlight QuickScopePrimary guifg='#00C7DF' gui=underline ctermfg=155 cterm=unde
 highlight QuickScopeSecondary guifg='#afff5f' gui=underline ctermfg=81 cterm=underline
 let g:qs_max_chars=150
 
-"CONFIG POLYGLOT
-"let g:polyglot_disabled = ['markdown']
-"let g:polyglot_disabled = ['markdown.plugin']
-
 "CONFIG SNEAK
 let g:sneak#label = 1
 let g:sneak#use_ic_scs = 1
@@ -199,6 +195,10 @@ let g:gruvqueen_style = 'original'
 "CONFIG AYU THEME = light | mirage | dark
 let ayucolor="dark" 
 set termguicolors     
+
+"CONFIG GRUVBOX THEME = soft | default | hard
+let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_contrast_light = 'soft'
 
 "CONFIG NVIM TRANSPARENT
 map <Leader>tr :TransparentToggle<CR>

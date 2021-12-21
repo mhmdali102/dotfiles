@@ -72,6 +72,9 @@ call plug#begin('~/.vim/autoload/plugged')
   "CSS HEX COLORS
   "Plug 'ap/vim-css-color'
   Plug 'KabbAmine/vCoolor.vim'
+
+  "DASHBOARD
+  Plug 'glepnir/dashboard-nvim'
   
   "Markdown preview
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
@@ -98,9 +101,10 @@ call plug#end()
 "YANK TO THE END OF THE LINE
 nnoremap Y yg_
 
-"GO TO START /END OF THE LINE
-nnoremap H g^
-nnoremap L g_
+"GO TO START/MIDDLE/END OF THE LINE
+nnoremap <A-j> g^
+nnoremap <A-k> g_
+nnoremap <A-m> :exe 'normal ' . len(getline('.'))/2 . '\|'<CR>
 
 "COMMENT SHORTCUT
 vmap <A-x> <plug>NERDCommenterToggle
@@ -133,6 +137,9 @@ require('telescope').setup{
 require('telescope').load_extension('fzf')
 require('telescope').load_extension('coc')
 EOF
+
+"CONFIG DASHBOARD
+let g:dashboard_default_executive ='telescope'
 
 "SETUP COC PRETTIER
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
@@ -201,7 +208,9 @@ let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_contrast_light = 'soft'
 
 "CONFIG NVIM TRANSPARENT
-map <Leader>tr :TransparentToggle<CR>
+map <Leader>te :TransparentEnable<CR>
+map <Leader>td :TransparentDisable<CR>
+
 lua << EOF
 require("transparent").setup({
   enable = true, -- boolean: enable transparent
@@ -281,6 +290,9 @@ inoremap <C-s> <ESC>:w<CR>a
 "OPEN TERMINAL
 map <Leader>ht :new term://fish<CR>
 map <Leader>vt :vnew term://fish<CR>
+
+"COMPILE AND RUN JAVA
+map <Leader>jv :w<CR> :!javac % && java %:r <CR>
 
 "CONFIG VIFM
 map <Leader>ve :EditVifm<CR>

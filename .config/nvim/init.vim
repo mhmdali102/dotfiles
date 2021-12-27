@@ -70,7 +70,7 @@ call plug#begin('~/.vim/autoload/plugged')
   Plug 'fannheyward/telescope-coc.nvim'
 
   "CSS HEX COLORS
-  "Plug 'ap/vim-css-color'
+  Plug 'ap/vim-css-color'
   Plug 'KabbAmine/vCoolor.vim'
 
   "DASHBOARD

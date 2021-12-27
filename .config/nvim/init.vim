@@ -131,7 +131,8 @@ nmap <C-p> :Telescope find_files<CR>
 lua << EOF
 require('telescope').setup{
   defaults = {
-          prompt_prefix = "$ "
+          prompt_prefix = "$ ",
+          file_ignore_patterns = {"./node_modules/*", "node_modules", "^node_modules/*", "node_modules/*"}
       }
 }
 require('telescope').load_extension('fzf')

@@ -182,7 +182,32 @@ mode "move" {
     bindsym Escape mode "default"
 }
 
-bindsym Mod4+m focus floating; mode "move"
+bindsym $mod+m focus floating; mode "move"
+
+mode "swap" {
+	# switch to workspace
+	bindsym $mod+1 workspace $ws1
+	bindsym $mod+2 workspace $ws2
+	bindsym $mod+3 workspace $ws3
+	bindsym $mod+4 workspace $ws4
+	bindsym $mod+5 workspace $ws5
+	bindsym $mod+6 workspace $ws6
+	bindsym $mod+7 workspace $ws7
+	bindsym $mod+8 workspace $ws8
+	bindsym $mod+9 workspace $ws9
+	bindsym $mod+0 workspace $ws10
+
+	# change focus (without mod)
+	bindsym h focus left
+	bindsym j focus down
+	bindsym k focus up
+	bindsym l focus right
+
+	bindsym Return swap container with mark "swapee"; unmark "swapee"; mode "default";
+	bindsym Escape unmark "swapee"; mode "default";
+}
+
+bindsym $mod+Shift+m mark --add "swapee"; mode "swap"
 
 ######################################
 # keybindings for different actions: #
@@ -549,6 +574,6 @@ bindsym $mod+Shift+p exec rofi -show window \
 #bindsym $mod+t exec rofi -show window \
 #		-config ~/.config/rofi/rofidmenu.rasi
 
+# floating terminal
 bindsym $mod+t exec --no-startup-id $terminal --role floating_term
 for_window [window_role=floating_term] floating enable
-

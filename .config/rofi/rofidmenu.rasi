@@ -18,11 +18,11 @@ configuration {
 window {
     background-color: @background;
     border:           0;
-    padding:          30;
+    padding:          25;
 }
 listview {
     lines:                          10;
-    columns:                        3;
+    columns:                        1;
 }
 mainbox {
     border:  0;

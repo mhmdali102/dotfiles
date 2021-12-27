@@ -28,31 +28,21 @@ link to the specified URL.-->
     <link id="longTermForecast" url="http://www.yr.no/place/Lebanon/Beirut/Beirut/long" />
   </links>
   <meta>
-    <lastupdate>2021-12-27T15:33:27</lastupdate>
-    <nextupdate>2021-12-27T21:33:27</nextupdate>
+    <lastupdate>2021-12-27T15:29:05</lastupdate>
+    <nextupdate>2021-12-27T21:29:05</nextupdate>
   </meta>
   <sun rise="2021-12-27T06:41:47" set="2021-12-27T16:36:26" />
   <forecast>
     <tabular>
-      <time from="2021-12-27T17:00:00" to="2021-12-27T18:00:00" period="2">
-        <!-- Valid from 2021-12-27T17:00:00 to 2021-12-27T18:00:00 -->
-        <symbol number="1" numberEx="1" name="Clear sky" var="01d" />
-        <precipitation value="0" />
-        <!-- Valid at 2021-12-27T17:00:00 -->
-        <windDirection deg="55.8" code="NE" name="Northeast" />
-        <windSpeed mps="2.3" name="Light breeze" />
-        <temperature unit="celsius" value="17" />
-        <pressure unit="hPa" value="1020.7" />
-      </time>
-      <time from="2021-12-27T18:00:00" to="2021-12-28T00:00:00" period="3">
-        <!-- Valid from 2021-12-27T18:00:00 to 2021-12-28T00:00:00 -->
+      <time from="2021-12-27T19:00:00" to="2021-12-28T00:00:00" period="3">
+        <!-- Valid from 2021-12-27T19:00:00 to 2021-12-28T00:00:00 -->
         <symbol number="1" numberEx="1" name="Clear sky" var="01n" />
         <precipitation value="0" />
-        <!-- Valid at 2021-12-27T18:00:00 -->
-        <windDirection deg="85.6" code="E" name="East" />
-        <windSpeed mps="2.4" name="Light breeze" />
-        <temperature unit="celsius" value="16" />
-        <pressure unit="hPa" value="1020.8" />
+        <!-- Valid at 2021-12-27T19:00:00 -->
+        <windDirection deg="95.6" code="E" name="East" />
+        <windSpeed mps="2.7" name="Light breeze" />
+        <temperature unit="celsius" value="15" />
+        <pressure unit="hPa" value="1020.6" />
       </time>
       <time from="2021-12-28T00:00:00" to="2021-12-28T06:00:00" period="0">
         <!-- Valid from 2021-12-28T00:00:00 to 2021-12-28T06:00:00 -->

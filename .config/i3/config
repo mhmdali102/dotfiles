@@ -182,7 +182,7 @@ mode "move" {
     bindsym Escape mode "default"
 }
 
-bindsym $mod+m focus floating; mode "move"
+bindsym $mod+M focus floating; mode "move"
 
 mode "swap" {
 	# switch to workspace
@@ -207,7 +207,7 @@ mode "swap" {
 	bindsym Escape unmark "swapee"; mode "default";
 }
 
-bindsym $mod+Shift+m mark --add "swapee"; mode "swap"
+bindsym $mod+Shift+M mark --add "swapee"; mode "swap"
 
 ######################################
 # keybindings for different actions: #
@@ -219,12 +219,16 @@ set $terminal xfce4-terminal
 bindsym $mod+Return exec $terminal --role FullTerm
 bindsym $mod+c exec --no-startup-id $terminal --role coding
 bindsym $mod+Shift+Return exec $terminal 
+#
+# floating terminal
+bindsym $mod+t exec --no-startup-id $terminal --role floating_term
+for_window [window_role=floating_term] floating enable
 
 # kill focused window
 bindsym $mod+q kill
 
 # exit-menu
-bindsym $mod+Shift+e exec ~/.config/i3/scripts/powermenu
+bindsym $mod+Shift+q exec ~/.config/i3/scripts/powermenu
 bindsym $mod+Shift+Escape exec "shutdown -h now"
 
 # Lock the system
@@ -234,7 +238,7 @@ bindsym $mod+Shift+Escape exec "shutdown -h now"
 bindsym $mod+Escape exec ~/.config/i3/scripts/blur-lock
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+#bindsym $mod+Shift+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to update i3)
 bindsym $mod+Shift+r restart
@@ -571,17 +575,23 @@ strip_workspace_numbers yes
 bindsym $mod+p exec rofi -modi drun -show drun \
 		-config ~/.config/rofi/rofidmenu.rasi
 
-bindsym $mod+Shift+p exec rofi -show window \
+bindsym $mod+Shift+w exec rofi -show window \
 		-config ~/.config/rofi/rofidmenu.rasi
 
 #bindsym F9 exec rofi -modi drun -show drun \
-#		-config ~/.config/rofi/rofidmenu.rasi
+		#-config ~/.config/rofi/rofidmenu.rasi
 
 ## rofi bindings for window menu ($mod+t /F10 optional disabled)
 
-#bindsym $mod+t exec rofi -show window \
-#		-config ~/.config/rofi/rofidmenu.rasi
+bindsym $mod+Shift+e exec rofi -show emoji \
+		-config ~/.config/rofi/rofidmenu.rasi
 
-# floating terminal
-bindsym $mod+t exec --no-startup-id $terminal --role floating_term
-for_window [window_role=floating_term] floating enable
+bindsym $mod+Shift+a exec rofi -show combi \
+		-config ~/.config/rofi/rofidmenu.rasi
+
+bindsym $mod+Shift+f exec rofi -show filebrowser \
+		-config ~/.config/rofi/rofidmenu.rasi
+
+bindsym $mod+Shift+c exec rofi -show calc \
+		-config ~/.config/rofi/rofidmenu.rasi
+

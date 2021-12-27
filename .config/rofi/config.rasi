@@ -1,5 +1,5 @@
 configuration {
-/*	modi: "window,run,ssh";*/
+	modi: "window,run,ssh,emoji,calc,combi,drun,filebrowser,keys";
 /*	font: "mono 12";*/
 /*	location: 0;*/
 /*	yoffset: 0;*/

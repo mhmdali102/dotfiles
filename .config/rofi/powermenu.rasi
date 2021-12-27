@@ -16,10 +16,10 @@ configuration {
 window {
     background-color:               @background;
     border:                         0;
-    padding:                        10;
+    padding:                        20;
     transparency:                   "real";
-    width:                          120px;
-    location:                       east;
+    /*width:                          120px;*/
+    /*location:                       east;*/
 /*y-offset:                       18;*/
 /*x-offset:	                    850;*/
     transparency:                   "real";
@@ -31,7 +31,7 @@ listview {
 }
 element {
     border:  0;
-    padding: 1px ;
+    padding: 2px ;
 }
 element-text {
     background-color: inherit;

@@ -151,7 +151,7 @@ See the above repository for updates as well as full license text. */
 
 #nav-bar:not([customizing]) {
   opacity: 0;
-  transition: transform 400ms ease 1.8s, opacity 400ms ease 1.8s !important;
+  transition: transform 400ms ease 0ms, opacity 400ms ease 0ms !important;
   position: relative;
   z-index: 2;
 }
@@ -179,7 +179,7 @@ See the above repository for updates as well as full license text. */
 
 /* Bookmarks toolbar needs so extra rules */
 #PersonalToolbar {
-  transition: transform 400ms ease 1.8s !important;
+  transition: transform 400ms ease 0s !important;
   position: relative;
   z-index: 1;
 }

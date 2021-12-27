@@ -109,18 +109,18 @@ def main():
     # Print the temperature and sun times.
     print(temperature, end="°C ")
 
-    # Print the sun rise and set time.
-    if rise_fall_available:
-        print("[" + sun_rise_time + " 🌅 " + sun_set_time + "]", end=" ")
-
-    # Print the precipitation (if there is any).
-    if precipitation != "0":
-        # Print with a wet umbrella
-        print(" ☔ " + precipitation + "mm", end=" ")
-
-    # Print wind data.
-    print(" 🍃 " + wind_speed + "m/s " + "(" + wind_direction + ")", end="")
-    print("  | ", end="")
+#    # Print the sun rise and set time.
+#    if rise_fall_available:
+#        print("[" + sun_rise_time + " 🌅 " + sun_set_time + "]", end=" ")
+#
+#    # Print the precipitation (if there is any).
+#    if precipitation != "0":
+#        # Print with a wet umbrella
+#        print(" ☔ " + precipitation + "mm", end=" ")
+#
+#    # Print wind data.
+#    print(" 🍃 " + wind_speed + "m/s " + "(" + wind_direction + ")", end="")
+#    print("  | ", end="")
 
 # Go gadget, go!
 main()

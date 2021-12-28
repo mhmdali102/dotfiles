@@ -23,7 +23,7 @@ menu(){
 }
 
 main() {
-	choice=$(menu | rofi -dmenu | cut -d. -f1)
+	choice=$(menu | rofi -dmenu -config ~/.config/rofi/rofidmenu.rasi | cut -d. -f1)
 
 	case $choice in
 		1)

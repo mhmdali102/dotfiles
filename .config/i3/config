@@ -271,7 +271,7 @@ bindsym $mod+w exec /usr/bin/firefox-developer-edition
 bindsym $mod+n exec /usr/bin/thunar
 bindsym $mod+g exec $terminal -e ranger --role ranger
 bindsym $mod+Shift+g exec $terminal -e ranger --role floating_term
-bindsym $mod+u exec $terminal -e cmus --role music
+bindsym $mod+u exec $terminal -e cmus --role cmus
 bindsym Print exec "scrot ~/%Y-%m-%d-%T-screenshot.png"
 
 # Screenshot with flameshot then kill flameshot
@@ -315,7 +315,7 @@ assign [class="mpv"] $ws5
 assign [class="io.github.celluloid_player.Celluloid"] $ws5
 assign [class="VSCodium"] $ws3
 assign [window_role="coding"] $ws3
-assign [window_role="music"] $ws7
+assign [window_role="cmus"] $ws7
 assign [class=Motrix] $ws8
 
 # automatic set focus new window if it opens on another workspace then the current:
@@ -328,7 +328,7 @@ for_window [class="mpv"] focus
 for_window [class="io.github.celluloid_player.Celluloid"] focus
 for_window [class="VSCodium"] focus
 for_window [window_role="coding"] focus
-for_window [window_role="music"] focuse
+for_window [window_role="cmus"] focus
 for_window [class=Motrix] focus
 
 #############################################
@@ -541,4 +541,4 @@ bindsym $mod+Shift+f exec rofi -show filebrowser \
 bindsym $mod+Shift+c exec rofi -show calc \
 		-config ~/.config/rofi/rofidmenu.rasi
 
-bindsym $mod+Shift+u exec --no-startup-id $terminal --role music -e ~/.config/i3/scripts/rofi-beats
+bindsym $mod+Shift+u exec  ~/.config/i3/scripts/rofi-beats 

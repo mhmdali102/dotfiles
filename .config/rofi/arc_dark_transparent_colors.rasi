@@ -3,7 +3,7 @@
  * Maintainer: joekamprad <joekamprad@endeavouros.com>
  *******************************************************/
 * {
-    selected-normal-foreground:  rgba(100, 100, 250, 100%);
+    selected-normal-foreground:  rgba(200, 150, 255, 100%);
     foreground:                  rgba ( 196, 203, 212, 100 % );
     normal-foreground:           @foreground;
     alternate-normal-background: rgba ( 45, 48, 59, 1 % );

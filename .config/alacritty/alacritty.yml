@@ -1,4 +1,4 @@
-background_opacity: .8
+background_opacity: 1
 
 font:
   normal:
@@ -12,7 +12,7 @@ font:
     style: Light
 
   # Point size
-  #size: 7.9
+  size: 7
 
   offset:
     x: 0
@@ -405,7 +405,12 @@ schemes:
 # *solarized-dark
 # *tomorrow-night
 
-colors: *gruvbox-dark
+schemes:
+  dracula: &dracula
+    primary:
+      background: '#08052b'
+
+colors: *doom-one
 
 #######################################
 ##       END OF COLOR SCHEMES        ##

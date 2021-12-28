@@ -9,3 +9,4 @@ $SCREENSHOT
 convert $PICTURE -blur $BLUR $PICTURE
 i3lock -i $PICTURE
 rm $PICTURE
+xset dpms force off 

@@ -75,30 +75,6 @@ bindsym $mod+0    workspace  $ws10
 bindsym $mod+Shift+j workspace prev
 bindsym $mod+Shift+k workspace next
 
-# switch to workspace with numpad keys
-#bindcode $mod+87 workspace 1
-#bindcode $mod+88 workspace 2
-#bindcode $mod+89 workspace 3
-#bindcode $mod+83 workspace 4
-#bindcode $mod+84 workspace 5
-#bindcode $mod+85 workspace 6
-#bindcode $mod+79 workspace 7
-#bindcode $mod+80 workspace 8
-#bindcode $mod+81 workspace 9
-#bindcode $mod+90 workspace 10
-
-# switch to workspace with numlock numpad keys
-#bindcode $mod+Mod2+87 workspace $ws1
-#bindcode $mod+Mod2+88 workspace $ws2
-#bindcode $mod+Mod2+89 workspace $ws3
-#bindcode $mod+Mod2+83 workspace $ws4
-#bindcode $mod+Mod2+84 workspace $ws5
-#bindcode $mod+Mod2+85 workspace $ws6
-#bindcode $mod+Mod2+79 workspace $ws7
-#bindcode $mod+Mod2+80 workspace $ws8
-#bindcode $mod+Mod2+81 workspace $ws9
-#bindcode $mod+Mod2+90 workspace $ws10
-
 # move focused container to workspace
 bindsym $mod+Shift+1    move container to workspace  $ws1 workspace $ws1
 bindsym $mod+Shift+2    move container to workspace  $ws2 workspace $ws2
@@ -113,52 +89,17 @@ bindsym $mod+Shift+0    move container to workspace  $ws10 workspace $ws10
 bindsym $mod+Shift+h  	move container to workspace prev workspace prev
 bindsym $mod+Shift+l   	move container to workspace next workspace next
 
-
-# move focused container to workspace with numpad keys
-#bindcode $mod+Shift+Mod2+87 	move container to workspace  $ws1
-#bindcode $mod+Shift+Mod2+88 	move container to workspace  $ws2
-#bindcode $mod+Shift+Mod2+89 	move container to workspace  $ws3
-#bindcode $mod+Shift+Mod2+83 	move container to workspace  $ws4
-#bindcode $mod+Shift+Mod2+84 	move container to workspace  $ws5
-#bindcode $mod+Shift+Mod2+85 	move container to workspace  $ws6
-#bindcode $mod+Shift+Mod2+79 	move container to workspace  $ws7
-#bindcode $mod+Shift+Mod2+80 	move container to workspace  $ws8
-#bindcode $mod+Shift+Mod2+81 	move container to workspace  $ws9
-#bindcode $mod+Shift+Mod2+90 	move container to workspace  $ws10
-
-# move focused container to workspace with numpad keys
-#bindcode $mod+Shift+87 	 move container to workspace  $ws1
-#bindcode $mod+Shift+88 	 move container to workspace  $ws2
-#bindcode $mod+Shift+89 	 move container to workspace  $ws3
-#bindcode $mod+Shift+83 	 move container to workspace  $ws4
-#bindcode $mod+Shift+84 	 move container to workspace  $ws5
-#bindcode $mod+Shift+85 	 move container to workspace  $ws6
-#bindcode $mod+Shift+79 	 move container to workspace  $ws7
-#bindcode $mod+Shift+80 	 move container to workspace  $ws8
-#bindcode $mod+Shift+81 	 move container to workspace  $ws9
-#bindcode $mod+Shift+90 	 move container to workspace  $ws10
-
 # resize window (you can also use the mouse for that):
 mode "resize" {
-# These bindings trigger as soon as you enter the resize mode
-# Pressing left will shrink the window’s width.
-# Pressing right will grow the window’s width.
-# Pressing up will shrink the window’s height.
-# Pressing down will grow the window’s height.
         bindsym h resize shrink width 3 px or 3 ppt
         bindsym j resize grow height 3 px or 3 ppt
         bindsym k resize shrink height 3 px or 3 ppt
         bindsym l resize grow width 3 px or 3 ppt
-        bindsym Shift+h resize shrink width 20 px or 20 ppt
-        bindsym Shift+j resize grow height 20 px or 20 ppt
-        bindsym Shift+k resize shrink height 20 px or 20 ppt
-        bindsym Shift+l resize grow width 20 px or 20 ppt
+        bindsym Shift+h resize shrink width 10 px or 10 ppt
+        bindsym Shift+j resize grow height 10 px or 10 ppt
+        bindsym Shift+k resize shrink height 10 px or 10 ppt
+        bindsym Shift+l resize grow width 10 px or 10 ppt
 
-# same bindings, but for the arrow keys
-#	bindsym Left resize shrink width 10 px or 10 ppt
-#        bindsym Down resize grow height 10 px or 10 ppt
-#        bindsym Up resize shrink height 10 px or 10 ppt
-#        bindsym Right resize grow width 10 px or 10 ppt
 
 # back to normal: Enter or Escape
 	bindsym Return mode "default"
@@ -182,7 +123,7 @@ mode "move" {
     bindsym Escape mode "default"
 }
 
-bindsym $mod+M focus floating; mode "move"
+bindsym $mod+m focus floating; mode "move"
 
 mode "swap" {
 	# switch to workspace
@@ -207,7 +148,7 @@ mode "swap" {
 	bindsym Escape unmark "swapee"; mode "default";
 }
 
-bindsym $mod+Shift+M mark --add "swapee"; mode "swap"
+bindsym $mod+Shift+m mark --add "swapee"; mode "swap"
 
 ######################################
 # keybindings for different actions: #
@@ -259,23 +200,11 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# alternatively, you can use the cursor keys:
-#bindsym $mod+Left focus left
-#bindsym $mod+Down focus down
-#bindsym $mod+Up focus up
-#bindsym $mod+Right focus right
-
 # move focused window
 bindsym $mod+Ctrl+h move left
 bindsym $mod+Ctrl+j move down
 bindsym $mod+Ctrl+k move up
 bindsym $mod+Ctrl+l move right
-
-# alternatively, you can use the cursor keys:
-#bindsym $mod+Shift+Left move left
-#bindsym $mod+Shift+Down move down
-#bindsym $mod+Shift+Up move up
-#bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 bindsym $mod+i split h
@@ -284,7 +213,7 @@ bindsym $mod+i split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym F11 fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -339,7 +268,14 @@ bindsym $mod+y exec /usr/local/bin/switch-audio-port
 ## App shortcuts
 bindsym $mod+w exec /usr/bin/firefox-developer-edition
 bindsym $mod+n exec /usr/bin/thunar
+bindsym $mod+f exec xfce4-terminal -e ranger --role ranger
+bindsym $mod+Shift+f exec xfce4-terminal -e ranger --role floating_term
+bindsym $mod+u exec xfce4-terminal -e cmus --role cmus
 bindsym Print exec "scrot ~/%Y-%m-%d-%T-screenshot.png"
+
+# Screenshot with flameshot then kill flameshot
+bindsym $mod+Print exec "flameshot gui"
+bindsym $mod+Shift+Print exec "killall flameshot"
 
 ##########################################
 # configuration for workspace behaviour: #
@@ -353,8 +289,8 @@ set $ws3 "3:"
 set $ws4 "4:"
 set $ws5 "5:"
 set $ws6 "6:"
-set $ws7 "7"
-set $ws8 "8"
+set $ws7 "7:"
+set $ws8 "8:"
 set $ws9 "9"
 set $ws10 "10"
 
@@ -371,12 +307,16 @@ set $ws10 "10"
 assign [window_role=FullTerm] $ws1
 assign [class="(?i)firefox"] $ws2
 assign [class="Thunar"] $ws6
+assign [window_role="ranger"] $ws6
 assign [class="Thunderbird"] $ws4
 assign [class="TelegramDesktop"] $ws4
 assign [class="mpv"] $ws5
 assign [class="io.github.celluloid_player.Celluloid"] $ws5
 assign [class="VSCodium"] $ws3
 assign [window_role="coding"] $ws3
+assign [window_role="cmus"] $ws7
+assign [window_role="cmus"] $ws7
+assign [class=Motrix] $ws8
 
 # automatic set focus new window if it opens on another workspace then the current:
 for_window [class=Xfce4-terminal] focus
@@ -388,6 +328,7 @@ for_window [class="mpv"] focus
 for_window [class="io.github.celluloid_player.Celluloid"] focus
 for_window [class="VSCodium"] focus
 for_window [window_role="coding"] focus
+for_window [class=Motrix] focus
 
 #############################################
 # autostart applications/services on login: #
@@ -411,6 +352,9 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id numlockx on
 # configure multiple keyboard layouts and hotkey to switch (Alt+CAPSLOCK in this example)
 #exec --no-startup-id setxkbmap -layout 'us,sk' -variant altgr-intl,qwerty -option 'grp:alt_shift_toggle'
+
+# launch kdeconnect-indicator
+exec_always --no-startup-id kdeconnect-indicator
 
 # start conky:
 #exec_always --no-startup-id conky
@@ -566,6 +510,7 @@ strip_workspace_numbers yes
 # Launch polybar
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
+
 #####################################
 # Application menu handled by rofi: #
 #####################################
@@ -589,9 +534,8 @@ bindsym $mod+Shift+e exec rofi -show emoji \
 bindsym $mod+Shift+a exec rofi -show combi \
 		-config ~/.config/rofi/rofidmenu.rasi
 
-bindsym $mod+Shift+f exec rofi -show filebrowser \
+bindsym $mod+Shift+b exec rofi -show filebrowser \
 		-config ~/.config/rofi/rofidmenu.rasi
 
 bindsym $mod+Shift+c exec rofi -show calc \
 		-config ~/.config/rofi/rofidmenu.rasi
-

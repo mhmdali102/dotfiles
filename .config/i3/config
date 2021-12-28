@@ -57,6 +57,13 @@ new_window pixel 1
 gaps inner 4
 gaps outer 2
 
+bindsym $mod+Shift+plus exec \
+  i3-msg "gaps outer current plus 2" && \
+  i3-msg "gaps inner current plus 4"
+
+bindsym $mod+Shift+minus exec \
+  i3-msg "gaps outer current minus 2" && \
+  i3-msg "gaps inner current minus 4"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

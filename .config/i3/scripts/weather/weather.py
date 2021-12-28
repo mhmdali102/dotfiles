@@ -120,7 +120,6 @@ def main():
 #
 #    # Print wind data.
 #    print(" 🍃 " + wind_speed + "m/s " + "(" + wind_direction + ")", end="")
-#    print("  | ", end="")
 
 # Go gadget, go!
 main()

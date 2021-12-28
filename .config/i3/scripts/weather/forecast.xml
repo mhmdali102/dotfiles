@@ -28,29 +28,19 @@ link to the specified URL.-->
     <link id="longTermForecast" url="http://www.yr.no/place/Lebanon/Beirut/Beirut/long" />
   </links>
   <meta>
-    <lastupdate>2021-12-28T03:26:52</lastupdate>
-    <nextupdate>2021-12-28T09:26:52</nextupdate>
+    <lastupdate>2021-12-28T03:31:03</lastupdate>
+    <nextupdate>2021-12-28T09:31:03</nextupdate>
   </meta>
   <sun rise="2021-12-28T06:42:07" set="2021-12-28T16:37:05" />
   <forecast>
     <tabular>
-      <time from="2021-12-28T04:00:00" to="2021-12-28T06:00:00" period="0">
-        <!-- Valid from 2021-12-28T04:00:00 to 2021-12-28T06:00:00 -->
-        <symbol number="3" numberEx="3" name="Partly cloudy" var="03n" />
+      <time from="2021-12-28T07:00:00" to="2021-12-28T12:00:00" period="1">
+        <!-- Valid from 2021-12-28T07:00:00 to 2021-12-28T12:00:00 -->
+        <symbol number="3" numberEx="3" name="Partly cloudy" var="03d" />
         <precipitation value="0" />
-        <!-- Valid at 2021-12-28T04:00:00 -->
-        <windDirection deg="124.9" code="SE" name="Southeast" />
-        <windSpeed mps="5.3" name="Gentle breeze" />
-        <temperature unit="celsius" value="13" />
-        <pressure unit="hPa" value="1018.4" />
-      </time>
-      <time from="2021-12-28T06:00:00" to="2021-12-28T12:00:00" period="1">
-        <!-- Valid from 2021-12-28T06:00:00 to 2021-12-28T12:00:00 -->
-        <symbol number="4" numberEx="4" name="Cloudy" var="04" />
-        <precipitation value="0" />
-        <!-- Valid at 2021-12-28T06:00:00 -->
-        <windDirection deg="125.0" code="SE" name="Southeast" />
-        <windSpeed mps="5.4" name="Gentle breeze" />
+        <!-- Valid at 2021-12-28T07:00:00 -->
+        <windDirection deg="127.1" code="SE" name="Southeast" />
+        <windSpeed mps="5.2" name="Gentle breeze" />
         <temperature unit="celsius" value="14" />
         <pressure unit="hPa" value="1018.1" />
       </time>

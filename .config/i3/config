@@ -163,6 +163,7 @@ bindsym $mod+Shift+Return exec $terminal
 #
 # floating terminal
 bindsym $mod+t exec --no-startup-id $terminal --role floating_term
+bindsym $mod+Shift+t exec --no-startup-id $terminal --role floating_term -e htop
 for_window [window_role=floating_term] floating enable
 
 # kill focused window
@@ -213,11 +214,11 @@ bindsym $mod+i split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym F11 fullscreen toggle
+bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+g layout tabbed
+bindsym $mod+d layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -268,9 +269,9 @@ bindsym $mod+y exec /usr/local/bin/switch-audio-port
 ## App shortcuts
 bindsym $mod+w exec /usr/bin/firefox-developer-edition
 bindsym $mod+n exec /usr/bin/thunar
-bindsym $mod+f exec xfce4-terminal -e ranger --role ranger
-bindsym $mod+Shift+f exec xfce4-terminal -e ranger --role floating_term
-bindsym $mod+u exec xfce4-terminal -e cmus --role cmus
+bindsym $mod+g exec $terminal -e ranger --role ranger
+bindsym $mod+Shift+g exec $terminal -e ranger --role floating_term
+bindsym $mod+u exec $terminal -e cmus --role music
 bindsym Print exec "scrot ~/%Y-%m-%d-%T-screenshot.png"
 
 # Screenshot with flameshot then kill flameshot
@@ -314,8 +315,7 @@ assign [class="mpv"] $ws5
 assign [class="io.github.celluloid_player.Celluloid"] $ws5
 assign [class="VSCodium"] $ws3
 assign [window_role="coding"] $ws3
-assign [window_role="cmus"] $ws7
-assign [window_role="cmus"] $ws7
+assign [window_role="music"] $ws7
 assign [class=Motrix] $ws8
 
 # automatic set focus new window if it opens on another workspace then the current:
@@ -328,6 +328,7 @@ for_window [class="mpv"] focus
 for_window [class="io.github.celluloid_player.Celluloid"] focus
 for_window [class="VSCodium"] focus
 for_window [window_role="coding"] focus
+for_window [window_role="music"] focuse
 for_window [class=Motrix] focus
 
 #############################################
@@ -351,7 +352,7 @@ exec --no-startup-id dex --autostart --environment i3
 # num lock activated
 exec --no-startup-id numlockx on
 # configure multiple keyboard layouts and hotkey to switch (Alt+CAPSLOCK in this example)
-#exec --no-startup-id setxkbmap -layout 'us,sk' -variant altgr-intl,qwerty -option 'grp:alt_shift_toggle'
+exec_always --no-startup-id setxkbmap -layout 'us,ara' -variant altgr-intl,qwerty -option 'grp:win_space_toggle'
 
 # launch kdeconnect-indicator
 exec_always --no-startup-id kdeconnect-indicator
@@ -534,8 +535,10 @@ bindsym $mod+Shift+e exec rofi -show emoji \
 bindsym $mod+Shift+a exec rofi -show combi \
 		-config ~/.config/rofi/rofidmenu.rasi
 
-bindsym $mod+Shift+b exec rofi -show filebrowser \
+bindsym $mod+Shift+f exec rofi -show filebrowser \
 		-config ~/.config/rofi/rofidmenu.rasi
 
 bindsym $mod+Shift+c exec rofi -show calc \
 		-config ~/.config/rofi/rofidmenu.rasi
+
+bindsym $mod+Shift+u exec --no-startup-id $terminal --role music -e ~/.config/i3/scripts/rofi-beats

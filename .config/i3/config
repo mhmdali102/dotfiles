@@ -554,3 +554,5 @@ bindsym $mod+Shift+c exec rofi -show calc \
 		-config ~/.config/rofi/rofidmenu.rasi
 
 bindsym $mod+Shift+u exec  ~/.config/i3/scripts/rofi-beats 
+
+bindsym $mod+Control+p exec notify-send --icon=gtk-info Pomodoro "Focus for 25 minutes" && sleep 2500 && notify-send --icon=gtk-info Pomodoro "Take a 5 minute break"

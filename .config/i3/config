@@ -68,6 +68,9 @@ bindsym $mod+Shift+minus exec \
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# Disable focus on hover
+# focus_follows_mouse no
+
 # switch to workspace
 bindsym $mod+1    workspace  $ws1
 bindsym $mod+2    workspace  $ws2
@@ -175,6 +178,7 @@ for_window [window_role=floating_term] floating enable
 
 # kill focused window
 bindsym $mod+q kill
+bindsym --release $mod+Shift+x exec xkill
 
 # exit-menu
 bindsym $mod+Shift+q exec ~/.config/i3/scripts/powermenu
@@ -359,7 +363,8 @@ exec --no-startup-id dex --autostart --environment i3
 # num lock activated
 exec --no-startup-id numlockx on
 # configure multiple keyboard layouts and hotkey to switch (Alt+CAPSLOCK in this example)
-exec_always --no-startup-id setxkbmap -layout 'us,ara' -variant altgr-intl,qwerty -option 'grp:win_space_toggle'
+#exec_always --no-startup-id setxkbmap -layout 'us,ara' -variant altgr-intl,qwerty -option 'grp:win_space_toggle'
+exec_always --no-startup-id setxkbmap -layout 'us,ara' -variant altgr-intl,qwerty -option 'grp:alt_shift_toggle'
 
 # launch kdeconnect-indicator
 exec_always --no-startup-id kdeconnect-indicator

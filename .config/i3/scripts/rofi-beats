@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # add more args here according to preference
-ARGS="--volume=60"
+ARGS="--volume=60 --no-video"
 
 notification(){
 # change the icon to whatever you want. Make sure your notification server 

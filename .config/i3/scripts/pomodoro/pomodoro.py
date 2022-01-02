@@ -1,5 +1,4 @@
 import os
-import simpleaudio as sa
 
 from datetime import datetime, timedelta
 from subprocess import call
@@ -7,7 +6,6 @@ from subprocess import call
 from constants import STATE_FILE, ENABLE_NOTIFICATIONS
 from stages import STAGES
 from util import readState, writeState
-
 
 def print_time(label, remaining_time):
     if remaining_time.seconds > 59:
@@ -40,11 +38,8 @@ if __name__ == "__main__":
 
             if stage_obj.notification != '' and ENABLE_NOTIFICATIONS:
                 try:
-                    wave_obj = sa.WaveObject.from_wave_file("pomodoro/alert.wav")
-                    play_obj = wave_obj.play()
                     call(['notify-send', 'Pomodoro', stage_obj.notification, '-t', '5000'])
-                    play_obj.wait_done()
                 except FileNotFoundError:
                     print("`notify-send` wasn't recognized.")
- 
+
     stage_obj.print_(stage_obj.label, remaining_time)

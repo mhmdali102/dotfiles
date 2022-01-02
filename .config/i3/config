@@ -222,7 +222,7 @@ bindsym $mod+Ctrl+l move right
 bindsym $mod+i split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+o split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -280,6 +280,7 @@ bindsym $mod+y exec /usr/local/bin/switch-audio-port
 ## App shortcuts
 bindsym $mod+w exec /usr/bin/firefox-developer-edition
 bindsym $mod+n exec /usr/bin/thunar
+bindsym $mod+v exec /usr/bin/evolution
 bindsym $mod+g exec $terminal -e ranger --role ranger
 bindsym $mod+Shift+g exec $terminal -e ranger --role floating_term
 bindsym $mod+u exec $terminal -e cmus --role cmus
@@ -303,8 +304,8 @@ set $ws5 "5:"
 set $ws6 "6:"
 set $ws7 "7:"
 set $ws8 "8:"
-set $ws9 "9"
-set $ws10 "10"
+set $ws9 "9:﫯"
+set $ws10 "10:"
 
 # use workspaces on different displays:
 # where you have to replace VGA-0/HDMI-0 with the names for your displays
@@ -320,7 +321,7 @@ assign [window_role=FullTerm] $ws1
 assign [class="(?i)firefox"] $ws2
 assign [class="Thunar"] $ws6
 assign [window_role="ranger"] $ws6
-assign [class="Thunderbird"] $ws4
+assign [class="Evolution"] $ws9
 assign [class="TelegramDesktop"] $ws4
 assign [class="mpv"] $ws5
 assign [class="io.github.celluloid_player.Celluloid"] $ws5
@@ -333,7 +334,7 @@ assign [class=Motrix] $ws8
 for_window [class=Xfce4-terminal] focus
 for_window [class=(?i)firefox] focus
 for_window [class=Thunar] focus
-for_window [class=Thunderbird] focus
+for_window [class=Evolution] focus
 for_window [class=TelegramDesktop] focus
 for_window [class="mpv"] focus
 for_window [class="io.github.celluloid_player.Celluloid"] focus
@@ -554,5 +555,3 @@ bindsym $mod+Shift+c exec rofi -show calc \
 		-config ~/.config/rofi/rofidmenu.rasi
 
 bindsym $mod+Shift+u exec  ~/.config/i3/scripts/rofi-beats 
-
-bindsym $mod+Control+p exec notify-send --icon=gtk-info Pomodoro "Focus for 25 minutes" && sleep 2500 && notify-send --icon=gtk-info Pomodoro "Take a 5 minute break"

@@ -197,7 +197,7 @@ bindsym $mod+Escape exec ~/.config/i3/scripts/blur-lock
 bindsym $mod+Shift+r restart
 
 # keybinding in fancy rofi (automated):
-bindsym F1 exec ~/.config/i3/scripts/keyhint-2
+bindsym $mod+F1 exec ~/.config/i3/scripts/keyhint-2
 # alternative
 # keybinding list in editor:
 # bindsym $mod+F1 exec xed ~/.config/i3/keybindings
@@ -391,7 +391,11 @@ exec_always --no-startup-id kdeconnect-indicator
 # or:
 # picom: https://wiki.archlinux.org/title/Picom
 #exec --no-startup-id picom -CGb
+
 exec_always --no-startup-id picom --experimental-backends --config ~/.config/picom/picom.conf
+
+# launch live-wallpaper custom script
+exec_always --no-startup-id sleep 1 && ~/.config/i3/scripts/live-wallpaper/wallpaper-wrap 
 
 # networkmanager-applet
 exec --no-startup-id nm-applet

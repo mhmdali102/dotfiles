@@ -322,5 +322,9 @@ let g:rainbow_active = 1
 "AUTO-RESIZE SPLITS
 autocmd VimResized * wincmd =
 
+"SIGN COLUMN
+set signcolumn=yes:1
+highlight clear SignColumn
+
 colorscheme gruvbox
 "nvim dap

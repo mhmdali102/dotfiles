@@ -174,6 +174,7 @@ bindsym $mod+Shift+Return exec $terminal
 # floating terminal
 bindsym $mod+t exec --no-startup-id $terminal --role floating_term
 bindsym $mod+Shift+t exec --no-startup-id $terminal --role floating_term -e htop
+bindsym $mod+Shift+p exec --no-startup-id $terminal --role floating_term -e pulsemixer
 for_window [window_role=floating_term] floating enable
 
 # kill focused window
@@ -188,7 +189,8 @@ bindsym $mod+Shift+Escape exec "shutdown -h now"
 # lock with a picture:
 #bindsym $mod+Escape exec i3lock -i  ~/.config/i3/i3-lock-screen.png -p default|win -t
 # lock by blurring the screen:
-bindsym $mod+Escape exec ~/.config/i3/scripts/blur-lock
+#bindsym $mod+Escape exec ~/.config/i3/scripts/blur-lock
+bindsym $mod+Escape "exec i3lock -ef -c 000000 && xset dpms force off"
 
 # reload the configuration file
 #bindsym $mod+Shift+c reload
@@ -275,12 +277,13 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Redirect sound to headphones
-bindsym $mod+y exec /usr/local/bin/switch-audio-port
+bindsym $mod+Shift+y exec /usr/local/bin/switch-audio-port
 
 ## App shortcuts
 bindsym $mod+w exec /usr/bin/firefox-developer-edition
 bindsym $mod+n exec /usr/bin/thunar
 bindsym $mod+v exec /usr/bin/evolution
+bindsym $mod+y exec ~/.local/share/focalboard-app/focalboard-app
 bindsym $mod+g exec $terminal -e ranger --role ranger
 bindsym $mod+Shift+g exec $terminal -e ranger --role floating_term
 bindsym $mod+u exec $terminal -e cmus --role cmus
@@ -303,7 +306,7 @@ set $ws4 "4:"
 set $ws5 "5:"
 set $ws6 "6:"
 set $ws7 "7:"
-set $ws8 "8:"
+set $ws8 "8:"
 set $ws9 "9:﫯"
 set $ws10 "10:"
 
@@ -328,7 +331,8 @@ assign [class="io.github.celluloid_player.Celluloid"] $ws5
 assign [class="VSCodium"] $ws3
 assign [window_role="coding"] $ws3
 assign [window_role="cmus"] $ws7
-assign [class=Motrix] $ws8
+assign [class=Motrix] $ws0
+assign [class=Focalboard-app] $ws8
 
 # automatic set focus new window if it opens on another workspace then the current:
 for_window [class=Xfce4-terminal] focus
@@ -342,6 +346,7 @@ for_window [class="VSCodium"] focus
 for_window [window_role="coding"] focus
 for_window [window_role="cmus"] focus
 for_window [class=Motrix] focus
+for_window [class=Focalboard-app] focus
 
 #############################################
 # autostart applications/services on login: #

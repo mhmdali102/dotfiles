@@ -24,5 +24,4 @@
     "v": "open:vsplit"
   },
   "git.enableGutters": true,
-  "git.conflict.enabled": false
 }

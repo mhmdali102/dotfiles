@@ -11,8 +11,8 @@ function getLBP() {
     function (response) {
       var r = JSON.parse(response);
       try {
-        var buy = "Buy 1$: " + r.buy[r.buy.length - 1][1] + " LBP";
-        var sell = "Sell 1$: " + r.sell[r.sell.length - 1][1] + " LBP";
+        var buy = "Buy: " + r.buy[r.buy.length - 1][1];
+        var sell = "Sell: " + r.sell[r.sell.length - 1][1];
         console.log(`${buy} 💱 ${sell}`);
       } catch (e) {
         console.log(e);

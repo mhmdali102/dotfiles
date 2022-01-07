@@ -168,7 +168,8 @@ set $terminal xfce4-terminal
 
 # start a terminal
 bindsym $mod+Return exec $terminal --role FullTerm
-bindsym $mod+c exec --no-startup-id $terminal --role coding
+#bindsym $mod+c exec --no-startup-id $terminal --role coding
+bindsym $mod+c exec --no-startup-id alacritty --working-directory ~/mhmdali102/
 bindsym $mod+Shift+Return exec $terminal 
 #
 # floating terminal
@@ -330,6 +331,7 @@ assign [class="mpv"] $ws5
 assign [class="io.github.celluloid_player.Celluloid"] $ws5
 assign [class="VSCodium"] $ws3
 assign [window_role="coding"] $ws3
+assign [class=Alacritty] $ws3
 assign [window_role="cmus"] $ws7
 assign [class=Motrix] $ws0
 assign [class=Focalboard-app] $ws8
@@ -344,6 +346,7 @@ for_window [class="mpv"] focus
 for_window [class="io.github.celluloid_player.Celluloid"] focus
 for_window [class="VSCodium"] focus
 for_window [window_role="coding"] focus
+for_window [class=Alacritty] focus
 for_window [window_role="cmus"] focus
 for_window [class=Motrix] focus
 for_window [class=Focalboard-app] focus
@@ -373,7 +376,7 @@ exec --no-startup-id numlockx on
 exec_always --no-startup-id setxkbmap -layout 'us,ara' -variant altgr-intl,qwerty -option 'grp:alt_shift_toggle'
 
 # launch kdeconnect-indicator
-exec_always --no-startup-id kdeconnect-indicator
+#exec_always --no-startup-id kdeconnect-indicator
 
 # start conky:
 #exec_always --no-startup-id conky
@@ -383,7 +386,7 @@ exec_always --no-startup-id kdeconnect-indicator
 #exec --no-startup-id ~/.screenlayout/monitor.sh
 
 # start blueberry app for managing bluetooth devices from tray:
-#exec --no-startup-id blueberry-tray
+#exec_always --no-startup-id blueberry-tray
 
 # transparency
 # uncomment one of them to be used (picom package is installed per default)
@@ -396,7 +399,6 @@ exec_always --no-startup-id kdeconnect-indicator
 # or:
 # picom: https://wiki.archlinux.org/title/Picom
 #exec --no-startup-id picom -CGb
-
 exec_always --no-startup-id picom --experimental-backends --config ~/.config/picom/picom.conf
 
 # launch live-wallpaper custom script https://www.youtube.com/watch?v=_1ApoibhO90
@@ -413,7 +415,7 @@ exec --no-startup-id nitrogen --restore
 #exec --no-startup-id feh --bg-fill /usr/share/endeavouros/backgrounds/endeavouros_i3.png
 
 # set powersavings for display:
-exec --no-startup-id xset s 480 dpms 600 600 600
+#exec --no-startup-id xset s 480 dpms 600 600 600
 
 # Desktop notifications
 exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc

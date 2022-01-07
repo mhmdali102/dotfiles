@@ -23,5 +23,5 @@
     "<cr>": ["expandable?", "expand", "open"],
     "v": "open:vsplit"
   },
-  "git.enableGutters": true,
+  "git.enableGutters": false,
 }

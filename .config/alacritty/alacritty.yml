@@ -405,12 +405,7 @@ schemes:
 # *solarized-dark
 # *tomorrow-night
 
-schemes:
-  dracula: &dracula
-    primary:
-      background: '#08052b'
-
-colors: *doom-one
+colors: *gruvbox-dark
 
 #######################################
 ##       END OF COLOR SCHEMES        ##

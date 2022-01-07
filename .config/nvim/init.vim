@@ -12,7 +12,7 @@ set ignorecase
 set smartcase
 set noswapfile
 set nobackup
-set background=dark 
+set background=dark
 set noshowmode
 set fillchars+=vert:\ 
 set nocompatible
@@ -95,6 +95,7 @@ call plug#begin('~/.vim/autoload/plugged')
   Plug 'joshdick/onedark.vim'
   Plug 'tomasr/molokai'
   Plug 'catppuccin/nvim'
+  Plug 'arcticicestudio/nord-vim'
 
 call plug#end()
 
@@ -163,7 +164,7 @@ augroup END
 
 "CONFIG INDENT LINE
 let g:indentLine_color_term = 238
-let g:indentLine_char_list = ['│', '¦', '┆', '┊', '|']
+let g:indentLine_char_list = ['│']
 
 "CONFIG LIGHTLINE
 let g:lightline = {
@@ -205,7 +206,7 @@ let ayucolor="dark"
 set termguicolors     
 
 "CONFIG GRUVBOX THEME = soft | default | hard
-let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_contrast_dark = 'default'
 let g:gruvbox_contrast_light = 'soft'
 
 "CONFIG NVIM TRANSPARENT
@@ -214,7 +215,7 @@ map <Leader>td :TransparentDisable<CR>
 
 lua << EOF
 require("transparent").setup({
-  enable = true, -- boolean: enable transparent
+  enable = false, -- boolean: enable transparent
   extra_groups = { -- table/string: additional groups that should be clear
     -- In particular, when you set it to 'all', that means all avaliable groups
 
@@ -328,3 +329,4 @@ highlight clear SignColumn
 
 colorscheme gruvbox
 "nvim dap
+"https://github.com/puremourning/vimspector

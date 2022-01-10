@@ -50,26 +50,30 @@ workspace_layout default
 #border indicator on windows:
 new_window pixel 1
 
+# change borders
+bindsym $mod+bracketleft border none
+bindsym $mod+bracketright border pixel 1
+
 # thin borders
 # hide_edge_borders both
 
 # Set inner/outer gaps
 gaps inner 4
-gaps outer 2
+gaps outer 4
 
 bindsym $mod+Shift+plus exec \
-  i3-msg "gaps outer current plus 2" && \
+  i3-msg "gaps outer current plus 4" && \
   i3-msg "gaps inner current plus 4"
 
 bindsym $mod+Shift+minus exec \
-  i3-msg "gaps outer current minus 2" && \
+  i3-msg "gaps outer current minus 4" && \
   i3-msg "gaps inner current minus 4"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # Disable focus on hover
-# focus_follows_mouse no
+focus_follows_mouse no
 
 # switch to workspace
 bindsym $mod+grave    workspace  $ws0
@@ -492,7 +496,7 @@ client.focused_inactive #2e3440 #1f222d #888888 #1f222d
 client.placeholder      #2e3440 #1f222d #888888 #1f222d
 client.urgent           #900000 #900000 #ffffff #900000
 client.background       #242424
-exec_always xset r rate 300 50 &
+exec --no-startup-id xset r rate 300 50 &
 
 ############################################
 # bar settings (input comes from i3blocks) #

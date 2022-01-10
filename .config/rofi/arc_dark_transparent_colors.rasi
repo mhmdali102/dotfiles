@@ -3,9 +3,9 @@
  * Maintainer: joekamprad <joekamprad@endeavouros.com>
  *******************************************************/
 * {
-    selected-normal-foreground:  rgba(200, 150, 255, 100%);
-    foreground:                  rgba ( 196, 203, 212, 100 % );
-    normal-foreground:           @foreground;
+    selected-normal-foreground:  rgba(216, 222, 233, 100%);
+    foreground:                  rgba ( 94, 129, 172, 100 % );
+    normal-foreground:           @foreground ;
     alternate-normal-background: rgba ( 45, 48, 59, 1 % );
     red:                         rgba ( 220, 50, 47, 100 % );
     selected-urgent-foreground:  rgba ( 249, 249, 249, 100 % );
@@ -16,11 +16,11 @@
     lightbg:                     rgba ( 238, 232, 213, 100 % );
     selected-active-foreground:  rgba ( 249, 249, 249, 100 % );
     alternate-active-background: rgba ( 45, 48, 59, 88 % );
-    background:                  rgba ( 45, 48, 59, 88 % );
+    background:                 rgba ( 46, 52, 64, 100 % );
     alternate-normal-foreground: @foreground;
     normal-background:           rgba ( 45, 48, 59, 1 % );
     lightfg:                     rgba ( 88, 104, 117, 100 % );
-    selected-normal-background:  rgba ( 24, 26, 32, 100 % );
+    selected-normal-background:   rgba ( 61, 68, 84, 88 % );
     border-color:                rgba ( 124, 131, 137, 100 % );
     spacing:                     2;
     separatorcolor:              rgba ( 45, 48, 59, 1 % );

@@ -463,13 +463,36 @@ set $mediumgrey		#8b8b8b
 set $yellowbrown	#e1b700
 set $bgcolor	#08052b29
 
+# NORD COLORSCHEME
+set $bgcolor	#2e344090
+set $darkbluetrans #81a1c1e6
+set $darkblue	#81a1c1
+set $lightblue	#5e81ac
+set $urgentred	#8fbcbb
+set $white	#d8dee9
+set $black	#2e3440
+set $grey	#67738a
+set $mediumgrey	#434C5E
+set $darkgrey #2e3440
+set $purple	#b48ead
+set $yellowbrown #ebcb8b
+
+
 # define colors for windows:
 #class		        	border		bground		text		indicator	child_border
-client.focused		    $lightblue	$darkblue	$white		$purple		$mediumgrey
-client.unfocused	    $darkblue	$darkblue	$grey		$purple		$darkgrey
-client.focused_inactive	$darkblue	$darkblue	$grey		$purple		$black
-client.urgent		    $urgentred	$urgentred	$white		$purple		$yellowbrown
+#client.focused		    $lightblue	$darkblue	$white		$purple		$mediumgrey
+#client.unfocused	    $darkblue	$darkblue	$grey		$purple		$darkgrey
+#client.focused_inactive	$darkblue	$darkblue	$grey		$purple		$black
+#client.urgent		    $urgentred	$urgentred	$white		$purple		$yellowbrown
 
+# NORD COLORSCHEME
+client.focused          #81a1c1 #81a1c1 #ffffff #81a1c1
+client.unfocused        #2e3440 #1f222d #888888 #1f222d
+client.focused_inactive #2e3440 #1f222d #888888 #1f222d
+client.placeholder      #2e3440 #1f222d #888888 #1f222d
+client.urgent           #900000 #900000 #ffffff #900000
+client.background       #242424
+exec_always xset r rate 300 50 &
 
 ############################################
 # bar settings (input comes from i3blocks) #
@@ -497,17 +520,33 @@ bar {
 strip_workspace_numbers yes
 #strip_workspace_name no
 
-		    colors {
-		    separator          $purple
-		    background         $bgcolor
-		    statusline         $white
-#                          		border 		        bg		txt		indicator
-		focused_workspace	$mediumgrey	   	$grey		$darkgrey	$purple
-		active_workspace	$lightblue      	$mediumgrey	$darkgrey	$purple
-		inactive_workspace	$darkgrey   		$darkgrey	$grey		$purple
-		urgent_workspace	$urgentred	    	$urgentred	$white		$purple
-	}
+# BAR DEFAULT COLORSCHEME 
+				#colors {
+				#separator          $purple
+				#background         $bgcolor
+				#statusline         $white
+##                          		border 		        bg		txt		indicator
+		#focused_workspace	$mediumgrey	   	$grey		$darkgrey	$purple
+		#active_workspace	$lightblue      	$mediumgrey	$darkgrey	$purple
+		#inactive_workspace	$darkgrey   		$darkgrey	$grey		$purple
+		#urgent_workspace	$urgentred	    	$urgentred	$white		$purple
+	#}
+
+# BAR NORD COLORSCHEME 
+    colors {
+            separator  #1f222d
+            background #2e3440
+            statusline #81a1c1
+
+            #                   border  background text
+            focused_workspace  #1f222d #1f222d    #81a1c1
+            active_workspace   #1f222d #252936    #5e81ac
+            inactive_workspace #1f222d #1f222d    #4c566a
+            urgent_workspace   #1f222d #1f222d    #ee829f
+            binding_mode       #1f222d #81a1c1    #2e3440
+    }
 }
+
 
 # you can add different bars for multidisplay setups on each display:
 # set output HDMI-0 to the display you want the bar, --transparency can be set.

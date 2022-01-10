@@ -259,8 +259,8 @@ nnoremap <A--> :sp<CR>
 inoremap jk <ESC>
 
 "COMMA IS THE <Leader> KEY
-let mapleader=','
-let maplocalleader=','
+let mapleader=' '
+let maplocalleader=' '
 
 "SWITCH WINDOWS DIRECTION
 map <Leader>th <C-w>t<C-w>H
@@ -327,6 +327,6 @@ autocmd VimResized * wincmd =
 set signcolumn=yes:1
 highlight clear SignColumn
 
-colorscheme gruvbox
+colorscheme nord
 "nvim dap
 "https://github.com/puremourning/vimspector

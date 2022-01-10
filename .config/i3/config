@@ -72,6 +72,7 @@ floating_modifier $mod
 # focus_follows_mouse no
 
 # switch to workspace
+bindsym $mod+grave    workspace  $ws0
 bindsym $mod+1    workspace  $ws1
 bindsym $mod+2    workspace  $ws2
 bindsym $mod+3    workspace  $ws3
@@ -86,6 +87,7 @@ bindsym $mod+Shift+j workspace prev
 bindsym $mod+Shift+k workspace next
 
 # move focused container to workspace
+bindsym $mod+Shift+grave   move container to workspace  $ws0 workspace $ws0
 bindsym $mod+Shift+1    move container to workspace  $ws1 workspace $ws1
 bindsym $mod+Shift+2    move container to workspace  $ws2 workspace $ws2
 bindsym $mod+Shift+3    move container to workspace  $ws3 workspace $ws3
@@ -137,6 +139,7 @@ bindsym $mod+m focus floating; mode "move"
 
 mode "swap" {
 	# switch to workspace
+	bindsym $mod+grave workspace $ws0
 	bindsym $mod+1 workspace $ws1
 	bindsym $mod+2 workspace $ws2
 	bindsym $mod+3 workspace $ws3
@@ -156,6 +159,7 @@ mode "swap" {
 
 	bindsym Return swap container with mark "swapee"; unmark "swapee"; mode "default";
 	bindsym Escape unmark "swapee"; mode "default";
+	bindsym $mod+Shift+m unmark "swapee"; mode "default";
 }
 
 bindsym $mod+Shift+m mark --add "swapee"; mode "swap"
@@ -300,6 +304,7 @@ bindsym $mod+Shift+Print exec "killall flameshot"
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
+set $ws0 "0"
 set $ws1 "1:"
 set $ws2 "2:"
 set $ws3 "3:"
@@ -333,7 +338,7 @@ assign [class="VSCodium"] $ws3
 assign [window_role="coding"] $ws3
 assign [class=Alacritty] $ws3
 assign [window_role="cmus"] $ws7
-assign [class=Motrix] $ws0
+assign [class=Motrix] $ws10
 assign [class=Focalboard-app] $ws8
 
 # automatic set focus new window if it opens on another workspace then the current:
@@ -402,7 +407,7 @@ exec_always --no-startup-id setxkbmap -layout 'us,ara' -variant altgr-intl,qwert
 exec_always --no-startup-id picom --experimental-backends --config ~/.config/picom/picom.conf
 
 # launch live-wallpaper custom script https://www.youtube.com/watch?v=_1ApoibhO90
-exec_always --no-startup-id sleep 1 && ~/.config/i3/scripts/live-wallpaper/wallpaper-wrap 
+#exec_always --no-startup-id sleep 1 && ~/.config/i3/scripts/live-wallpaper/wallpaper-wrap 
 
 # start autotiling
 exec_always --no-startup-id ~/.config/i3/scripts/autotiling.py

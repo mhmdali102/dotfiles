@@ -327,6 +327,6 @@ autocmd VimResized * wincmd =
 set signcolumn=yes:1
 highlight clear SignColumn
 
-colorscheme nord
+colorscheme gruvbox
 "nvim dap
 "https://github.com/puremourning/vimspector

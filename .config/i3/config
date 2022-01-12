@@ -468,18 +468,30 @@ set $yellowbrown	#e1b700
 set $bgcolor	#08052b29
 
 # NORD COLORSCHEME
-set $bgcolor	#2e344090
-set $darkbluetrans #81a1c1e6
-set $darkblue	#81a1c1
-set $lightblue	#5e81ac
-set $urgentred	#8fbcbb
-set $white	#d8dee9
-set $black	#2e3440
-set $grey	#67738a
-set $mediumgrey	#434C5E
-set $darkgrey #2e3440
-set $purple	#b48ead
-set $yellowbrown #ebcb8b
+#set $bgcolor	#2e344090
+#set $darkbluetrans #81a1c1e6
+#set $darkblue	#81a1c1
+#set $lightblue	#5e81ac
+#set $urgentred	#8fbcbb
+#set $white	#d8dee9
+#set $black	#2e3440
+#set $grey	#67738a
+#set $mediumgrey	#434C5E
+#set $darkgrey #2e3440
+#set $purple	#b48ead
+#set $yellowbrown #ebcb8b
+
+# GRUVBOX COLORSCHEME
+set $bg #282828
+set $red #cc241d
+set $green #98971a
+set $yellow #d79921
+set $blue #458588
+set $purple #b16286
+set $aqua #689d68
+set $gray #a89984
+set $darkgray #1d2021
+set $lightgray #bdae93
 
 
 # define colors for windows:
@@ -490,12 +502,21 @@ set $yellowbrown #ebcb8b
 #client.urgent		    $urgentred	$urgentred	$white		$purple		$yellowbrown
 
 # NORD COLORSCHEME
-client.focused          #81a1c1 #81a1c1 #ffffff #81a1c1
-client.unfocused        #2e3440 #1f222d #888888 #1f222d
-client.focused_inactive #2e3440 #1f222d #888888 #1f222d
-client.placeholder      #2e3440 #1f222d #888888 #1f222d
-client.urgent           #900000 #900000 #ffffff #900000
-client.background       #242424
+#client.focused          #81a1c1 #81a1c1 #ffffff #81a1c1
+#client.unfocused        #2e3440 #1f222d #888888 #1f222d
+#client.focused_inactive #2e3440 #1f222d #888888 #1f222d
+#client.placeholder      #2e3440 #1f222d #888888 #1f222d
+#client.urgent           #900000 #900000 #ffffff #900000
+#client.background       #242424
+
+
+# class                 border|backgr|text|indicator|child_border
+client.focused          $lightgray $lightgray $bg $lightgray
+client.focused_inactive $darkgray $darkgray $lightgray $lightgray 
+client.unfocused        $darkgray $darkgray $lightgray $lightgray
+client.urgent           $red $red $white $red
+
+
 exec --no-startup-id xset r rate 300 50 &
 
 ############################################
@@ -537,17 +558,29 @@ strip_workspace_numbers yes
 	#}
 
 # BAR NORD COLORSCHEME 
-    colors {
-            separator  #1f222d
-            background #2e3440
-            statusline #81a1c1
+    #colors {
+            #separator  #1f222d
+            #background #2e3440
+            #statusline #81a1c1
 
-            #                   border  background text
-            focused_workspace  #1f222d #1f222d    #81a1c1
-            active_workspace   #1f222d #252936    #5e81ac
-            inactive_workspace #1f222d #1f222d    #4c566a
-            urgent_workspace   #1f222d #1f222d    #ee829f
-            binding_mode       #1f222d #81a1c1    #2e3440
+            ##                   border  background text
+            #focused_workspace  #1f222d #1f222d    #81a1c1
+            #active_workspace   #1f222d #252936    #5e81ac
+            #inactive_workspace #1f222d #1f222d    #4c566a
+            #urgent_workspace   #1f222d #1f222d    #ee829f
+            #binding_mode       #1f222d #81a1c1    #2e3440
+    #}
+
+# BAR GRUVBOX THEME
+   colors {
+        background $bg
+        statusline $lightgray
+        # workspaces section            
+        #                    border  backgr. text
+        focused_workspace    $lightgray $lightgray $bg
+        inactive_workspace   $darkgray $darkgray $lightgray
+        active_workspace     $darkgray $darkgray $lightgray
+        urgent_workspace     $red $red $bg
     }
 }
 

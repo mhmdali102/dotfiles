@@ -405,7 +405,7 @@ schemes:
 # *solarized-dark
 # *tomorrow-night
 
-colors: *nord
+colors: *gruvbox-dark
 
 #######################################
 ##       END OF COLOR SCHEMES        ##

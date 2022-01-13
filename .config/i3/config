@@ -172,19 +172,18 @@ bindsym $mod+Shift+m mark --add "swapee"; mode "swap"
 # keybindings for different actions: #
 ######################################
 
-set $terminal xfce4-terminal
+set $terminal alacritty
 
 # start a terminal
-bindsym $mod+Return exec $terminal --role FullTerm
-#bindsym $mod+c exec --no-startup-id $terminal --role coding
-bindsym $mod+c exec --no-startup-id alacritty --working-directory ~/mhmdali102/
+bindsym $mod+Return exec $terminal -t FullTerm
+bindsym $mod+c exec --no-startup-id alacritty -t coding 
 bindsym $mod+Shift+Return exec $terminal 
 #
 # floating terminal
-bindsym $mod+t exec --no-startup-id $terminal --role floating_term
-bindsym $mod+Shift+t exec --no-startup-id $terminal --role floating_term -e htop
-bindsym $mod+Shift+p exec --no-startup-id $terminal --role floating_term -e pulsemixer
-for_window [window_role=floating_term] floating enable
+bindsym $mod+t exec --no-startup-id $terminal -t floating_term
+bindsym $mod+Shift+t exec --no-startup-id $terminal -t floating_term -e htop
+bindsym $mod+Shift+p exec --no-startup-id $terminal -t floating_term -e pulsemixer
+for_window [title=floating_term] floating enable
 
 # kill focused window
 bindsym $mod+q kill
@@ -253,7 +252,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # open new empty workspace
-bindsym $mod+Shift+n exec ~/.config/i3/scripts/empty_workspace
+#bindsym $mod+Shift+n exec ~/.config/i3/scripts/empty_workspace
 
 ## Multimedia Keys
 
@@ -290,12 +289,13 @@ bindsym $mod+Shift+y exec /usr/local/bin/switch-audio-port
 
 ## App shortcuts
 bindsym $mod+w exec /usr/bin/firefox-developer-edition
-bindsym $mod+n exec /usr/bin/thunar
+bindsym $mod+n exec /usr/bin/thunar --class thunar_fs
+bindsym $mod+Shift+n exec /usr/bin/thunar
 bindsym $mod+v exec /usr/bin/evolution
 bindsym $mod+y exec ~/.local/share/focalboard-app/focalboard-app
-bindsym $mod+g exec $terminal -e ranger --role ranger
-bindsym $mod+Shift+g exec $terminal -e ranger --role floating_term
-bindsym $mod+u exec $terminal -e cmus --role cmus
+bindsym $mod+g exec  $terminal -t ranger -e ranger 
+bindsym $mod+Shift+g exec $terminal --hold -t floating_term -e ranger 
+bindsym $mod+u exec $terminal -e cmus -t cmus
 bindsym Print exec "scrot ~/%Y-%m-%d-%T-screenshot.png"
 
 # Screenshot with flameshot then kill flameshot
@@ -330,18 +330,17 @@ set $ws10 "10:"
 #workspace $ws5 output HDMI-0
 
 # bind program to workspace and focus to them on startup:
-assign [window_role=FullTerm] $ws1
+assign [title=FullTerm] $ws1
 assign [class="(?i)firefox"] $ws2
-assign [class="Thunar"] $ws6
-assign [window_role="ranger"] $ws6
+assign [class="thunar_fs"] $ws6
+assign [title="ranger"] $ws6
 assign [class="Evolution"] $ws9
 assign [class="TelegramDesktop"] $ws4
 assign [class="mpv"] $ws5
 assign [class="io.github.celluloid_player.Celluloid"] $ws5
 assign [class="VSCodium"] $ws3
-assign [window_role="coding"] $ws3
-assign [class=Alacritty] $ws3
-assign [window_role="cmus"] $ws7
+assign [title="coding"] $ws3
+assign [title="cmus"] $ws7
 assign [class=Motrix] $ws10
 assign [class=Focalboard-app] $ws8
 
@@ -349,14 +348,15 @@ assign [class=Focalboard-app] $ws8
 for_window [class=Xfce4-terminal] focus
 for_window [class=(?i)firefox] focus
 for_window [class=Thunar] focus
+for_window [class="thunar_fs"] focus
 for_window [class=Evolution] focus
 for_window [class=TelegramDesktop] focus
 for_window [class="mpv"] focus
 for_window [class="io.github.celluloid_player.Celluloid"] focus
 for_window [class="VSCodium"] focus
-for_window [window_role="coding"] focus
+for_window [title="coding"] focus
 for_window [class=Alacritty] focus
-for_window [window_role="cmus"] focus
+for_window [title="cmus"] focus
 for_window [class=Motrix] focus
 for_window [class=Focalboard-app] focus
 

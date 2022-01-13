@@ -19,6 +19,7 @@ set nocompatible
 set splitbelow splitright
 set showtabline=2
 set clipboard=unnamedplus
+set autoindent
 set ttyfast
 
 call plug#begin('~/.vim/autoload/plugged')

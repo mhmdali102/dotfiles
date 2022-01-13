@@ -77,11 +77,11 @@ $short_text = $full_text;
 
 if ($percent < 20) {
   $label = '';
-} elsif ($percent < 45) {
+} elsif ($percent < 40) {
   $label = '';
-} elsif ($percent < 70) {
+} elsif ($percent < 65) {
   $label = '';
-} elsif ($percent < 95) {
+} elsif ($percent < 90) {
   $label = '';
 } else {
   $label = '';

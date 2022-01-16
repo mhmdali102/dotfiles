@@ -175,9 +175,9 @@ bindsym $mod+Shift+m mark --add "swapee"; mode "swap"
 set $terminal alacritty
 
 # start a terminal
-bindsym $mod+Return exec $terminal -t FullTerm
+bindsym $mod+Return  exec --no-startup-id $terminal -t FullTerm
 bindsym $mod+c exec --no-startup-id alacritty -t coding 
-bindsym $mod+Shift+Return exec $terminal 
+bindsym $mod+Shift+Return exec --no-startup-id $terminal 
 #
 # floating terminal
 bindsym $mod+t exec --no-startup-id $terminal -t floating_term
@@ -198,7 +198,7 @@ bindsym $mod+Shift+Escape exec "shutdown -h now"
 #bindsym $mod+Escape exec i3lock -i  ~/.config/i3/i3-lock-screen.png -p default|win -t
 # lock by blurring the screen:
 #bindsym $mod+Escape exec ~/.config/i3/scripts/blur-lock
-bindsym $mod+Escape "exec i3lock -ef -c 000000 && xset dpms force off"
+bindsym $mod+Escape "exec i3lock -ef -c 000000"
 
 # reload the configuration file
 #bindsym $mod+Shift+c reload
@@ -295,7 +295,7 @@ bindsym $mod+v exec /usr/bin/evolution
 bindsym $mod+y exec ~/.local/share/focalboard-app/focalboard-app
 bindsym $mod+g exec  $terminal -t ranger -e ranger 
 bindsym $mod+Shift+g exec $terminal --hold -t floating_term -e ranger 
-bindsym $mod+u exec $terminal -e cmus -t cmus
+bindsym $mod+u exec $terminal --hold -t cmus -e cmus 
 bindsym Print exec "scrot ~/%Y-%m-%d-%T-screenshot.png"
 
 # Screenshot with flameshot then kill flameshot
@@ -308,7 +308,7 @@ bindsym $mod+Shift+Print exec "killall flameshot"
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws0 "0"
+set $ws0 "0:"
 set $ws1 "1:"
 set $ws2 "2:"
 set $ws3 "3:"

@@ -6,3 +6,8 @@ set -g theme_display_ruby no
 set -g theme_display_node yes
 
 thefuck --alias | source
+
+#https://wiki.archlinux.org/title/GNOME/Keyring#Using_the_keyring_outside_GNOME
+if test -n "$DESKTOP_SESSION"
+    set -x (gnome-keyring-daemon --start | string split "=")
+end

@@ -31,7 +31,7 @@ else
 fi
 
 case $BLOCK_BUTTON in
-  3) xset dpms force off ;; # right click
+  #3) xset dpms force off ;; # right click
   4) $XBACKLIGHT_SET -inc "$STEP_SIZE" ;; # scroll up
   5) $XBACKLIGHT_SET -dec "$STEP_SIZE" ;; # scroll down, decrease
 esac

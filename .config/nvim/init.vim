@@ -21,6 +21,7 @@ set showtabline=2
 set clipboard=unnamedplus
 set autoindent
 set ttyfast
+let g:polyglot_disabled = ['markdown']
 
 call plug#begin('~/.vim/autoload/plugged')
   "COC
@@ -97,6 +98,7 @@ call plug#begin('~/.vim/autoload/plugged')
   Plug 'tomasr/molokai'
   Plug 'catppuccin/nvim'
   Plug 'arcticicestudio/nord-vim'
+  Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 call plug#end()
 
@@ -104,8 +106,8 @@ call plug#end()
 nnoremap Y yg_
 
 "GO TO START/MIDDLE/END OF THE LINE
-nnoremap <A-j> g^
-nnoremap <A-k> g_
+nnoremap <A-h> ^
+nnoremap <A-l> g_
 nnoremap <A-m> :exe 'normal ' . len(getline('.'))/2 . '\|'<CR>
 
 "COMMENT SHORTCUT
@@ -145,6 +147,7 @@ EOF
 let g:dashboard_default_executive ='telescope'
 
 "SETUP COC PRETTIER
+map <Leader>pr :CocCommand prettier.formatFile<CR>
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 "COCCONFIG
@@ -156,6 +159,9 @@ autocmd FileType scss setl iskeyword+=@-@
 "CONFIG COC-SNIPPET
 let g:coc_snippet_next = '<Tab>'
 let g:coc_snippet_prev = '<S-Tab>'
+
+"COC RENAME
+nmap <F2> <Plug>(coc-rename)
 
 "EMMET FOR JSX
 augroup filetype_jsx
@@ -169,7 +175,7 @@ let g:indentLine_char_list = ['│']
 
 "CONFIG LIGHTLINE
 let g:lightline = {
-    \ 'colorscheme': 'wombat',
+    \ 'colorscheme': 'gruvbox',
     \ 'active': {
     \   'right': [ [ 'lineinfo' ],
     \              [ 'percent' ],
@@ -203,12 +209,15 @@ let g:material_style = 'darker'
 let g:gruvqueen_style = 'original'
 
 "CONFIG AYU THEME = light | mirage | dark
-let ayucolor="dark" 
+let ayucolor="mirage" 
 set termguicolors     
 
 "CONFIG GRUVBOX THEME = soft | default | hard
 let g:gruvbox_contrast_dark = 'default'
 let g:gruvbox_contrast_light = 'soft'
+
+"CONFIG TOKYONIGHT THEME = day | storm | night
+let g:tokyonight_style = "night"
 
 "CONFIG NVIM TRANSPARENT
 map <Leader>te :TransparentEnable<CR>
@@ -259,7 +268,7 @@ nnoremap <A--> :sp<CR>
 "REMAP ESC TO jk
 inoremap jk <ESC>
 
-"COMMA IS THE <Leader> KEY
+"SPACE IS THE <Leader> KEY
 let mapleader=' '
 let maplocalleader=' '
 
@@ -271,8 +280,8 @@ map <Leader>tk <C-w>t<C-w>K
 nnoremap <A-t> :tabedit .<CR>
 
 "TAB NAVIGATION
-nnoremap <A-h> gT
-nnoremap <A-l> gt
+nnoremap <A-j> gT
+nnoremap <A-k> gt
 nnoremap 1 1gt
 nnoremap 2 2gt
 nnoremap 3 3gt

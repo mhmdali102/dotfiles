@@ -105,6 +105,12 @@ bindsym $mod+Shift+0    move container to workspace  $ws10 workspace $ws10
 bindsym $mod+Shift+h  	move container to workspace prev workspace prev
 bindsym $mod+Shift+l   	move container to workspace next workspace next
 
+# Make the currently focused window a scratchpad
+bindsym $mod+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+plus scratchpad show
+
 # resize window (you can also use the mouse for that):
 mode "resize" {
         bindsym h resize shrink width 3 px or 3 ppt
@@ -197,8 +203,8 @@ bindsym $mod+Shift+Escape exec "shutdown -h now"
 # lock with a picture:
 #bindsym $mod+Escape exec i3lock -i  ~/.config/i3/i3-lock-screen.png -p default|win -t
 # lock by blurring the screen:
-#bindsym $mod+Escape exec ~/.config/i3/scripts/blur-lock
-bindsym $mod+Escape "exec i3lock -ef -c 000000"
+bindsym $mod+Escape exec ~/.config/i3/scripts/blur-lock
+#bindsym $mod+Escape "exec i3lock -ef -c 000000"
 
 # reload the configuration file
 #bindsym $mod+Shift+c reload
@@ -298,7 +304,7 @@ bindsym $mod+Shift+g exec $terminal --hold -t floating_term -e ranger
 bindsym $mod+u exec $terminal --hold -t cmus -e cmus 
 bindsym Print exec "scrot ~/%Y-%m-%d-%T-screenshot.png"
 
-# Screenshot with flameshot then kill flameshot
+# Screenshot with flameshot and kill flameshot
 bindsym $mod+Print exec "flameshot gui"
 bindsym $mod+Shift+Print exec "killall flameshot"
 
@@ -312,12 +318,12 @@ set $ws0 "0:"
 set $ws1 "1:"
 set $ws2 "2:"
 set $ws3 "3:"
-set $ws4 "4:"
+set $ws4 "4:"
 set $ws5 "5:"
 set $ws6 "6:"
 set $ws7 "7:"
 set $ws8 "8:"
-set $ws9 "9:﫯"
+set $ws9 "9:"
 set $ws10 "10:"
 
 # use workspaces on different displays:
@@ -384,9 +390,6 @@ exec --no-startup-id numlockx on
 #exec_always --no-startup-id setxkbmap -layout 'us,ara' -variant altgr-intl,qwerty -option 'grp:win_space_toggle'
 exec_always --no-startup-id setxkbmap -layout 'us,ara' -variant altgr-intl,qwerty -option 'grp:alt_shift_toggle'
 
-# launch kdeconnect-indicator
-#exec_always --no-startup-id kdeconnect-indicator
-
 # start conky:
 #exec_always --no-startup-id conky
 
@@ -436,11 +439,6 @@ exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
 #exec --no-startup-id sleep 7 && firefox https://github.com/endeavouros-team/endeavouros-i3wm-setup/blob/main/force-knowledge.md
 #exec --no-startup-id sleep 3 && thunar
 
-# set floating (nontiling)for apps needing it
-for_window [class="Yad" instance="yad"] floating enable
-for_window [class="Galculator" instance="galculator"] floating enable
-for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
-
 # set floating (nontiling) for special apps
 for_window [class="Xsane" instance="xsane"] floating enable
 for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
@@ -454,18 +452,18 @@ for_window [class="Pamac-manager"] floating enable
 ######################################
 
 # Define colors variables:
-set $darkbluetrans	#08052be6
-set $darkblue		#08052b
-set $lightblue		#5294e2
-set $urgentred		#e53935
-set $white		#ffffff
-set $black		#000000
-set $purple		#e345ff
-set $darkgrey		#383c4a
-set $grey		#b0b5bd
-set $mediumgrey		#8b8b8b
-set $yellowbrown	#e1b700
-set $bgcolor	#08052b29
+#set $darkbluetrans	#08052be6
+#set $darkblue		#08052b
+#set $lightblue		#5294e2
+#set $urgentred		#e53935
+#set $white		#ffffff
+#set $black		#000000
+#set $purple		#e345ff
+#set $darkgrey		#383c4a
+#set $grey		#b0b5bd
+#set $mediumgrey		#8b8b8b
+#set $yellowbrown	#e1b700
+#set $bgcolor	#08052b29
 
 # NORD COLORSCHEME
 #set $bgcolor	#2e344090
@@ -533,7 +531,8 @@ bar {
 		status_command i3blocks -c ~/.config/i3/i3blocks.conf
 	    	position bottom
 	    	i3bar_command i3bar --transparency
-		mode hide
+      mode hide
+
 # it could be that you have no primary display set: set one (xrandr --output <output> --primary)
 # reference: https://i3wm.org/docs/userguide.html#_tray_output
 		    tray_output primary

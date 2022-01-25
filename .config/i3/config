@@ -238,7 +238,7 @@ bindsym $mod+Ctrl+l move right
 bindsym $mod+i split h
 
 # split in vertical orientation
-bindsym $mod+o split v
+bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -246,7 +246,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+d layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+a layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -255,7 +255,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+bindsym $mod+Shift+o focus parent
 
 # open new empty workspace
 #bindsym $mod+Shift+n exec ~/.config/i3/scripts/empty_workspace
@@ -297,11 +297,12 @@ bindsym $mod+Shift+y exec /usr/local/bin/switch-audio-port
 bindsym $mod+w exec /usr/bin/firefox-developer-edition
 bindsym $mod+n exec /usr/bin/thunar --class thunar_fs
 bindsym $mod+Shift+n exec /usr/bin/thunar
-bindsym $mod+v exec /usr/bin/evolution
+bindsym $mod+e exec /usr/bin/evolution
 bindsym $mod+y exec ~/.local/share/focalboard-app/focalboard-app
 bindsym $mod+g exec  $terminal -t ranger -e ranger 
 bindsym $mod+Shift+g exec $terminal --hold -t floating_term -e ranger 
-bindsym $mod+u exec $terminal --hold -t cmus -e cmus 
+bindsym $mod+u exec --no-startup-id $terminal -t music -e cmus 
+bindsym $mod+o exec --no-startup-id $terminal -t music -e mocp
 bindsym Print exec "scrot ~/%Y-%m-%d-%T-screenshot.png"
 
 # Screenshot with flameshot and kill flameshot
@@ -346,7 +347,7 @@ assign [class="mpv"] $ws5
 assign [class="io.github.celluloid_player.Celluloid"] $ws5
 assign [class="VSCodium"] $ws3
 assign [title="coding"] $ws3
-assign [title="cmus"] $ws7
+assign [title="music"] $ws7
 assign [class=Motrix] $ws10
 assign [class=Focalboard-app] $ws8
 
@@ -362,7 +363,7 @@ for_window [class="io.github.celluloid_player.Celluloid"] focus
 for_window [class="VSCodium"] focus
 for_window [title="coding"] focus
 for_window [class=Alacritty] focus
-for_window [title="cmus"] focus
+for_window [title="music"] focus
 for_window [class=Motrix] focus
 for_window [class=Focalboard-app] focus
 

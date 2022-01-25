@@ -81,7 +81,7 @@ Mp3IgnoreCRCErrors	= yes
 Repeat			= no
 
 # Turn on shuffle.
-Shuffle			= no
+Shuffle			= yes
 
 # Turn on AutoNext.
 AutoNext		= yes
@@ -116,32 +116,32 @@ Prebuffering		= 64
 # debugging).
 # You can enter more than one driver as a colon-separated list.  The first
 # working driver will be used.
-SoundDriver		= JACK:ALSA:OSS
+#SoundDriver		= JACK:ALSA:OSS
 
 # Jack output settings.
-JackOutLeft		= "alsa_pcm:playback_1"
-JackOutRight		= "alsa_pcm:playback_2"
+#JackOutLeft		= "alsa_pcm:playback_1"
+#JackOutRight		= "alsa_pcm:playback_2"
 
 # OSS output device.
-OSSDevice		= /dev/dsp
+#OSSDevice		= /dev/dsp
 
 # OSS Mixer device.
-OSSMixerDevice		= /dev/mixer
+#OSSMixerDevice		= /dev/mixer
 
 # OSS Mixer channel: pcm or master.
-OSSMixerChannel1	= pcm
+#OSSMixerChannel1	= pcm
 
 # Second OSS Mixer channel: pcm or master.
-OSSMixerChannel2	= master
+#OSSMixerChannel2	= master
 
 # ALSA mixer device.
-AlsaMixer1		= PCM
+#AlsaMixer1		= PCM
 
 # Second ALSA mixer device.
-AlsaMixer2		= Master
+#AlsaMixer2		= Master
 
 # ALSA output device.
-AlsaDevice		= default
+#AlsaDevice		= default
 
 # Save software mixer state?
 # If enabled, a file 'softmixer' will
@@ -153,7 +153,7 @@ AlsaDevice		= default
 # the mixer setting (0-100). This results
 # in a higher signal amplitude but may also
 # produce clipping.
-#Softmixer_SaveState = yes
+Softmixer_SaveState = yes
 
 # Save equalizer state?
 # If enabled, a file 'equalizer' will
@@ -188,12 +188,12 @@ ShowTime		= IfAvailable
 #ShowTimePercent	= no
 
 # Values of the TERM environment variable which are deemed to be xterms.
-XTerms = xterm
-XTerms += xterm-colour:xterm-color
-XTerms += xterm-256colour:xterm-256color
-XTerms += rxvt:rxvt-unicode
-XTerms += rxvt-unicode-256colour:rxvt-unicode-256color
-XTerms += eterm
+#XTerms = xterm
+#XTerms += xterm-colour:xterm-color
+#XTerms += xterm-256colour:xterm-256color
+#XTerms += rxvt:rxvt-unicode
+#XTerms += rxvt-unicode-256colour:rxvt-unicode-256color
+#XTerms += eterm
 
 # Theme file. This can be absolute path or relative to
 # /usr/share/moc/themes/ (depends on installation prefix) or ~/.moc/themes/

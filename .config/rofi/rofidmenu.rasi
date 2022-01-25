@@ -15,7 +15,8 @@ configuration {
 
 window {
     background-color: @background;
-    border:           0;
+    border:           1px;
+    border-color:  @foreground;
     padding:          25;
     border-radius: 8px;
 }

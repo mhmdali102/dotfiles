@@ -1,7 +1,0 @@
-[2022-01-25 12:31:35.837] [info]  [db] Initialized DB client
-[2022-01-25 12:31:36.055] [info]  [plugin] Loaded /home/mhmdali102/.config/Insomnia/plugins/insomnia-plugin-nord-theme
-[2022-01-25 12:31:36.717] [info]  [FileSystemDriver] Initialized in "/home/mhmdali102/.config/Insomnia/version-control"
-[2022-01-25 12:31:36.719] [info]  [FileSystemDriver] Initialized in "/home/mhmdali102/.config/Insomnia/version-control"
-[2022-01-25 12:31:36.719] [info]  [sync] checking for collections which need to be moved into a remote project
-[2022-01-25 12:31:36.748] [info]  [ga] Event Activity, Change, debug
-[2022-01-25 12:31:36.748] [info]  [ga] Page /debug

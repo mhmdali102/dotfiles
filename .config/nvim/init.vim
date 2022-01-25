@@ -106,8 +106,8 @@ call plug#end()
 nnoremap Y yg_
 
 "GO TO START/MIDDLE/END OF THE LINE
-nnoremap <A-h> ^
-nnoremap <A-l> g_
+nnoremap <A-,> ^
+nnoremap <A-.> g_
 nnoremap <A-m> :exe 'normal ' . len(getline('.'))/2 . '\|'<CR>
 
 "COMMENT SHORTCUT
@@ -175,7 +175,7 @@ let g:indentLine_char_list = ['│']
 
 "CONFIG LIGHTLINE
 let g:lightline = {
-    \ 'colorscheme': 'gruvbox',
+    \ 'colorscheme': 'nord',
     \ 'active': {
     \   'right': [ [ 'lineinfo' ],
     \              [ 'percent' ],
@@ -282,6 +282,8 @@ nnoremap <A-t> :tabedit .<CR>
 "TAB NAVIGATION
 nnoremap <A-j> gT
 nnoremap <A-k> gt
+nnoremap <A-h> :tabm -1<CR>
+nnoremap <A-l> :tabm +1<CR>
 nnoremap 1 1gt
 nnoremap 2 2gt
 nnoremap 3 3gt
@@ -337,6 +339,6 @@ autocmd VimResized * wincmd =
 set signcolumn=yes:1
 highlight clear SignColumn
 
-colorscheme gruvbox
+colorscheme nord
 "nvim dap
 "https://github.com/puremourning/vimspector

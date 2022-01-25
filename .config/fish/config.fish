@@ -4,6 +4,7 @@ set -g theme_display_pwd_on_first_line yes
 set -g theme_display_git_on_first_line yes
 set -g theme_display_ruby no
 set -g theme_display_node yes
+set -gx EDITOR nvim
 
 thefuck --alias | source
 

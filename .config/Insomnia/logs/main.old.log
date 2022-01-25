@@ -1,0 +1,15 @@
+[2022-01-25 10:37:49.100] [info]  Running version 2021.7.2
+[2022-01-25 10:37:49.122] [error] [electron client protocol] FAILED to set default protocol 'insomnia://'
+[2022-01-25 10:37:49.139] [info]  [electron client protocol] the current executable is not the default protocol for 'insomnia://'
+[2022-01-25 10:37:49.183] [info]  [electron client protocol] the default application set for 'insomnia://' is 'insomnia.desktop
+'
+[2022-01-25 10:37:49.374] [info]  [fix] Running database repairs
+[2022-01-25 10:37:49.426] [info]  [db] Initialized DB at /home/mhmdali102/.config/Insomnia/insomnia.$TYPE.db
+[2022-01-25 10:37:49.427] [info]  [db] Init responses DB
+[2022-01-25 10:37:49.431] [info]  [localstorage] Initialized at /home/mhmdali102/.config/Insomnia/localStorage
+[2022-01-25 10:37:49.468] [info]  [main] Loading file:///opt/Insomnia/resources/app.asar/renderer.html
+[2022-01-25 10:37:49.478] [info]  [ga] Non-interactive General, Launched, 2021.7.2
+[2022-01-25 10:37:49.979] [info]  [updater] Updater not running platform=linux dev=false
+[2022-01-25 10:37:55.450] [error] [catcher] Unhandled rejection: TypeError: Object has been destroyed
+    at Object.b.send (electron/js2c/browser_init.js:157:2201)
+    at IpcMainImpl.<anonymous> (/opt/Insomnia/resources/app.asar/main.min.js:83058:18)

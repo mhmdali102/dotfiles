@@ -71,7 +71,9 @@ if ($status eq 'discharging') {
 			$full_text .= ' DIS';
 		}
 	}
-}
+	} else {
+		$full_text .= ' ?';
+	}
 
 $short_text = $full_text;
 
@@ -96,17 +98,17 @@ print " $short_text\n";
 # consider color and urgent flag only on discharge
 if ($status eq 'discharging') {
 
-	if ($percent < 20) {
-		print "#FF0000\n";
-	} elsif ($percent < 40) {
-		print "#FFAE00\n";
-	} elsif ($percent < 60) {
-		print "#FFF600\n";
-	} elsif ($percent < 85) {
-		print "#A8FF00\n";
-	}
+	#if ($percent < 20) {
+		#print "#FF0000\n";
+	#} elsif ($percent < 40) {
+		#print "#FFAE00\n";
+	#} elsif ($percent < 60) {
+		#print "#FFF600\n";
+	#} elsif ($percent < 85) {
+		#print "#A8FF00\n";
+	#}
 
-	if ($percent < 5) {
+	if ($percent < 15) {
 		exit(33);
 	}
 }

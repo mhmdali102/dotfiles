@@ -1,4 +1,4 @@
-background_opacity: .9
+window.opacity: .9
 
 font:
   normal:
@@ -405,7 +405,7 @@ schemes:
 # *solarized-dark
 # *tomorrow-night
 
-colors: *gruvbox-dark
+colors: *nord
 
 #######################################
 ##       END OF COLOR SCHEMES        ##

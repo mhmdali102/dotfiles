@@ -17,6 +17,7 @@ window {
     background-color: @background;
     border:           0;
     padding:          25;
+    border-radius: 8px;
 }
 listview {
     lines:                          10;
@@ -44,7 +45,8 @@ listview {
 }
 element {
     border:  0;
-    padding: 1px ;
+    padding: 1.5px 2px ;
+    border-radius: 6px;
 }
 element-text {
     background-color: inherit;

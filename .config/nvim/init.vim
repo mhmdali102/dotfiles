@@ -81,9 +81,6 @@ call plug#begin('~/.vim/autoload/plugged')
   "Markdown preview
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
-  "NVIM TRANSPARENT
-  Plug 'xiyaowong/nvim-transparent'
-
   "THEMES
   Plug 'tomasiser/vim-code-dark'
   Plug 'marko-cerovac/material.nvim'

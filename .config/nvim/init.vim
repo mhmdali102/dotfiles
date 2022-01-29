@@ -71,6 +71,9 @@ call plug#begin('~/.vim/autoload/plugged')
   Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
   Plug 'fannheyward/telescope-coc.nvim'
 
+  "NVIM TREESITTER
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
   "CSS HEX COLORS
   Plug 'ap/vim-css-color'
   Plug 'KabbAmine/vCoolor.vim'
@@ -129,12 +132,16 @@ autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | end
 
 "TELESCOPE CONFIG
 nmap <C-p> :Telescope find_files<CR>
+map <Leader>gs :Telescope git_status<CR>
+map <Leader>ts :Telescope treesitter<CR>
+map <Leader>tp :Telescope builtin<CR>
+
 lua << EOF
 require('telescope').setup{
   defaults = {
           prompt_prefix = "$ ",
-          file_ignore_patterns = {"./node_modules/*", "node_modules", "^node_modules/*", "node_modules/*"}
-      }
+          file_ignore_patterns = {"./node_modules/*", "node_modules", "^node_modules/*", "node_modules/*"},
+      },
 }
 require('telescope').load_extension('fzf')
 require('telescope').load_extension('coc')
@@ -216,28 +223,6 @@ let g:gruvbox_contrast_light = 'soft'
 "CONFIG TOKYONIGHT THEME = day | storm | night
 let g:tokyonight_style = "night"
 
-"CONFIG NVIM TRANSPARENT
-map <Leader>te :TransparentEnable<CR>
-map <Leader>td :TransparentDisable<CR>
-
-lua << EOF
-require("transparent").setup({
-  enable = false, -- boolean: enable transparent
-  extra_groups = { -- table/string: additional groups that should be clear
-    -- In particular, when you set it to 'all', that means all avaliable groups
-
-    -- example of akinsho/nvim-bufferline.lua
-    "BufferLineTabClose",
-    "BufferlineBufferSelected",
-    "BufferLineFill",
-    "BufferLineBackground",
-    "BufferLineSeparator",
-    "BufferLineIndicatorSelected",
-  },
-  exclude = {}, -- table: groups you don't want to clear
-})
-EOF
-
 "NAVIGATE WINDOWS"
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -314,6 +299,8 @@ map <Leader>tv :TabVifm<CR>
 "KEEP CURSOR CENTERED
 nnoremap n nzz
 nnoremap N Nzz
+nnoremap j jzz
+nnoremap k kzz
 
 "TOGGLE WRAP
 nnoremap <A-z> :set wrap!<CR>

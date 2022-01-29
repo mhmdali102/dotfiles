@@ -181,15 +181,15 @@ bindsym $mod+Shift+m mark --add "swapee"; mode "swap"
 set $terminal alacritty
 
 # start a terminal
-bindsym $mod+Return  exec --no-startup-id $terminal -t FullTerm
-bindsym $mod+c exec --no-startup-id alacritty -t coding 
+bindsym $mod+Return  exec --no-startup-id $terminal -t Terminal
+bindsym $mod+c exec --no-startup-id alacritty -t Code
 bindsym $mod+Shift+Return exec --no-startup-id $terminal 
 #
 # floating terminal
-bindsym $mod+t exec --no-startup-id $terminal -t floating_term
-bindsym $mod+Shift+t exec --no-startup-id $terminal -t floating_term -e htop
-bindsym $mod+Shift+p exec --no-startup-id $terminal -t floating_term -e pulsemixer
-for_window [title=floating_term] floating enable
+bindsym $mod+t exec --no-startup-id $terminal -t FTerminal
+bindsym $mod+Shift+t exec --no-startup-id $terminal -t FTerminal -e htop
+bindsym $mod+Shift+p exec --no-startup-id $terminal -t FTerminal -e pulsemixer
+for_window [title=FTerminal] floating enable
 
 # kill focused window
 bindsym $mod+q kill
@@ -300,7 +300,7 @@ bindsym $mod+Shift+n exec /usr/bin/thunar
 bindsym $mod+e exec /usr/bin/evolution
 bindsym $mod+y exec ~/.local/share/focalboard-app/focalboard-app
 bindsym $mod+g exec  $terminal -t ranger -e ranger 
-bindsym $mod+Shift+g exec $terminal --hold -t floating_term -e ranger 
+bindsym $mod+Shift+g exec $terminal --hold -t FTerminal -e ranger 
 bindsym $mod+u exec --no-startup-id $terminal -t music -e cmus 
 bindsym $mod+o exec --no-startup-id $terminal -t music -e mocp
 bindsym Print exec "scrot ~/%Y-%m-%d-%T-screenshot.png"
@@ -337,7 +337,7 @@ set $ws10 "10:"
 #workspace $ws5 output HDMI-0
 
 # bind program to workspace and focus to them on startup:
-assign [title=FullTerm] $ws1
+assign [title=FTerminal] $ws1
 assign [class="(?i)firefox"] $ws2
 assign [class="thunar_fs"] $ws6
 assign [title="ranger"] $ws6
@@ -349,10 +349,11 @@ assign [class="VSCodium"] $ws3
 assign [title="coding"] $ws3
 assign [title="music"] $ws7
 assign [class=Motrix] $ws10
+assign [class=persepolis] $ws10
 assign [class=Focalboard-app] $ws8
 
 # automatic set focus new window if it opens on another workspace then the current:
-for_window [class=Xfce4-terminal] focus
+for_window [class=$terminal] focus
 for_window [class=(?i)firefox] focus
 for_window [class=Thunar] focus
 for_window [class="thunar_fs"] focus
@@ -365,6 +366,7 @@ for_window [title="coding"] focus
 for_window [class=Alacritty] focus
 for_window [title="music"] focus
 for_window [class=Motrix] focus
+for_window [class=persepolis] focus
 for_window [class=Focalboard-app] focus
 
 #############################################
@@ -439,14 +441,6 @@ exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
 #exec --no-startup-id sleep 2 && xfce4-terminal
 #exec --no-startup-id sleep 7 && firefox https://github.com/endeavouros-team/endeavouros-i3wm-setup/blob/main/force-knowledge.md
 #exec --no-startup-id sleep 3 && thunar
-
-# set floating (nontiling) for special apps
-for_window [class="Xsane" instance="xsane"] floating enable
-for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
-for_window [class="qt5ct" instance="qt5ct"] floating enable
-for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
-for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enable
-for_window [class="Pamac-manager"] floating enable
 
 ######################################
 # color settings for bar and windows #

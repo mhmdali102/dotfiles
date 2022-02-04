@@ -165,7 +165,7 @@
     # Show age of message if message is older than show_age_threshold
     # seconds.
     # Set to -1 to disable.
-    show_age_threshold = 5
+    show_age_threshold = 9
 
     # Specify where to make an ellipsis in long lines.
     # Possible values are "start", "middle" and "end".
@@ -296,14 +296,14 @@
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#2e3440"
     foreground = "#81a1c1"
-    timeout = 5
+    timeout = 8
     # Icon for notifications with low urgency, uncomment to enable
     icon = /usr/share/icons/Arc-X-D/status/16/dialog-information.png
 
 [urgency_normal]
     background = "#2e3440"
     foreground = "#81a1c1"
-    timeout = 5
+    timeout = 8
     # Icon for notifications with normal urgency, uncomment to enable
     icon = /usr/share/icons/Arc-X-D/status/16/dialog-question.png
 

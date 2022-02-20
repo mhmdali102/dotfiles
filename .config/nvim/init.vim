@@ -84,6 +84,9 @@ call plug#begin('~/.vim/autoload/plugged')
   "Markdown preview
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
+  "VIMWIKI
+  Plug 'vimwiki/vimwiki'
+
   "THEMES
   Plug 'tomasiser/vim-code-dark'
   Plug 'marko-cerovac/material.nvim'
@@ -299,8 +302,6 @@ map <Leader>tv :TabVifm<CR>
 "KEEP CURSOR CENTERED
 nnoremap n nzz
 nnoremap N Nzz
-nnoremap j jzz
-nnoremap k kzz
 
 "TOGGLE WRAP
 nnoremap <A-z> :set wrap!<CR>

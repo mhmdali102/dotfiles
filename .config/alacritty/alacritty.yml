@@ -8,7 +8,7 @@ font:
     family: "FiraCode Nerd Font Mono"
     style: Bold
   light:
-    family: "FiraMono Nerd Font Mono"
+    ramily: "FiraMono Nerd Font Mono"
     style: Light
 
   # Point size

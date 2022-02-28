@@ -59,7 +59,7 @@
 
 
 # Show file titles (title, author, album) instead of file names.
-ReadTags		= yes
+ReadTags		= no
 
 # Directory in which you store music files. If you specify it you will be able
 # to quickly go to this directory with the '-m' parameter or the 'm' command.

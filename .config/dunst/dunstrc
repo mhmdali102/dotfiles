@@ -30,13 +30,13 @@
     height = 300
 
     # Position the notification in the top right corner
-    origin = bottom-right
+    origin = top-right
 
     # Offset from the origin
-    offset = 30x40
+    offset = 25x55
 
     # Scale factor. It is auto-detected if value is 0.
-    scale = 1.175
+    scale = 1.2
 
     # Maximum number of notification (0 means no limit)
     notification_limit = 5
@@ -68,7 +68,7 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
     # present (e.g. xcompmgr, compiz, etc.). (X11 only)
-    transparency = 16
+    transparency = 25
 
     # Draw a line of "separator_height" pixel height between two
     # notifications.
@@ -76,17 +76,17 @@
     separator_height = 2
 
     # Padding between text and separator.
-    padding = 10
+    padding = 14
 
     # Horizontal padding.
-    horizontal_padding = 10
+    horizontal_padding = 14
 
     # Padding between text and icon.
-    text_icon_padding = 13
+    text_icon_padding = 14
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 1
+    frame_width = 2
 
     # Defines color of the frame around the notification window.
     frame_color = "#81a1c1"
@@ -111,7 +111,7 @@
 
     ### Text ###
 
-    font = FiraCode Nerd Font Mono 9
+    font = FiraCode Nerd Font Mono 10
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -231,7 +231,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 8
+    corner_radius = 20
 
     # Ignore the dbus closeNotification message.
     # Useful to enforce the timeout set by dunst configuration. Without this

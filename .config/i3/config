@@ -27,6 +27,7 @@ font pango:Noto Sans Regular 10
 
 # set the mod key to the winkey:
 set $mod Mod4
+set $alt Mod1
 
 #####################
 # workspace layout: #
@@ -48,26 +49,26 @@ workspace_layout default
 ##############################
 
 #border indicator on windows:
-new_window pixel 1
+new_window pixel 2
 
 # change borders
 bindsym $mod+bracketleft border none
-bindsym $mod+bracketright border pixel 1
+bindsym $mod+bracketright border pixel 2
 
 # thin borders
-# hide_edge_borders both
+ #hide_edge_borders both
 
 # Set inner/outer gaps
 gaps inner 6
 gaps outer 2
-smart_gaps on
-smart_borders on
+#smart_gaps on
+#smart_borders on
 
-bindsym $mod+plus exec \
+bindsym $mod+plus exec --no-startup-id \
   i3-msg "gaps outer current plus 2" && \
   i3-msg "gaps inner current plus 6"
 
-bindsym $mod+minus exec \
+bindsym $mod+minus exec --no-startup-id \
   i3-msg "gaps outer current minus 2" && \
   i3-msg "gaps inner current minus 6"
 
@@ -78,7 +79,6 @@ floating_modifier $mod
 focus_follows_mouse no
 
 # switch to workspace
-bindsym $mod+grave    workspace  $ws0
 bindsym $mod+1    workspace  $ws1
 bindsym $mod+2    workspace  $ws2
 bindsym $mod+3    workspace  $ws3
@@ -89,11 +89,12 @@ bindsym $mod+7    workspace  $ws7
 bindsym $mod+8    workspace  $ws8
 bindsym $mod+9    workspace  $ws9
 bindsym $mod+0    workspace  $ws10
+bindsym $mod+$alt+1   workspace  $ws11
 bindsym $mod+Shift+j workspace prev
 bindsym $mod+Shift+k workspace next
+bindsym $mod+Tab workspace back_and_forth
 
 # move focused container to workspace
-bindsym $mod+Shift+grave   move container to workspace  $ws0 workspace $ws0
 bindsym $mod+Shift+1    move container to workspace  $ws1 workspace $ws1
 bindsym $mod+Shift+2    move container to workspace  $ws2 workspace $ws2
 bindsym $mod+Shift+3    move container to workspace  $ws3 workspace $ws3
@@ -336,7 +337,6 @@ bindsym $mod+Shift+Print exec "killall flameshot"
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws0 "0:"
 set $ws1 "1:"
 set $ws2 "2:"
 set $ws3 "3:"
@@ -347,6 +347,7 @@ set $ws7 "7:"
 set $ws8 "8:"
 set $ws9 "9:"
 set $ws10 "10:"
+set $ws11 "11"
 
 # use workspaces on different displays:
 # where you have to replace VGA-0/HDMI-0 with the names for your displays
@@ -542,66 +543,66 @@ exec --no-startup-id xset r rate 300 50 &
 ############################################
 
 # Toggle bar
-bindsym $mod+b --release bar mode toggle
+#bindsym $mod+b --release bar mode toggle
 
 # Start i3bar to display a workspace bar
 # (plus the system information i3status finds out, if available)
-bar {
-		font pango:FiraCode Nerd Font Mono 10, FontAwesome 10
-		status_command i3blocks -c ~/.config/i3/i3blocks.conf
-	    	position bottom
-	    	i3bar_command i3bar --transparency
-      mode hide
+#bar {
+		#font pango:FiraCode Nerd Font Mono 10, FontAwesome 10
+		#status_command i3blocks -c ~/.config/i3/i3blocks.conf
+				#position bottom
+				#i3bar_command i3bar --transparency
+      #mode hide
 
-# it could be that you have no primary display set: set one (xrandr --output <output> --primary)
-# reference: https://i3wm.org/docs/userguide.html#_tray_output
-		    tray_output primary
-		    tray_padding 0
+## it could be that you have no primary display set: set one (xrandr --output <output> --primary)
+## reference: https://i3wm.org/docs/userguide.html#_tray_output
+				#tray_output primary
+				#tray_padding 0
 
-# When strip_workspace_numbers is set to yes,
-# any workspace that has a name of the form
-# “[n][:][NAME]” will display only the name.
-strip_workspace_numbers yes
-#strip_workspace_name no
+## When strip_workspace_numbers is set to yes,
+## any workspace that has a name of the form
+## “[n][:][NAME]” will display only the name.
+#strip_workspace_numbers yes
+##strip_workspace_name no
 
-# BAR DEFAULT COLORSCHEME 
-				#colors {
-				#separator          $purple
-				#background         $bgcolor
-				#statusline         $white
-##                          		border 		        bg		txt		indicator
-		#focused_workspace	$mediumgrey	   	$grey		$darkgrey	$purple
-		#active_workspace	$lightblue      	$mediumgrey	$darkgrey	$purple
-		#inactive_workspace	$darkgrey   		$darkgrey	$grey		$purple
-		#urgent_workspace	$urgentred	    	$urgentred	$white		$purple
-	#}
+## BAR DEFAULT COLORSCHEME 
+				##colors {
+				##separator          $purple
+				##background         $bgcolor
+				##statusline         $white
+###                          		border 		        bg		txt		indicator
+		##focused_workspace	$mediumgrey	   	$grey		$darkgrey	$purple
+		##active_workspace	$lightblue      	$mediumgrey	$darkgrey	$purple
+		##inactive_workspace	$darkgrey   		$darkgrey	$grey		$purple
+		##urgent_workspace	$urgentred	    	$urgentred	$white		$purple
+	##}
 
-# BAR NORD COLORSCHEME 
-    colors {
-            separator  #1f222d
-            background #2e3440
-            statusline #81a1c1
+## BAR NORD COLORSCHEME 
+    #colors {
+            #separator  #1f222d
+            #background #2e3440
+            #statusline #81a1c1
 
-            #                   border  background text
-            focused_workspace  #1f222d #1f222d    #81a1c1
-            active_workspace   #1f222d #252936    #5e81ac
-            inactive_workspace #1f222d #1f222d    #4c566a
-            urgent_workspace   #1f222d #1f222d    #ee829f
-            binding_mode       #1f222d #81a1c1    #2e3440
-    }
-
-# BAR GRUVBOX THEME
-   #colors {
-        #background $bg
-        #statusline $lightgray
-        ## workspaces section            
-        ##                    border  backgr. text
-        #focused_workspace    $lightgray $lightgray $bg
-        #inactive_workspace   $darkgray $darkgray $lightgray
-        #active_workspace     $darkgray $darkgray $lightgray
-        #urgent_workspace     $red $red $bg
+            ##                   border  background text
+            #focused_workspace  #1f222d #1f222d    #81a1c1
+            #active_workspace   #1f222d #252936    #5e81ac
+            #inactive_workspace #1f222d #1f222d    #4c566a
+            #urgent_workspace   #1f222d #1f222d    #ee829f
+            #binding_mode       #1f222d #81a1c1    #2e3440
     #}
-}
+
+## BAR GRUVBOX THEME
+   ##colors {
+        ##background $bg
+        ##statusline $lightgray
+        ### workspaces section            
+        ###                    border  backgr. text
+        ##focused_workspace    $lightgray $lightgray $bg
+        ##inactive_workspace   $darkgray $darkgray $lightgray
+        ##active_workspace     $darkgray $darkgray $lightgray
+        ##urgent_workspace     $red $red $bg
+    ##}
+#}
 
 
 # you can add different bars for multidisplay setups on each display:
@@ -636,8 +637,9 @@ strip_workspace_numbers yes
 #}
 
 # Launch polybar
-#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
+exec --no-startup-id polybar main
+# Toggle polybar
+bindsym $mod+b exec --no-startup-id polybar-msg cmd toggle
 
 #####################################
 # Application menu handled by rofi: #

@@ -5,7 +5,7 @@
 configuration {
     font:				"Sourcecode Pro Regular 10";
     show-icons:				true;
-    icon-theme:				"NordArc";
+    icon-theme:				"Tela-circle-blue-dark";
     display-drun:			"Apps";
     drun-display-format:		"{name}";
     scroll-method:			1;
@@ -15,7 +15,7 @@ configuration {
 
 window {
     background-color: @background;
-    border:           1px;
+    border:           2px;
     border-color:  @foreground;
     padding:          25;
     border-radius: 8px;

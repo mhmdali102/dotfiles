@@ -68,14 +68,6 @@ content-foreground = ${color.white}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
-
-[module/CLD]
-type = custom/text
-content = "%{T3}%{T-}"
-content-font = 3
-content-background = ${color.background}
-content-foreground = ${color.cyan}
-
 [module/BRD]
 type = custom/text
 content = "%{T3}%{T-}"
@@ -110,12 +102,12 @@ content-font = 3
 content-background = ${color.background}
 content-foreground = ${color.yellow}
 
-[module/YRD]
+[module/CRD]
 type = custom/text
 content = "%{T3}%{T-}"
 content-font = 3
 content-background = ${color.background}
-content-foreground = ${color.yellow}
+content-foreground = ${color.cyan}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -127,21 +119,19 @@ content-font = 3
 content-background = ${color.background}
 content-foreground = ${color.green}
 
-[module/GRD]
-type = custom/text
-content = "%{T3}%{T-}"
-content-font = 3
-content-background = ${color.background}
-content-foreground = ${color.green}
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
 [module/BLD]
 type = custom/text
 content = "%{T3}%{T-}"
 content-font = 3
 content-background = ${color.background}
 content-foreground = ${color.blue}
+
+[module/GRD]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.background}
+content-foreground = ${color.green}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -152,12 +142,26 @@ content-font = 3
 content-background = ${color.green}
 content-foreground = ${color.yellow}
 
+[module/YBL]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.blue}
+content-foreground = ${color.yellow}
+
 [module/BPL]
 type = custom/text
 content = "%{T3}%{T-}"
 content-font = 3
 content-background = ${color.yellow}
 content-foreground = ${color.blue}
+
+[module/YPG]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.yellow}
+content-foreground = ${color.green}
 
 [module/RPL]
 type = custom/text
@@ -173,18 +177,11 @@ content-font = 3
 content-background = ${color.magenta}
 content-foreground = ${color.green}
 
-[module/MPB]
-type = custom/text
-content = "%{T3}%{T-}"
-content-font = 3
-content-background = ${color.blue}
-content-foreground = ${color.magenta}
-
 [module/YPB]
 type = custom/text
 content = "%{T3}%{T-}"
 content-font = 3
-content-background = ${color.cyan}
-content-foreground = ${color.yellow}
+content-background = ${color.magenta}
+content-foreground = ${color.cyan}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_

@@ -59,18 +59,22 @@ bindsym $mod+bracketright border pixel 2
  #hide_edge_borders both
 
 # Set inner/outer gaps
-gaps inner 6
-gaps outer 2
+gaps inner 8
+gaps outer 4
 #smart_gaps on
 #smart_borders on
 
 bindsym $mod+plus exec --no-startup-id \
-  i3-msg "gaps outer current plus 2" && \
-  i3-msg "gaps inner current plus 6"
+  i3-msg "gaps outer current plus 4" && \
+  i3-msg "gaps inner current plus 8"
 
 bindsym $mod+minus exec --no-startup-id \
-  i3-msg "gaps outer current minus 2" && \
-  i3-msg "gaps inner current minus 6"
+  i3-msg "gaps outer current minus 4" && \
+  i3-msg "gaps inner current minus 8"
+
+# Toggle gaps
+bindsym $mod+shift+bracketleft gaps inner all set 0, gaps outer all set 0, border none
+bindsym $mod+shift+bracketright gaps inner all set 8, gaps outer all set 4, border pixel 2
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -89,7 +93,6 @@ bindsym $mod+7    workspace  $ws7
 bindsym $mod+8    workspace  $ws8
 bindsym $mod+9    workspace  $ws9
 bindsym $mod+0    workspace  $ws10
-bindsym $mod+$alt+1   workspace  $ws11
 bindsym $mod+Shift+j workspace prev
 bindsym $mod+Shift+k workspace next
 bindsym $mod+Tab workspace back_and_forth
@@ -152,7 +155,6 @@ bindsym $mod+m focus floating; mode "move"
 
 mode "swap" {
 	# switch to workspace
-	bindsym $mod+grave workspace $ws0
 	bindsym $mod+1 workspace $ws1
 	bindsym $mod+2 workspace $ws2
 	bindsym $mod+3 workspace $ws3
@@ -282,6 +284,28 @@ set $statussig SIGUSR1
 # Amount to increase/decrease volume as a percentage
 set $volumestep 5
 
+# control mouse with vim keys
+mode "mouse" {
+  bindsym h exec --no-startup-id xdotool mousemove_relative -- -20 0
+  bindsym j exec --no-startup-id xdotool mousemove_relative 0 20
+  bindsym k exec --no-startup-id xdotool mousemove_relative 0 -20
+  bindsym l exec --no-startup-id xdotool mousemove_relative 20 0
+  bindsym Shift+h exec --no-startup-id xdotool mousemove_relative -- -150 0
+  bindsym Shift+j exec --no-startup-id xdotool mousemove_relative 0 150
+  bindsym Shift+k exec --no-startup-id xdotool mousemove_relative 0 -150
+  bindsym Shift+l exec --no-startup-id xdotool mousemove_relative 150 0
+	bindsym u exec --no-startup-id xdotool click 1
+	bindsym i exec --no-startup-id xdotool click 2
+	bindsym o exec --no-startup-id xdotool click 3
+	bindsym bracketleft exec --no-startup-id xdotool click 4
+	bindsym bracketright exec --no-startup-id xdotool click 5
+  bindsym Escape mode "default"
+  bindsym $mod+grave mode "default"
+}
+
+bindsym $mod+grave mode "mouse"
+
+
 # pulseaudio-utils settings
 #
 # Symbolic name for sink (numeric index not supported)
@@ -325,6 +349,7 @@ bindsym $mod+g exec  $terminal -t ranger -e ranger
 bindsym $mod+Shift+g exec $terminal --hold -t Floating -e ranger 
 bindsym $mod+u exec --no-startup-id $terminal -t music -e cmus 
 bindsym $mod+o exec --no-startup-id $terminal -t music -e mocp
+bindsym $mod+Shift+b exec --no-startup-id obs
 bindsym Print exec "scrot ~/%Y-%m-%d-%T-screenshot.png"
 
 # Screenshot with flameshot and kill flameshot
@@ -344,10 +369,9 @@ set $ws4 "4:"
 set $ws5 "5:"
 set $ws6 "6:"
 set $ws7 "7:"
-set $ws8 "8:"
+set $ws8 "8:雷"
 set $ws9 "9:"
 set $ws10 "10:"
-set $ws11 "11"
 
 # use workspaces on different displays:
 # where you have to replace VGA-0/HDMI-0 with the names for your displays
@@ -371,7 +395,7 @@ assign [class="VSCodium"] $ws3
 assign [title="coding"] $ws3
 assign [title="music"] $ws7
 assign [class=Motrix] $ws10
-assign [class=persepolis] $ws10
+assign [class=obs] $ws8
 assign [class="^(?i)libreoffice-*"] $ws8
 
 # automatic set focus new window if it opens on another workspace then the current:
@@ -388,8 +412,7 @@ for_window [title="coding"] focus
 for_window [class=Alacritty] focus
 for_window [title="music"] focus
 for_window [class=Motrix] focus
-for_window [class=persepolis] focus
-for_window [class=Focalboard-app] focus
+for_window [class=obs] focus
 
 #############################################
 # autostart applications/services on login: #

@@ -198,7 +198,7 @@ for_window [title=Floating] floating enable
 
 # kill focused window
 bindsym $mod+q kill
-bindsym --release $mod+Shift+x exec xkill
+bindsym --release $mod+Shift+x exec --no-startup-id xkill
 
 # exit-menu
 bindsym $mod+Shift+q exec ~/.config/i3/scripts/powermenu
@@ -344,11 +344,11 @@ bindsym $mod+Shift+y exec /usr/local/bin/switch-audio-port
 bindsym $mod+w exec /usr/bin/firefox-developer-edition
 bindsym $mod+n exec /usr/bin/thunar
 bindsym $mod+Shift+n exec /usr/bin/thunar --class thunar_
-bindsym $mod+e exec /usr/bin/evolution
 bindsym $mod+g exec  $terminal -t ranger -e ranger 
 bindsym $mod+Shift+g exec $terminal --hold -t Floating -e ranger 
 bindsym $mod+u exec --no-startup-id $terminal -t music -e cmus 
 bindsym $mod+o exec --no-startup-id $terminal -t music -e mocp
+bindsym $mod+e exec --no-startup-id notion-app-enhanced
 bindsym $mod+Shift+b exec --no-startup-id obs
 bindsym Print exec "scrot ~/%Y-%m-%d-%T-screenshot.png"
 
@@ -369,8 +369,8 @@ set $ws4 "4:"
 set $ws5 "5:"
 set $ws6 "6:"
 set $ws7 "7:"
-set $ws8 "8:雷"
-set $ws9 "9:"
+set $ws8 "8:⏺"
+set $ws9 "9:"
 set $ws10 "10:"
 
 # use workspaces on different displays:
@@ -387,10 +387,10 @@ assign [title=Terminal] $ws1
 assign [class="(?i)firefox"] $ws2
 assign [class="Thunar"] $ws6
 assign [title="ranger"] $ws6
-assign [class="Evolution"] $ws9
 assign [class="TelegramDesktop"] $ws4
 assign [class="mpv"] $ws5
 assign [class="io.github.celluloid_player.Celluloid"] $ws5
+assign [class="notion-app-enhanced"] $ws9
 assign [class="VSCodium"] $ws3
 assign [title="coding"] $ws3
 assign [title="music"] $ws7
@@ -403,7 +403,6 @@ for_window [class=$terminal] focus
 for_window [class=(?i)firefox] focus
 for_window [class=Thunar] focus
 for_window [class="thunar_fs"] focus
-for_window [class=Evolution] focus
 for_window [class=TelegramDesktop] focus
 for_window [class="mpv"] focus
 for_window [class="io.github.celluloid_player.Celluloid"] focus
@@ -413,6 +412,7 @@ for_window [class=Alacritty] focus
 for_window [title="music"] focus
 for_window [class=Motrix] focus
 for_window [class=obs] focus
+for_window [class=notion-app-enhanced] focus
 
 #############################################
 # autostart applications/services on login: #
@@ -450,6 +450,9 @@ exec_always --no-startup-id setxkbmap -layout 'us,ara' -variant altgr-intl,qwert
 
 # start a script for battery popup
 exec --no-startup-id ~/.config/i3/scripts/battery-popup/i3-battery-popup -L 20
+
+# switch escape with caps lock keys
+exec --no-startup-id sleep 5 && setxkbmap -option caps:swapescape
 
 # transparency
 # uncomment one of them to be used (picom package is installed per default)
@@ -566,66 +569,66 @@ exec --no-startup-id xset r rate 300 50 &
 ############################################
 
 # Toggle bar
-#bindsym $mod+b --release bar mode toggle
+bindsym $mod+b --release bar mode toggle
 
 # Start i3bar to display a workspace bar
 # (plus the system information i3status finds out, if available)
-#bar {
-		#font pango:FiraCode Nerd Font Mono 10, FontAwesome 10
-		#status_command i3blocks -c ~/.config/i3/i3blocks.conf
-				#position bottom
-				#i3bar_command i3bar --transparency
-      #mode hide
+bar {
+    font pango:FiraCode Nerd Font Mono 10, FontAwesome 10
+    status_command i3blocks -c ~/.config/i3/i3blocks.conf
+        position bottom
+        i3bar_command i3bar --transparency
+      mode hide
 
-## it could be that you have no primary display set: set one (xrandr --output <output> --primary)
-## reference: https://i3wm.org/docs/userguide.html#_tray_output
-				#tray_output primary
-				#tray_padding 0
+# it could be that you have no primary display set: set one (xrandr --output <output> --primary)
+# reference: https://i3wm.org/docs/userguide.html#_tray_output
+        tray_output primary
+        tray_padding 0
 
-## When strip_workspace_numbers is set to yes,
-## any workspace that has a name of the form
-## “[n][:][NAME]” will display only the name.
-#strip_workspace_numbers yes
-##strip_workspace_name no
+# When strip_workspace_numbers is set to yes,
+# any workspace that has a name of the form
+# “[n][:][NAME]” will display only the name.
+strip_workspace_numbers yes
+#strip_workspace_name no
 
-## BAR DEFAULT COLORSCHEME 
-				##colors {
-				##separator          $purple
-				##background         $bgcolor
-				##statusline         $white
-###                          		border 		        bg		txt		indicator
-		##focused_workspace	$mediumgrey	   	$grey		$darkgrey	$purple
-		##active_workspace	$lightblue      	$mediumgrey	$darkgrey	$purple
-		##inactive_workspace	$darkgrey   		$darkgrey	$grey		$purple
-		##urgent_workspace	$urgentred	    	$urgentred	$white		$purple
-	##}
+# BAR DEFAULT COLORSCHEME 
+        #colors {
+        #separator          $purple
+        #background         $bgcolor
+        #statusline         $white
+##                          		border 		        bg		txt		indicator
+    #focused_workspace	$mediumgrey	   	$grey		$darkgrey	$purple
+    #active_workspace	$lightblue      	$mediumgrey	$darkgrey	$purple
+    #inactive_workspace	$darkgrey   		$darkgrey	$grey		$purple
+    #urgent_workspace	$urgentred	    	$urgentred	$white		$purple
+  #}
 
-## BAR NORD COLORSCHEME 
-    #colors {
-            #separator  #1f222d
-            #background #2e3440
-            #statusline #81a1c1
+# BAR NORD COLORSCHEME 
+    colors {
+            separator  #1f222d
+            background #2e3440
+            statusline #81a1c1
 
-            ##                   border  background text
-            #focused_workspace  #1f222d #1f222d    #81a1c1
-            #active_workspace   #1f222d #252936    #5e81ac
-            #inactive_workspace #1f222d #1f222d    #4c566a
-            #urgent_workspace   #1f222d #1f222d    #ee829f
-            #binding_mode       #1f222d #81a1c1    #2e3440
+            #                   border  background text
+            focused_workspace  #1f222d #1f222d    #81a1c1
+            active_workspace   #1f222d #252936    #5e81ac
+            inactive_workspace #1f222d #1f222d    #4c566a
+            urgent_workspace   #1f222d #1f222d    #ee829f
+            binding_mode       #1f222d #81a1c1    #2e3440
+    }
+
+# BAR GRUVBOX THEME
+   #colors {
+        #background $bg
+        #statusline $lightgray
+        ## workspaces section            
+        ##                    border  backgr. text
+        #focused_workspace    $lightgray $lightgray $bg
+        #inactive_workspace   $darkgray $darkgray $lightgray
+        #active_workspace     $darkgray $darkgray $lightgray
+        #urgent_workspace     $red $red $bg
     #}
-
-## BAR GRUVBOX THEME
-   ##colors {
-        ##background $bg
-        ##statusline $lightgray
-        ### workspaces section            
-        ###                    border  backgr. text
-        ##focused_workspace    $lightgray $lightgray $bg
-        ##inactive_workspace   $darkgray $darkgray $lightgray
-        ##active_workspace     $darkgray $darkgray $lightgray
-        ##urgent_workspace     $red $red $bg
-    ##}
-#}
+}
 
 
 # you can add different bars for multidisplay setups on each display:
@@ -660,9 +663,9 @@ exec --no-startup-id xset r rate 300 50 &
 #}
 
 # Launch polybar
-exec --no-startup-id polybar main
+#exec --no-startup-id polybar main
 # Toggle polybar
-bindsym $mod+b exec --no-startup-id polybar-msg cmd toggle
+#bindsym $mod+b exec --no-startup-id polybar-msg cmd toggle
 
 #####################################
 # Application menu handled by rofi: #

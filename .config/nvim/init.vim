@@ -65,9 +65,6 @@ call plug#begin('~/.vim/autoload/plugged')
   "INDENT LINE
   Plug 'Yggdroot/indentLine'
 
-  "SMOOTH SCROLL
-  Plug 'karb94/neoscroll.nvim'
-
   "Telescope
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
@@ -150,13 +147,6 @@ require('telescope').setup{
 }
 require('telescope').load_extension('fzf')
 require('telescope').load_extension('coc')
-EOF
-
-"CONFIG NEOSCROLL
-lua << EOF
-require('neoscroll').setup({
-    mappings = {'<C-f>', '<C-b>', '<C-u>', '<C-d>', '<C-y>', '<C-e>', 'zt', 'zz', 'zb'},
-})
 EOF
 
 "CONFIG DASHBOARD
@@ -260,7 +250,7 @@ nnoremap <A-M-Bslash> :vs<CR>
 nnoremap <A--> :sp<CR>
 
 "REMAP ESC TO jk
-inoremap jk <ESC>
+"inoremap jk <ESC>
 
 "SPACE IS THE <Leader> KEY
 let mapleader=' '

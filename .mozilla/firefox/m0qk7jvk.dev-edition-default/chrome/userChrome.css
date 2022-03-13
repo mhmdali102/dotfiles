@@ -188,3 +188,9 @@ See the above repository for updates as well as full license text. */
 :root[sessionrestored]:not([inFullscreen]) > body > #browser {
   margin-top: var(--uc-navbar-transform);
 }
+
+/*Remove empty box before tab*/
+.titlebar-spacer[type="pre-tabs"],
+.titlebar-spacer[type="post-tabs"] {
+  width: 3px !important;
+}

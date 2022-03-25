@@ -64,6 +64,9 @@ gaps outer 4
 #smart_gaps on
 #smart_borders on
 
+# sticky floating windows
+for_window [class=(?i)firefox] sticky enable
+
 bindsym $mod+plus exec --no-startup-id \
   i3-msg "gaps outer current plus 4" && \
   i3-msg "gaps inner current plus 8"
@@ -187,7 +190,7 @@ set $terminal alacritty
 
 # start a terminal
 bindsym $mod+Return  exec --no-startup-id $terminal -t Terminal
-bindsym $mod+c exec --no-startup-id alacritty -t coding
+bindsym $mod+c exec --no-startup-id alacritty -t coding -e tmux
 bindsym $mod+Shift+Return exec --no-startup-id $terminal 
 #
 # floating terminal
@@ -341,20 +344,20 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+Shift+y exec /usr/local/bin/switch-audio-port
 
 ## App shortcuts
-bindsym $mod+w exec /usr/bin/firefox-developer-edition
-bindsym $mod+n exec /usr/bin/thunar
-bindsym $mod+Shift+n exec /usr/bin/thunar --class thunar_
-bindsym $mod+g exec  $terminal -t ranger -e ranger 
-bindsym $mod+Shift+g exec $terminal --hold -t Floating -e ranger 
+bindsym $mod+w exec --no-startup-id /usr/bin/firefox-developer-edition
+bindsym $mod+n exec --no-startup-id /usr/bin/thunar
+bindsym $mod+Shift+n --no-startup-id exec /usr/bin/thunar --class thunar_
+bindsym $mod+g exec --no-startup-id  $terminal -t ranger -e ranger 
+bindsym $mod+Shift+g exec --no-startup-id $terminal --hold -t Floating -e ranger 
 bindsym $mod+u exec --no-startup-id $terminal -t music -e cmus 
 bindsym $mod+o exec --no-startup-id $terminal -t music -e mocp
 bindsym $mod+e exec --no-startup-id notion-app-enhanced
 bindsym $mod+Shift+b exec --no-startup-id obs
-bindsym Print exec "scrot ~/%Y-%m-%d-%T-screenshot.png"
+bindsym Print exec --no-startup-id "scrot ~/%Y-%m-%d-%T-screenshot.png"
 
 # Screenshot with flameshot and kill flameshot
-bindsym $mod+Print exec "flameshot gui"
-bindsym $mod+Shift+Print exec "killall flameshot"
+bindsym $mod+Print exec --no-startup-id "flameshot gui"
+bindsym $mod+Shift+Print exec --no-startup-id "killall flameshot"
 
 ##########################################
 # configuration for workspace behaviour: #

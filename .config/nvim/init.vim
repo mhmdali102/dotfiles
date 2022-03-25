@@ -117,6 +117,9 @@ nnoremap <A-m> :exe 'normal ' . len(getline('.'))/2 . '\|'<CR>
 vmap <A-x> <plug>NERDCommenterToggle
 nmap <A-x> <plug>NERDCommenterToggle
 
+"CONFIG AUTOPAIRS
+let g:AutoPairsShortcutToggle = '<A-P>'
+
 "CONFIG QUICK SCOPE
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 highlight QuickScopePrimary guifg='#00C7DF' gui=underline ctermfg=155 cterm=underline
@@ -216,7 +219,7 @@ let g:gruvqueen_style = 'original'
 
 "CONFIG AYU THEME = light | mirage | dark
 let ayucolor="mirage" 
-set termguicolors     
+" set termguicolors
 
 "CONFIG GRUVBOX THEME = soft | default | hard
 let g:gruvbox_contrast_dark = 'default'
@@ -326,3 +329,4 @@ highlight clear SignColumn
 colorscheme nord
 "nvim dap
 "https://github.com/puremourning/vimspector
+"https://github.com/sindrets/diffview.nvim

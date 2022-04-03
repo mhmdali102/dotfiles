@@ -1,6 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR __fish_initialized:3100
+SETUVAR __fish_initialized:3400
 SETUVAR budspencer_colors:ECEFF4\x1e5c6370\x1e666666\x1effffff\x1e61afef\x1e56b6c2\x1eff0033\x1eff6600\x1ed19a66\x1e98c379\x1ee06c75\x1ec678dd
 SETUVAR budspencer_cursors:\x5c033\x5d12\x3b\x2398c379\x5c007\x1e\x5c033\x5d12\x3b\x2361afef\x5c007\x1e\x5c033\x5d12\x3b\x23ff6600\x5c007\x1e\x5c033\x5d12\x3b\x23d19a66\x5c007
 SETUVAR budspencer_day:000000\x1e333333\x1e666666\x1effffff\x1effff00\x1eff6600\x1eff0000\x1eff0033\x1e3300ff\x1e00aaff\x1e00ffff\x1e00ff00
@@ -38,3 +38,4 @@ SETUVAR fish_pager_color_completion:normal
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
+SETUVAR fish_pager_color_selected_background:\x2dr

@@ -82,8 +82,8 @@ bindsym $mod+shift+bracketright gaps inner all set 8, gaps outer all set 4, bord
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# Disable focus on hover
-focus_follows_mouse no
+# focus on hover
+focus_follows_mouse yes
 
 # switch to workspace
 bindsym $mod+1    workspace  $ws1
@@ -190,7 +190,7 @@ set $terminal alacritty
 
 # start a terminal
 bindsym $mod+Return  exec --no-startup-id $terminal -t Terminal
-bindsym $mod+c exec --no-startup-id alacritty -t coding -e tmux
+bindsym $mod+c exec --no-startup-id alacritty -t coding
 bindsym $mod+Shift+Return exec --no-startup-id $terminal 
 #
 # floating terminal
@@ -346,7 +346,7 @@ bindsym $mod+Shift+y exec /usr/local/bin/switch-audio-port
 ## App shortcuts
 bindsym $mod+w exec --no-startup-id /usr/bin/firefox-developer-edition
 bindsym $mod+n exec --no-startup-id /usr/bin/thunar
-bindsym $mod+Shift+n --no-startup-id exec /usr/bin/thunar --class thunar_
+bindsym $mod+Shift+n exec --no-startup-id /usr/bin/thunar --class thunar_
 bindsym $mod+g exec --no-startup-id  $terminal -t ranger -e ranger 
 bindsym $mod+Shift+g exec --no-startup-id $terminal --hold -t Floating -e ranger 
 bindsym $mod+u exec --no-startup-id $terminal -t music -e cmus 

@@ -101,6 +101,7 @@ call plug#begin('~/.vim/autoload/plugged')
   Plug 'tomasr/molokai'
   Plug 'catppuccin/nvim'
   Plug 'arcticicestudio/nord-vim'
+  Plug 'sainnhe/everforest'
   Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 call plug#end()
@@ -216,6 +217,9 @@ let g:material_style = 'darker'
 
 "CONFIG GRUVQUEEN THEME = original | mix | material
 let g:gruvqueen_style = 'original'
+
+"CONFIG EVERFOREST THEME = soft | medium | hard
+let g:everforest_background = "medium"
 
 "CONFIG AYU THEME = light | mirage | dark
 let ayucolor="mirage" 

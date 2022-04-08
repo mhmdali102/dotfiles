@@ -12,6 +12,3 @@ thefuck --alias | source
 if test -n "$DESKTOP_SESSION"
     set -x (gnome-keyring-daemon --start | string split "=")
 end
-
-# PACMAN COLORSCRIPT
-pacman-colorscript

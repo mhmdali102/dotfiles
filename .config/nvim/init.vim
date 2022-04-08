@@ -21,6 +21,7 @@ set showtabline=2
 set clipboard=unnamedplus
 set autoindent
 set ttyfast
+set shell=bash
 let g:polyglot_disabled = ['markdown']
 
 call plug#begin('~/.vim/autoload/plugged')
@@ -35,6 +36,10 @@ call plug#begin('~/.vim/autoload/plugged')
 
   "LANGUAGE PACK
   Plug 'sheerun/vim-polyglot'
+
+ " GIT DIFFVIEW
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'sindrets/diffview.nvim'
 
   "NERD COMMENTER
   Plug 'preservim/nerdcommenter'
@@ -64,12 +69,10 @@ call plug#begin('~/.vim/autoload/plugged')
 
   "INDENT LINE
   Plug 'Yggdroot/indentLine'
-
-  "Telescope
-  Plug 'nvim-lua/plenary.nvim'
-  Plug 'nvim-telescope/telescope.nvim'
-  Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-  Plug 'fannheyward/telescope-coc.nvim'
+  
+  "FZF
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
 
   "NVIM TREESITTER
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -83,9 +86,6 @@ call plug#begin('~/.vim/autoload/plugged')
   
   "Markdown preview
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-
-  "VIMWIKI
-  Plug 'vimwiki/vimwiki'
 
   "THEMES
   Plug 'tomasiser/vim-code-dark'
@@ -133,28 +133,46 @@ let g:sneak#use_ic_scs = 1
 let g:sneak#s_next = 1
 let g:sneak#prompt = '🔎 '
 
+"Config diffview
+let g:use_icons = "false"
+map <Leader>do :DiffviewOpen<CR>
+map <Leader>dc :DiffviewClose<CR>
+map <Leader>df :DiffviewFileHistory<CR>
+
 "CONFIG COC-EXPLORER
 nmap <C-t> :CocCommand explorer<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 
 "TELESCOPE CONFIG
-nmap <C-p> :Telescope find_files<CR>
-map <Leader>gs :Telescope git_status<CR>
-map <Leader>ts :Telescope treesitter<CR>
-map <Leader>tp :Telescope builtin<CR>
-lua << EOF
-require('telescope').setup{
-  defaults = {
-          prompt_prefix = "$ ",
-          file_ignore_patterns = {"./node_modules/*", "node_modules", "^node_modules/*", "node_modules/*"},
-      },
-}
-require('telescope').load_extension('fzf')
-require('telescope').load_extension('coc')
-EOF
+"nmap <C-p> :Telescope find_files<CR>
+"map <Leader>gs :Telescope git_status<CR>
+"map <Leader>ts :Telescope treesitter<CR>
+"map <Leader>tp :Telescope builtin<CR>
+"lua << EOF
+"require('telescope').setup{
+  "defaults = {
+          "prompt_prefix = "$ ",
+          "file_ignore_patterns = {"./node_modules/*", "node_modules", "^node_modules/*", "node_modules/*"},
+      "},
+"}
+"require('telescope').load_extension('coc')
+"EOF
+
+"CONFIG FZF
+nmap <C-p> :GFiles<CR>
+nmap <A-f> :Files<CR>
+nmap <A-c> :Colors<CR>
+nmap <A-m> :Marks<CR>
+nmap <A-w> :Windows<CR>
+nmap <A-h> :History<CR>
+nmap <A-g> :Commits<CR>
+nmap <A-b> :BCommits<CR>
+nmap <A-o> :Commands<CR>
+nmap <A-r> :Maps<CR>
 
 "CONFIG DASHBOARD
-let g:dashboard_default_executive ='telescope'
+let g:dashboard_default_executive ='fzf'
+let g:indentLine_fileTypeExclude = ['dashboard']
 
 "SETUP COC PRETTIER
 map <Leader>pr :CocCommand prettier.formatFile<CR>
@@ -177,6 +195,7 @@ nmap <F2> <Plug>(coc-rename)
 augroup filetype_jsx
     autocmd!
     autocmd FileType javascript set filetype=javascriptreact
+    autocmd FileType jsx set filetype=javascriptreact
 augroup END
 
 "CONFIG INDENT LINE
@@ -292,10 +311,6 @@ vnoremap > >gv
 "SAVE IN INSERT MODE
 inoremap <C-s> <ESC>:w<CR>a
 
-"OPEN TERMINAL
-map <Leader>ht :new term://fish<CR>
-map <Leader>vt :vnew term://fish<CR>
-
 "COMPILE AND RUN JAVA
 map <Leader>jv :w<CR> :!javac % && java %:r <CR>
 
@@ -333,4 +348,3 @@ highlight clear SignColumn
 colorscheme nord
 "nvim dap
 "https://github.com/puremourning/vimspector
-"https://github.com/sindrets/diffview.nvim

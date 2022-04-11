@@ -118,7 +118,7 @@ schemes:
 # *gruvbox-dark
 # *nord
 
-colors: *nord
+colors: *gruvbox-dark
 
 #######################################
 ##       END OF COLOR SCHEMES        ##

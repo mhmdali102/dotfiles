@@ -41,6 +41,9 @@ call plug#begin('~/.vim/autoload/plugged')
   Plug 'nvim-lua/plenary.nvim'
   Plug 'sindrets/diffview.nvim'
 
+  " GDIFF
+  Plug 'oguzbilgic/vim-gdiff'
+
   "NERD COMMENTER
   Plug 'preservim/nerdcommenter'
 
@@ -73,6 +76,8 @@ call plug#begin('~/.vim/autoload/plugged')
   "FZF
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
+  "VIM FUGITIVE'
+  Plug 'tpope/vim-fugitive'
 
   "NVIM TREESITTER
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -169,6 +174,7 @@ nmap <A-g> :Commits<CR>
 nmap <A-b> :BCommits<CR>
 nmap <A-o> :Commands<CR>
 nmap <A-r> :Maps<CR>
+nmap <A-l> :BLines<CR>
 
 "CONFIG DASHBOARD
 let g:dashboard_default_executive ='fzf'
@@ -202,9 +208,12 @@ augroup END
 let g:indentLine_color_term = 238
 let g:indentLine_char_list = ['│']
 
+"CONFIG VCOOLOR
+let g:vcoolor_disable_mappings = 1
+
 "CONFIG LIGHTLINE
 let g:lightline = {
-    \ 'colorscheme': 'nord',
+    \ 'colorscheme': 'gruvbox',
     \ 'active': {
     \   'right': [ [ 'lineinfo' ],
     \              [ 'percent' ],
@@ -345,6 +354,6 @@ autocmd VimResized * wincmd =
 set signcolumn=yes:1
 highlight clear SignColumn
 
-colorscheme nord
+colorscheme gruvbox
 "nvim dap
 "https://github.com/puremourning/vimspector

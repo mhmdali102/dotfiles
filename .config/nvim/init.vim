@@ -65,6 +65,9 @@ call plug#begin('~/.vim/autoload/plugged')
   "XMLATTR
   Plug 'kana/vim-textobj-user'
   Plug 'whatyouhide/vim-textobj-xmlattr'
+  
+  "VIM CLOSETAG
+  Plug 'alvan/vim-closetag'
 
   "STATUS LINE
   Plug 'itchyny/lightline.vim'
@@ -111,6 +114,10 @@ call plug#begin('~/.vim/autoload/plugged')
 
 call plug#end()
 
+"SPACE IS THE <Leader> KEY
+let mapleader=' '
+let maplocalleader=' '
+
 "YANK TO THE END OF THE LINE
 nnoremap Y yg_
 
@@ -118,6 +125,14 @@ nnoremap Y yg_
 nnoremap <A-,> ^
 nnoremap <A-.> g_
 nnoremap <A-m> :exe 'normal ' . len(getline('.'))/2 . '\|'<CR>
+
+"MOVE LINE UP AND DOWN
+nnoremap <C-Down> :m .+1<CR>==
+nnoremap <C-Up> :m .-2<CR>==
+vnoremap <C-Down> :m '>+1<CR>gv=gv
+vnoremap <C-Up> :m '<-2<CR>gv=gv
+nnoremap <A-C-Up> yyP
+nnoremap <A-C-Down> yyp
 
 "COMMENT SHORTCUT
 vmap <A-x> <plug>NERDCommenterToggle
@@ -197,12 +212,18 @@ let g:coc_snippet_prev = '<S-Tab>'
 "COC RENAME
 nmap <F2> <Plug>(coc-rename)
 
+"CONFIG VIM CLOSETAG
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js'
+
 "EMMET FOR JSX
 augroup filetype_jsx
     autocmd!
     autocmd FileType javascript set filetype=javascriptreact
     autocmd FileType jsx set filetype=javascriptreact
 augroup END
+
+"SOURCE SYNTAX HIGHLIGHT FOR JAVASCRIPT
+map <Leader>js :runtime! syntax/javascript.vim<CR>
 
 "CONFIG INDENT LINE
 let g:indentLine_color_term = 238
@@ -275,10 +296,10 @@ nnoremap <A-Right> <C-w>L
 "RESIZE WINDOWS
 nnoremap _ <C-W>-
 nnoremap + <C-W>+
-nnoremap <S-Right> <C-W>>
-nnoremap <S-Left>  <C-W><
-nnoremap <S-Down>  <C-W>-
-nnoremap <S-Up>    <C-W>+
+nnoremap <A-NL> <C-W>-
+nnoremap <A-C-K> <C-W>+
+nnoremap <A-C-L> <C-W>>
+nnoremap <A-C-H>  <C-W><
 
 "SPLIT WINDOWS
 nnoremap <A-M-Bslash> :vs<CR>
@@ -286,10 +307,6 @@ nnoremap <A--> :sp<CR>
 
 "REMAP ESC TO jk
 "inoremap jk <ESC>
-
-"SPACE IS THE <Leader> KEY
-let mapleader=' '
-let maplocalleader=' '
 
 "SWITCH WINDOWS DIRECTION
 map <Leader>th <C-w>t<C-w>H

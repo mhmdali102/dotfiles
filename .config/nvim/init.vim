@@ -85,9 +85,8 @@ call plug#begin('~/.vim/autoload/plugged')
   "NVIM TREESITTER
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-  "CSS HEX COLORS
-  Plug 'ap/vim-css-color'
-  Plug 'KabbAmine/vCoolor.vim'
+  "VIM COLOR DISPLAY
+  Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 
   "DASHBOARD
   Plug 'glepnir/dashboard-nvim'
@@ -163,20 +162,16 @@ map <Leader>df :DiffviewFileHistory<CR>
 nmap <C-t> :CocCommand explorer<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 
-"TELESCOPE CONFIG
-"nmap <C-p> :Telescope find_files<CR>
-"map <Leader>gs :Telescope git_status<CR>
-"map <Leader>ts :Telescope treesitter<CR>
-"map <Leader>tp :Telescope builtin<CR>
-"lua << EOF
-"require('telescope').setup{
-  "defaults = {
-          "prompt_prefix = "$ ",
-          "file_ignore_patterns = {"./node_modules/*", "node_modules", "^node_modules/*", "node_modules/*"},
-      "},
-"}
-"require('telescope').load_extension('coc')
-"EOF
+"CONFIG HEXOKINASE
+let g:Hexokinase_highlighters = [ 'backgroundfull' ]
+let g:Hexokinase_ftEnabled = ['css', 'html', 'javascript']
+
+"CONFIG GIT GUTTER
+map <Leader>g] :GitGutterNextHunk<CR>
+map <Leader>g[ :GitGutterPrevHunk<CR>
+map <Leader>gp :GitGutterPreviewHunk<CR>
+map <Leader>gf :GitGutterFold<CR>
+map <Leader>gt :GitGutterLineHighlightsToggle<CR>
 
 "CONFIG FZF
 nmap <C-p> :GFiles<CR>
@@ -201,6 +196,20 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 "COCCONFIG
 source $HOME/.config/nvim/CocConfig.vim
+let g:coc_global_extensions = [
+  \ 'coc-snippets',
+  \ 'coc-prettier',
+  \ 'coc-html',
+  \ 'coc-explorer',
+  \ 'coc-eslint',
+  \ 'coc-emmet',
+  \ 'coc-cssmodules',
+  \ 'coc-tsserver',
+  \ 'coc-pyright',
+  \ 'coc-java',
+  \ 'coc-css',
+  \ 'coc-json',
+  \ ]
 
 "COC-CSS | SASS
 autocmd FileType scss setl iskeyword+=@-@
@@ -213,7 +222,7 @@ let g:coc_snippet_prev = '<S-Tab>'
 nmap <F2> <Plug>(coc-rename)
 
 "CONFIG VIM CLOSETAG
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js'
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js,*.jsx'
 
 "EMMET FOR JSX
 augroup filetype_jsx
@@ -228,9 +237,6 @@ map <Leader>js :runtime! syntax/javascript.vim<CR>
 "CONFIG INDENT LINE
 let g:indentLine_color_term = 238
 let g:indentLine_char_list = ['│']
-
-"CONFIG VCOOLOR
-let g:vcoolor_disable_mappings = 1
 
 "CONFIG LIGHTLINE
 let g:lightline = {
@@ -272,7 +278,7 @@ let g:everforest_background = "medium"
 
 "CONFIG AYU THEME = light | mirage | dark
 let ayucolor="mirage" 
-" set termguicolors
+set termguicolors
 
 "CONFIG GRUVBOX THEME = soft | default | hard
 let g:gruvbox_contrast_dark = 'default'

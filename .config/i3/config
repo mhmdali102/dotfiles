@@ -455,9 +455,6 @@ exec_always --no-startup-id setxkbmap -layout 'us,ara' -variant altgr-intl,qwert
 # start a script for battery popup
 exec --no-startup-id ~/.config/i3/scripts/battery-popup/i3-battery-popup -L 20
 
-# switch escape with caps lock keys
-exec --no-startup-id sleep 5 && setxkbmap -option caps:swapescape
-
 # transparency
 # uncomment one of them to be used (picom package is installed per default)
 # options could need changes, related to used GPU and drivers.
@@ -568,8 +565,6 @@ client.focused_inactive $darkgray $darkgray $lightgray $lightgray
 client.unfocused        $darkgray $darkgray $lightgray $lightgray
 client.urgent           $red $red $white $red
 
-
-exec --no-startup-id xset r rate 300 50 &
 
 ############################################
 # bar settings (input comes from i3blocks) #

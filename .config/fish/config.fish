@@ -12,3 +12,6 @@ thefuck --alias | source
 if test -n "$DESKTOP_SESSION"
     set -x (gnome-keyring-daemon --start | string split "=")
 end
+
+# suckless patching alias
+alias slmake="rm -rf config.h; sudo make clean install; make clean"

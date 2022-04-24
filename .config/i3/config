@@ -253,7 +253,7 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+d layout tabbed
+bindsym $mod+x layout tabbed
 bindsym $mod+a layout toggle split
 
 # toggle tiling / floating
@@ -353,6 +353,7 @@ bindsym $mod+u exec --no-startup-id $terminal -t music -e cmus
 bindsym $mod+o exec --no-startup-id $terminal -t music -e mocp
 bindsym $mod+e exec --no-startup-id notion-app-enhanced
 bindsym $mod+Shift+b exec --no-startup-id obs
+bindsym $mod+d exec --no-startup-id mpc toggle
 bindsym Print exec --no-startup-id "scrot ~/%Y-%m-%d-%T-screenshot.png"
 
 # Screenshot with flameshot and kill flameshot
@@ -495,6 +496,9 @@ exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
 #exec --no-startup-id sleep 2 && xfce4-terminal
 #exec --no-startup-id sleep 7 && firefox https://github.com/endeavouros-team/endeavouros-i3wm-setup/blob/main/force-knowledge.md
 #exec --no-startup-id sleep 3 && thunar
+
+# auto start mpd
+exec --no-startup-id mpd &
 
 ######################################
 # color settings for bar and windows #

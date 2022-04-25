@@ -18,13 +18,19 @@ xset +fp $HOME/.fonts
 
 /* nitrogen --restore & */
 dbus-launch dunst --config ~/.config/dunst/dunstrc &
-killall mpd && mpd &
+mpd &
+nm-applet &
 picom --experimental-backends &
-dwm-time &
 
 xset r rate 300 50
 numlockx on
 setxkbmap -layout 'us,ara' -variant altgr-intl,qwerty -option 'grp:alt_shift_toggle'
 setxkbmap -option caps:swapescape
+
+while true 
+do
+  xsetroot -name "$(date '+%H:%M')"
+  sleep 60
+done & 
 
 exec dwm

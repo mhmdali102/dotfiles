@@ -20,7 +20,7 @@ xset +fp $HOME/.fonts
 dbus-launch dunst --config ~/.config/dunst/dunstrc &
 killall mpd && mpd &
 picom --experimental-backends &
-/usr/bin/dwm-time &
+dwm-time &
 
 xset r rate 300 50
 numlockx on

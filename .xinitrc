@@ -16,19 +16,14 @@ fi
 # Prepend a custom font path to Xorg's list of known font paths
 xset +fp $HOME/.fonts 
 
-# swap cpaslock with escape
-exec setxkbmap -option caps:swapescape &
-
-exec xset r rate 300 50 &
-exec numlockx on &
-setxkbmap -layout 'us,ara' -variant altgr-intl,qwerty -option 'grp:alt_shift_toggle' &
-exec nitrogen --restore &
-exec dbus-launch dunst --config ~/.config/dunst/dunstrc &
+/* nitrogen --restore & */
+dbus-launch dunst --config ~/.config/dunst/dunstrc &
 mpd &
+picom --experimental-backends &
 
-# start picom
-if [ -f /usr/bin/picom ]; then
-  exec picom --experimental-backends --config ~/.config/picom/picom.conf &
-fi
+xset r rate 300 50
+numlockx on
+setxkbmap -layout 'us,ara' -variant altgr-intl,qwerty -option 'grp:alt_shift_toggle'
+setxkbmap -option caps:swapescape
 
 exec dwm

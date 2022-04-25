@@ -23,7 +23,7 @@
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Noto Sans Regular 10
+font pango:JetBrainsMono Nerd Font Mono 10
 
 # set the mod key to the winkey:
 set $mod Mod4
@@ -350,7 +350,6 @@ bindsym $mod+Shift+n exec --no-startup-id /usr/bin/thunar --class thunar_
 bindsym $mod+g exec --no-startup-id  $terminal -t ranger -e ranger 
 bindsym $mod+Shift+g exec --no-startup-id $terminal --hold -t Floating -e ranger 
 bindsym $mod+u exec --no-startup-id $terminal -t music -e cmus 
-bindsym $mod+o exec --no-startup-id $terminal -t music -e mocp
 bindsym $mod+e exec --no-startup-id notion-app-enhanced
 bindsym $mod+Shift+b exec --no-startup-id obs
 bindsym $mod+d exec --no-startup-id mpc toggle

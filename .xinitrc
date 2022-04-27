@@ -29,8 +29,19 @@ setxkbmap -option caps:swapescape
 
 while true 
 do
-  xsetroot -name "$(date '+%H:%M')"
-  sleep 60
+  R1=`cat /sys/class/net/wlan0/statistics/rx_bytes`
+  T1=`cat /sys/class/net/wlan0/statistics/tx_bytes`
+  sleep 1
+  R2=`cat /sys/class/net/wlan0/statistics/rx_bytes`
+  T2=`cat /sys/class/net/wlan0/statistics/tx_bytes`
+  BC=`cat /sys/class/power_supply/BAT0/capacity`
+  BS=`cat /sys/class/power_supply/BAT0/status`
+  TBPS=`expr $T2 - $T1`
+  RBPS=`expr $R2 - $R1`
+  TKBPS=`expr $TBPS / 1024`
+  RKBPS=`expr $RBPS / 1024`
+  xsetroot -name "$RKBPS ⇵ $TKBPS | $(xkblayout) | $BC ${BS:0:1} | $(date '+%H:%M') |"
+  sleep 1
 done & 
 
 exec dwm

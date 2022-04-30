@@ -244,6 +244,11 @@ _G.packer_plugins = {
     path = "/home/mhmdali102/.local/share/nvim/site/pack/packer/start/project.nvim",
     url = "https://github.com/ahmedkhalf/project.nvim"
   },
+  ["quick-scope"] = {
+    loaded = true,
+    path = "/home/mhmdali102/.local/share/nvim/site/pack/packer/start/quick-scope",
+    url = "https://github.com/unblevable/quick-scope"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/mhmdali102/.local/share/nvim/site/pack/packer/start/telescope.nvim",

@@ -99,6 +99,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias slmake="rm -rf config.h; sudo make clean install; make clean"
+
 # Enable colors and change prompt:
 autoload -U colors && colors
 
@@ -161,5 +163,8 @@ bindkey -s '^o' 'rangercd\n'
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
+
+# set nvim as default text editor
+export EDITOR=/usr/bin/nvim
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null

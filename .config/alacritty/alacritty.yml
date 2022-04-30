@@ -1,4 +1,4 @@
-window.opacity: .9
+window.opacity: .7
 
 font:
   normal:
@@ -44,12 +44,6 @@ selection:
 
 live_config_reload: true
 
-#######################################
-##      START OF COLOR SCHEMES       ##
-##  Credit : from Distro Tube repo   ## 
-##  https://gitlab.com/dwt1/dotfiles ##
-##       THANK YOU DEREK TYLOR       ##
-#######################################
 schemes:
   ### Gruvbox dark ###
   gruvbox-dark: &gruvbox-dark
@@ -109,17 +103,73 @@ schemes:
       blue:    '#81A1C1'
       magenta: '#B48EAD'
       cyan:    '#8FBCBB'
-      white:   '#ECEFF4'
-      
-######################################################################
-## SET THEME: Choose ONE color scheme from those in the above list. ##
-## ###################################################################
+
+  oxide: &oxide
+    primary:
+      background: '#242424'
+      foreground: '#AAAAAA'
+      bright_foreground: '#f3f4f5'
+
+    cursor:
+      text: '#242424'
+      cursor: '#AAAAAA'
+
+    # Normal colors
+    normal:
+      black:   '#242424'
+      red:     '#e57373'
+      green:   '#a6bc69'
+      yellow:  '#fac863'
+      blue:    '#6699cc'
+      magenta: '#c594c5'
+      cyan:    '#5fb3b3'
+      white:   '#AAAAAA'
+
+    # Bright colors
+    bright:
+      black:   '#5c5c5c'
+      red:     '#e57373'
+      green:   '#a6bc69'
+      yellow:  '#fac863'
+      blue:    '#6699cc'
+      magenta: '#c594c5'
+      cyan:    '#5fb3b3'
+      white:   '#f3f4f5'
+
+  tomorrow: &tomorrow
+     primary:
+        background: '#1d1f21'
+        foreground: '#c5c8c6'
+
+     cursor:
+       text: '#1d1f21'
+       cursor: '#ffffff'
+
+     # Normal colors
+     normal:
+       black:   '#1d1f21'
+       red:     '#cc6666'
+       green:   '#b5bd68'
+       yellow:  '#e6c547'
+       blue:    '#81a2be'
+       magenta: '#b294bb'
+       cyan:    '#70c0ba'
+       white:   '#373b41'
+
+     # Bright colors
+     bright:
+       black:   '#666666'
+       red:     '#ff3334'
+       green:   '#9ec400'
+       yellow:  '#f0c674'
+       blue:    '#81a2be'
+       magenta: '#b77ee0'
+       cyan:    '#54ced6'
+       white:   '#282a2e'
+
 # Available themes are:
 # *gruvbox-dark
 # *nord
+# *oxide
 
-colors: *gruvbox-dark
-
-#######################################
-##       END OF COLOR SCHEMES        ##
-#######################################
+colors: *tomorrow

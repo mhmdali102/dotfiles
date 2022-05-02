@@ -72,6 +72,7 @@ ZSH_THEME="rkj-repos"
 # Add wisely, as too many plugins slow down shell startup.
 
 source $ZSH/oh-my-zsh.sh
+plugins=
 
 # User configuration
 

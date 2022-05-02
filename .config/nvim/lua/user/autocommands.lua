@@ -28,6 +28,12 @@ vim.cmd [[
     autocmd!
     autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
   augroup end
+
+  augroup filetype_jsx
+      autocmd!
+      autocmd FileType javascript set filetype=javascriptreact
+      autocmd FileType jsx set filetype=javascriptreact
+  augroup END
 ]]
 
 -- Autoformat

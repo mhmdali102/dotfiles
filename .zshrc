@@ -72,9 +72,14 @@ ZSH_THEME="rkj-repos"
 # Add wisely, as too many plugins slow down shell startup.
 
 source $ZSH/oh-my-zsh.sh
-plugins=
-
+plugins=( 
+    # other plugins...
+    zsh-autosuggestions
+)
 # User configuration
+
+# activate zsh-autosuggestions
+source $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -101,6 +106,7 @@ plugins=
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias slmake="rm -rf config.h; sudo make clean install; make clean"
+alias cap="sudo create_ap wlan0 wlan0 ArchNetwork Mah1022002 --hidden"
 
 # Enable colors and change prompt:
 autoload -U colors && colors

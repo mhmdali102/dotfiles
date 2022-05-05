@@ -35,21 +35,6 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<A-k>", ":bnext<CR>", opts)
 keymap("n", "<A-j>", ":bprevious<CR>", opts)
 
---TAB NAVIGATION
-keymap("n",  "<A-j>", "gT", opts)
-keymap("n",  "<A-k>", "gt", opts)
-keymap("n",  "<A-h>", ":tabm -1<CR>", opts)
-keymap("n",  "<A-l>", ":tabm +1<CR>", opts)
-keymap("n",  "1", "1gt", opts)
-keymap("n",  "2", "2gt", opts)
-keymap("n",  "3", "3gt", opts)
-keymap("n",  "4", "4gt", opts)
-keymap("n",  "5", "5gt", opts)
-keymap("n",  "6", "6gt", opts)
-keymap("n",  "7", "7gt", opts)
-keymap("n",  "8", "8gt", opts)
-keymap("n",  "9", "9gt", opts)
-
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)

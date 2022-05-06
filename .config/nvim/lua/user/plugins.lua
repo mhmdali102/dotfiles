@@ -60,6 +60,7 @@ return packer.startup(function(use)
   use "folke/which-key.nvim"
   use 'norcalli/nvim-colorizer.lua'
   use 'unblevable/quick-scope'
+  use 'xiyaowong/nvim-transparent'
 
   -- Colorschemes
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out

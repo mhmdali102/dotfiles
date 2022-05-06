@@ -1,5 +1,3 @@
-window.opacity: .7
-
 font:
   normal:
     ramily: "JetBrainsMono Nerd Font Mono"
@@ -22,6 +20,7 @@ font:
     y: 0
 
 window:
+  opacity: 0.5
   padding:
     x: 0
     y: 0

@@ -68,6 +68,7 @@ return packer.startup(function(use)
   use "ellisonleao/gruvbox.nvim"
   use "lunarvim/darkplus.nvim"
   use "jacoborus/tender.vim"
+  use 'shaunsingh/nord.nvim'
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin

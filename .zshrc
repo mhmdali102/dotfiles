@@ -107,6 +107,7 @@ source $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.z
 
 alias slmake="rm -rf config.h; sudo make clean install; make clean"
 alias cap="sudo create_ap wlan0 wlan0 ArchNetwork Mah1022002 --hidden"
+alias :q="exit"
 
 # Enable colors and change prompt:
 autoload -U colors && colors

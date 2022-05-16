@@ -20,7 +20,7 @@ font:
     y: 0
 
 window:
-  opacity: 0.75
+  opacity: 0.9
   padding:
     x: 0
     y: 0
@@ -42,6 +42,9 @@ selection:
   save_to_clipboard: true
 
 live_config_reload: true
+
+key_bindings:
+  - { key: N, mods: Control|Shift, command: { program: "/bin/bash", args: ["-c", "/usr/local/bin/spawn-alacritty-cwd"] } }
 
 schemes:
   ### Gruvbox dark ###
@@ -139,4 +142,4 @@ schemes:
 # *nord
 # *tomorrow
 
-colors: *tomorrow
+colors: *nord

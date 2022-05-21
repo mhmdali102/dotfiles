@@ -17,9 +17,10 @@ fi
 xset +fp $HOME/.fonts 
 
 /* nitrogen --restore & */
-nitrogen --set-zoom-fill $HOME/Pictures/Wallpapers/Nord/ign_unsplash27.png &
+nitrogen --set-zoom-fill $HOME/Pictures/Wallpapers/Nord/ign_unsplash44.png &
 dbus-launch dunst --config ~/.config/dunst/dunstrc &
 mpd &
+kdeconnect-indicator &
 nm-applet &
 picom --experimental-backends &
 
@@ -30,11 +31,11 @@ setxkbmap -option caps:swapescape
 
 while true 
 do
-  R1=`cat /sys/class/net/wlan0/statistics/rx_bytes`
-  T1=`cat /sys/class/net/wlan0/statistics/tx_bytes`
+  R1=`cat /sys/class/net/wlan1/statistics/rx_bytes`
+  T1=`cat /sys/class/net/wlan1/statistics/tx_bytes`
   sleep 1
-  R2=`cat /sys/class/net/wlan0/statistics/rx_bytes`
-  T2=`cat /sys/class/net/wlan0/statistics/tx_bytes`
+  R2=`cat /sys/class/net/wlan1/statistics/rx_bytes`
+  T2=`cat /sys/class/net/wlan1/statistics/tx_bytes`
   BC=`cat /sys/class/power_supply/BAT0/capacity`
   BS=`cat /sys/class/power_supply/BAT0/status`
   TBPS=`expr $T2 - $T1`

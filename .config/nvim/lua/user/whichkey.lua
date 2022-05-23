@@ -97,6 +97,15 @@ local mappings = {
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
   ["T"] = { "<cmd>TransparentToggle<cr>", "Toggle Transparent" },
 
+  d = {
+    name = "DiffView",
+    o = {"<cmd>DiffviewOpen<CR>", "Open"},
+    c = {"<cmd>DiffviewClose<CR>", "Close"},
+    t = {"<cmd>DiffviewToggleFiles<CR>", "Toggle Files Panel"},
+    f = {"<cmd>DiffviewFocusFiles<CR>", "Focus Files Panel"},
+    r = {"<cmd>DiffviewRefresh<CR>", "Refresh"},
+  },
+
   p = {
     name = "Packer",
     c = { "<cmd>PackerCompile<cr>", "Compile" },

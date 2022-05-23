@@ -60,6 +60,7 @@ return packer.startup(function(use)
   use 'norcalli/nvim-colorizer.lua'
   use 'unblevable/quick-scope'
   use 'xiyaowong/nvim-transparent'
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
   -- Colorschemes
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out

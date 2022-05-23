@@ -45,6 +45,7 @@ keymap("n", "<A-6>", "6gt", opts)
 keymap("n", "<A-7>", "7gt", opts)
 keymap("n", "<A-8>", "8gt", opts)
 keymap("n", "<A-9>", "9gt", opts)
+keymap("n", "<A-0>", "<cmd>tablast<CR>", opts)
 
 -- Insert --
 -- Press jk fast to enter

@@ -20,7 +20,7 @@ xset +fp $HOME/.fonts
 nitrogen --set-zoom-fill $HOME/Pictures/Wallpapers/Nord/ign_unsplash44.png &
 dbus-launch dunst --config ~/.config/dunst/dunstrc &
 mpd &
-kdeconnect-indicator &
+/* kdeconnect-indicator & */
 nm-applet &
 picom --experimental-backends &
 

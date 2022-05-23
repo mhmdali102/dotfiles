@@ -31,9 +31,20 @@ keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
--- Navigate buffers
-keymap("n", "<A-k>", ":bnext<CR>", opts)
-keymap("n", "<A-j>", ":bprevious<CR>", opts)
+-- Navigate tabs
+keymap("n", "<A-j>", "gT", opts)
+keymap("n", "<A-k>", "gt", opts)
+keymap("n", "<A-h>", ":tabm -1<CR>", opts)
+keymap("n", "<A-l>", ":tabm +1<CR>", opts)
+keymap("n", "<A-1>", "1gt", opts)
+keymap("n", "<A-2>", "2gt", opts)
+keymap("n", "<A-3>", "3gt", opts)
+keymap("n", "<A-4>", "4gt", opts)
+keymap("n", "<A-5>", "5gt", opts)
+keymap("n", "<A-6>", "6gt", opts)
+keymap("n", "<A-7>", "7gt", opts)
+keymap("n", "<A-8>", "8gt", opts)
+keymap("n", "<A-9>", "9gt", opts)
 
 -- Insert --
 -- Press jk fast to enter

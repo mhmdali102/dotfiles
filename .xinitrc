@@ -18,6 +18,7 @@ xset +fp $HOME/.fonts
 
 /* nitrogen --restore & */
 nitrogen --set-zoom-fill $HOME/Pictures/Wallpapers/Nord/ign_unsplash44.png &
+/* ~/.config/i3/scripts/live-wallpaper/wallpaper-wrap & */
 dbus-launch dunst --config ~/.config/dunst/dunstrc &
 mpd &
 /* kdeconnect-indicator & */

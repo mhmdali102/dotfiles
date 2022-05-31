@@ -1,12 +1,12 @@
 font:
   normal:
-    ramily: "JetBrainsMono Nerd Font Mono"
+    family: "JetBrainsMono Nerd Font Mono"
     style: Regular
   bold:
-    ramily: "JetBrainsMono Nerd Font Mono"
+    family: "JetBrainsMono Nerd Font Mono"
     style: Bold
   light:
-    ramily: "JetBrainsMono Nerd Font Mono"
+    family: "JetBrainsMono Nerd Font Mono"
     style: Light
 
   # Point size

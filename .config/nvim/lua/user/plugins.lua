@@ -62,6 +62,8 @@ return packer.startup(function(use)
   use 'xiyaowong/nvim-transparent'
   use 'crispgm/nvim-tabline'
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+  use "karb94/neoscroll.nvim"
+  use "ThePrimeagen/harpoon"
 
   -- Colorschemes
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out

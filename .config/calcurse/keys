@@ -16,7 +16,7 @@ generic-reload  r R
 generic-copy  y Y 
 generic-paste  p P 
 generic-change-view  ^P 
-generic-prev-view  ^N
+generic-prev-view  ^N 
 generic-import  i I 
 generic-export  x X 
 generic-goto  g G 

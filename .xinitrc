@@ -16,8 +16,7 @@ fi
 # Prepend a custom font path to Xorg's list of known font paths
 xset +fp $HOME/.fonts 
 
-/* nitrogen --restore & */
-nitrogen --set-zoom-fill $HOME/Pictures/Wallpapers/Nord/ign_unsplash44.png &
+feh --bg-fill $HOME/Pictures/Wallpapers/Nord/ign_unsplash44.png &
 /* ~/.config/i3/scripts/live-wallpaper/wallpaper-wrap & */
 dbus-launch dunst --config ~/.config/dunst/dunstrc &
 mpd &

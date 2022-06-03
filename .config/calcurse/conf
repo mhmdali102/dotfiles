@@ -15,7 +15,7 @@ appearance.todoview=show-completed
 # DAEMON
 # ==============================
 
-daemon.enable=no
+daemon.enable=yes
 daemon.log=no
 
 # ==============================
@@ -43,7 +43,7 @@ general.periodicsave=0
 # ==============================
 
 notification.command=printf '\a'
-notification.notifyall=flagged-only
+notification.notifyall=all
 notification.warning=300
 appearance.headerline=yes
 appearance.eventseparator=yes

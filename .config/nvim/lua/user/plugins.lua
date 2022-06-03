@@ -64,6 +64,7 @@ return packer.startup(function(use)
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   use "karb94/neoscroll.nvim"
   use "ThePrimeagen/harpoon"
+  use "nyngwang/NeoZoom.lua"
 
   -- Colorschemes
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out

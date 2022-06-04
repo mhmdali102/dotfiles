@@ -50,11 +50,11 @@ keymap("n", "<A-0>", "<cmd>tablast<CR>", opts)
 -- Harpoon
 keymap("n", "<Leader>u", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", opts)
 keymap("n", "<Leader>A", "<cmd>lua require('harpoon.mark').add_file()<cr>", opts)
-keymap("n", "<Leader>1", "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", opts)
-keymap("n", "<Leader>2", "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", opts)
-keymap("n", "<Leader>3", "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", opts)
-keymap("n", "<Leader>4", "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", opts)
-keymap("n", "<Leader>5", "<cmd>lua require('harpoon.ui').nav_file(5)<cr>", opts)
+
+for i = 1,9
+do
+  keymap("n", string.format("<Leader>%s", i), string.format("<cmd>lua require('harpoon.ui').nav_file(%s)<cr>", i), opts)
+end
 
 -- Insert --
 -- Press jk fast to enter

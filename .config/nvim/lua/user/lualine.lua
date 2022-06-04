@@ -21,13 +21,13 @@ local diff = {
 	"diff",
 	colored = false,
 	symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
-  cond = hide_in_width
+  cond = hide_in_width,
 }
 
 local mode = {
 	"mode",
 	fmt = function(str)
-		return "-- " .. str .. " --"
+		return "[" .. str:sub(0,1) .. "]"
 	end,
 }
 
@@ -48,18 +48,14 @@ local location = {
 	padding = 0,
 }
 
--- cool function for progress
-local progress = function()
-	local current_line = vim.fn.line(".")
-	local total_lines = vim.fn.line("$")
-	local chars = { "__", "▁▁", "▂▂", "▃▃", "▄▄", "▅▅", "▆▆", "▇▇", "██" }
-	local line_ratio = current_line / total_lines
-	local index = math.ceil(line_ratio * #chars)
-	return chars[index]
+local spaces = function()
+	return "ﲖ " .. vim.api.nvim_buf_get_option(0, "shiftwidth") .. ""
 end
 
-local spaces = function()
-	return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
+-- integrate with nvim-gps
+local gps_status_ok, gps = pcall(require, "nvim-gps")
+if not gps_status_ok then
+  print("nvim-gps required for lualine")
 end
 
 lualine.setup({
@@ -67,19 +63,19 @@ lualine.setup({
 		icons_enabled = true,
 		theme = "auto",
 		component_separators = { left = "│", right = "│" },
-		section_separators = { left = "", right = "" },
+		section_separators = { left = "", right = "" },
 		disabled_filetypes = { "dashboard", "NvimTree", "Outline", "alpha" },
-		always_divide_middle = true,
+		always_divide_middle = false,
     globalstatus = true,
 	},
 	sections = {
-		lualine_a = { branch, diagnostics },
-		lualine_b = { "filename", "filesize" },
-		lualine_c = { mode },
+		lualine_a = { mode, "filename", "filesize" },
+		lualine_b = { branch, diagnostics },
+		lualine_c = { { gps.get_location, cond = gps.is_available } },
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
-		lualine_x = { diff, spaces, "encoding", filetype },
-		lualine_y = { location, progress  },
-		lualine_z = { "os.date('%H:%M')" },
+		lualine_x = { diff },
+		lualine_y = { filetype, spaces, "encoding"},
+		lualine_z = { location, "os.date('%H:%M')" },
 	},
 	inactive_sections = {
 		lualine_a = {},

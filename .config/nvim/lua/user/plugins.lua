@@ -64,6 +64,8 @@ return packer.startup(function(use)
   use "karb94/neoscroll.nvim"
   use "ThePrimeagen/harpoon"
   use "nyngwang/NeoZoom.lua"
+  use { "SmiteshP/nvim-gps", requires = "nvim-treesitter/nvim-treesitter" }
+  use "rcarriga/nvim-notify"
 
   -- Colorschemes
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out

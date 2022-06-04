@@ -78,25 +78,11 @@ local opts = {
   nowait = true, -- use `nowait` when creating keymaps
 }
 
-local m_opts = {
-  mode = "n", -- NORMAL mode
-  prefix = "m",
-  buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-  silent = true, -- use `silent` when creating keymaps
-  noremap = true, -- use `noremap` when creating keymaps
-  nowait = true, -- use `nowait` when creating keymaps
-}
-
-local m_mappings = {
-  h = { '<cmd>lua require("harpoon.mark").add_file()<cr>', "Harpoon" },
-  u = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', "Harpoon UI" },
-}
-
 local mappings = {
   ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
   ["b"] = {
     "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-   "Buffers",
+    "Buffers",
   },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["w"] = { "<cmd>w<CR>", "Save" },
@@ -109,15 +95,14 @@ local mappings = {
   },
   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
-  ["T"] = { "<cmd>TransparentToggle<cr>", "Toggle Transparent" },
 
   d = {
     name = "DiffView",
-    o = {"<cmd>DiffviewOpen<CR>", "Open"},
-    c = {"<cmd>DiffviewClose<CR>", "Close"},
-    t = {"<cmd>DiffviewToggleFiles<CR>", "Toggle Files Panel"},
-    f = {"<cmd>DiffviewFocusFiles<CR>", "Focus Files Panel"},
-    r = {"<cmd>DiffviewRefresh<CR>", "Refresh"},
+    o = { "<cmd>DiffviewOpen<CR>", "Open" },
+    c = { "<cmd>DiffviewClose<CR>", "Close" },
+    t = { "<cmd>DiffviewToggleFiles<CR>", "Toggle Files Panel" },
+    f = { "<cmd>DiffviewFocusFiles<CR>", "Focus Files Panel" },
+    r = { "<cmd>DiffviewRefresh<CR>", "Refresh" },
   },
 
   p = {
@@ -209,4 +194,3 @@ local mappings = {
 
 which_key.setup(setup)
 which_key.register(mappings, opts)
-which_key.register(m_mappings, m_opts)

@@ -59,7 +59,6 @@ return packer.startup(function(use)
   use "folke/which-key.nvim"
   use 'norcalli/nvim-colorizer.lua'
   use 'unblevable/quick-scope'
-  use 'xiyaowong/nvim-transparent'
   use 'crispgm/nvim-tabline'
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   use "karb94/neoscroll.nvim"
@@ -73,6 +72,7 @@ return packer.startup(function(use)
   use "lunarvim/darkplus.nvim"
   use "jacoborus/tender.vim"
   use 'shaunsingh/nord.nvim'
+  use "rose-pine/neovim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin

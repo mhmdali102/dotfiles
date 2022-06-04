@@ -179,6 +179,11 @@ _G.packer_plugins = {
     path = "/home/mhmdali102/.local/share/nvim/site/pack/packer/start/neoscroll.nvim",
     url = "https://github.com/karb94/neoscroll.nvim"
   },
+  neovim = {
+    loaded = true,
+    path = "/home/mhmdali102/.local/share/nvim/site/pack/packer/start/neovim",
+    url = "https://github.com/rose-pine/neovim"
+  },
   ["nlsp-settings.nvim"] = {
     loaded = true,
     path = "/home/mhmdali102/.local/share/nvim/site/pack/packer/start/nlsp-settings.nvim",
@@ -223,11 +228,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mhmdali102/.local/share/nvim/site/pack/packer/start/nvim-tabline",
     url = "https://github.com/crispgm/nvim-tabline"
-  },
-  ["nvim-transparent"] = {
-    loaded = true,
-    path = "/home/mhmdali102/.local/share/nvim/site/pack/packer/start/nvim-transparent",
-    url = "https://github.com/xiyaowong/nvim-transparent"
   },
   ["nvim-tree.lua"] = {
     loaded = true,

@@ -47,6 +47,15 @@ keymap("n", "<A-8>", "8gt", opts)
 keymap("n", "<A-9>", "9gt", opts)
 keymap("n", "<A-0>", "<cmd>tablast<CR>", opts)
 
+-- Harpoon
+keymap("n", "<Leader>u", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", opts)
+keymap("n", "<Leader>A", "<cmd>lua require('harpoon.mark').add_file()<cr>", opts)
+keymap("n", "<Leader>1", "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", opts)
+keymap("n", "<Leader>2", "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", opts)
+keymap("n", "<Leader>3", "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", opts)
+keymap("n", "<Leader>4", "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", opts)
+keymap("n", "<Leader>5", "<cmd>lua require('harpoon.ui').nav_file(5)<cr>", opts)
+
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
@@ -65,13 +74,6 @@ keymap("v", "p", '"_dP', opts)
 -- Move text up and down
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
-
--- Terminal --
--- Better terminal navigation
--- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
--- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
--- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
--- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Other
 -- keep cursor centered

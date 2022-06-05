@@ -1,7 +1,5 @@
 local opts = { noremap = true, silent = false }
 
-local term_opts = { silent = true }
-
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
@@ -48,9 +46,6 @@ keymap("n", "<A-9>", "9gt", opts)
 keymap("n", "<A-0>", "<cmd>tablast<CR>", opts)
 
 -- Harpoon
-keymap("n", "<Leader>u", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", opts)
-keymap("n", "<Leader>A", "<cmd>lua require('harpoon.mark').add_file()<cr>", opts)
-
 for i = 1,9
 do
   keymap("n", string.format("<Leader>%s", i), string.format("<cmd>lua require('harpoon.ui').nav_file(%s)<cr>", i), opts)

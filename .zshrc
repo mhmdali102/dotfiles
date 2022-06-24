@@ -108,8 +108,11 @@ source $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.z
 alias slmake="rm -rf config.h; sudo make clean install; make clean"
 alias cap="sudo create_ap wlan0 wlan0 ArchNetwork Mah1022002 --hidden"
 alias nvd="__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia"
+alias ytmp4="mpv --ytdl --ytdl-format='bestvideo[height=480]+bestaudio' --tls-verify"
+alias ytmp3="mpv --ytdl --ytdl-format='bestvideo[height=480]+bestaudio' --tls-verify --no-video"
 alias :q="exit"
 
+pacman-colorscript
 # Enable colors and change prompt:
 autoload -U colors && colors
 

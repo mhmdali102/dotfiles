@@ -16,9 +16,10 @@ fi
 # Prepend a custom font path to Xorg's list of known font paths
 xset +fp $HOME/.fonts 
 
-feh --bg-fill $HOME/Pictures/Wallpapers/Nord/ign_unsplash44.png &
+feh --bg-fill $HOME/Pictures/Wallpapers/landscape/nasa-HWIOLU7_O6w-unsplash.jpg &
 /* ~/.config/i3/scripts/live-wallpaper/wallpaper-wrap & */
 dbus-launch dunst --config ~/.config/dunst/dunstrc &
+/usr/bin/battery-notify &
 mpd &
 /* kdeconnect-indicator & */
 nm-applet &

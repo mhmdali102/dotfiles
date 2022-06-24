@@ -20,5 +20,5 @@ color=$BLOCK_INSTANCE
 # sleep to cater to grabc startup time
 sleep 0.25
 value=$(grabc 2>/dev/null)
-i3-msg -q exec "xclip -sel clip < <(echo -n \\$value)"
+xclip -sel clip < <(echo -n $value)
 notify-send "Copied to clipboard: $value"

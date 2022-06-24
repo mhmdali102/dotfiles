@@ -7,7 +7,7 @@ appearance.compactpanels=no
 appearance.defaultpanel=calendar
 appearance.layout=1
 appearance.notifybar=yes
-appearance.sidebarwidth=25
+appearance.sidebarwidth=30
 appearance.theme=blue on default
 appearance.todoview=show-completed
 

@@ -1,4 +1,5 @@
 userresources=$HOME/.Xresources
+export BROWSER=/usr/bin/firefox-developer-edition
 
 if [ -f "$userresources" ]; then
     xrdb -merge "$userresources"
@@ -13,13 +14,18 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
     unset f
 fi
 
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.bin" ] ; then
+    PATH="$HOME/.bin:$PATH"
+fi
+
 # Prepend a custom font path to Xorg's list of known font paths
 xset +fp $HOME/.fonts 
 
 feh --bg-fill $HOME/Pictures/Wallpapers/landscape/nasa-HWIOLU7_O6w-unsplash.jpg &
 /* ~/.config/i3/scripts/live-wallpaper/wallpaper-wrap & */
 dbus-launch dunst --config ~/.config/dunst/dunstrc &
-/usr/bin/battery-notify &
+$HOME/.bin/battery-notify &
 mpd &
 /* kdeconnect-indicator & */
 nm-applet &

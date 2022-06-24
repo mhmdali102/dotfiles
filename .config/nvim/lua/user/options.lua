@@ -14,7 +14,7 @@ local options = {
   smartcase = true,                        -- smart case
   smartindent = true,                      -- make indenting smarter again
   splitbelow = true,                       -- force all horizontal splits to go below current window
-  splitright = true,                       -- force all vertical splits to go to the right of current window
+  splitright = false,                       -- force all vertical splits to go to the right of current window
   swapfile = false,                        -- creates a swapfile
   termguicolors = true,                    -- set term gui colors (most terminals support this)
   timeoutlen = 0,                        -- time to wait for a mapped sequence to complete (in milliseconds)
@@ -32,7 +32,8 @@ local options = {
   wrap = false,                            -- display lines as one long line
   scrolloff = 8,                           -- is one of my fav
   sidescrolloff = 8,
-  guifont = "monospace:h17",               -- the font used in graphical neovim applications
+  list = true,
+  listchars = "tab:>\\ ,trail:·,eol:$,extends:›,precedes:‹",
 }
 
 vim.opt.shortmess:append "c"

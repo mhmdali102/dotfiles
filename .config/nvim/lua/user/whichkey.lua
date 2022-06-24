@@ -14,7 +14,7 @@ local setup = {
     -- the presets plugin, adds help for a bunch of default keybindings in Neovim
     -- No actual key bindings are created
     presets = {
-      operators = false, -- adds help for operators like d, y, ... and registers them for motion / text object completion
+      operators = true, -- adds help for operators like d, y, ... and registers them for motion / text object completion
       motions = true, -- adds help for motions
       text_objects = true, -- help for text objects triggered after entering an operator
       windows = true, -- default bindings on <c-w>
@@ -86,7 +86,7 @@ local mappings = {
   },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["w"] = { "<cmd>w<CR>", "Save" },
-  ["q"] = { "<cmd>q<CR>", "Quit" },
+  ["C"] = { "<cmd>:w|%bd|e#<CR>", "Clean Buffers" },
   ["c"] = { "<cmd>tabclose<CR>", "Close Tab" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
   ["f"] = {
@@ -98,6 +98,7 @@ local mappings = {
   ["u"] = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon UI" },
   ["A"] = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Add file" },
   ["S"] = { "<cmd>source ~/.config/nvim/init.lua<cr>", "Source conf" },
+  ["j"] = { "<cmd>split | term java %<CR>", "Run Java" },
 
   d = {
     name = "DiffView",

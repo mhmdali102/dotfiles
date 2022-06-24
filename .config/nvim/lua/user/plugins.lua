@@ -57,7 +57,6 @@ return packer.startup(function(use)
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
   use 'norcalli/nvim-colorizer.lua'
-  use 'unblevable/quick-scope'
   use 'crispgm/nvim-tabline'
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   use "karb94/neoscroll.nvim"
@@ -65,6 +64,11 @@ return packer.startup(function(use)
   use "nyngwang/NeoZoom.lua"
   use { "SmiteshP/nvim-gps", requires = "nvim-treesitter/nvim-treesitter" }
   use "rcarriga/nvim-notify"
+  use { "phaazon/hop.nvim",
+    config = function()
+      require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+    end
+  }
 
   -- Colorschemes
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out

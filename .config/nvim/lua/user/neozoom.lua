@@ -11,6 +11,4 @@ neozoom.setup {
   border = 'none',
 }
 
-vim.keymap.set('n', '<CR>', function()
-  vim.cmd('NeoZoomToggle')
-end)
+vim.keymap.set('n', '<A-f>', '<cmd>NeoZoomToggle<CR>')

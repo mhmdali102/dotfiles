@@ -57,7 +57,7 @@ nvim_tree.setup {
   },
   open_on_tab = false,
   hijack_cursor = false,
-  update_cwd = true,
+  update_cwd = false,
   diagnostics = {
     enable = true,
     icons = {
@@ -109,7 +109,7 @@ nvim_tree.setup {
     open_file = {
       quit_on_open = true,
       window_picker = {
-        enable = false,
+        enable = true,
       },
     },
   },

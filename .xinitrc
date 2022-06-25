@@ -25,6 +25,7 @@ xset +fp $HOME/.fonts
 feh --bg-fill $HOME/Pictures/night-mountain.jpg &
 dbus-launch dunst --config ~/.config/dunst/dunstrc &
 $HOME/.bin/battery-notify &
+redshift &
 mpd &
 /* kdeconnect-indicator & */
 nm-applet &

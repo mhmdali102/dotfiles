@@ -3,9 +3,9 @@
  * Maintainer: joekamprad <joekamprad@endeavouros.com>
  *******************************************************/
 configuration {
-    font:                           "Sourcecode Pro Regular 10";
+    font:                           "JetBrainsMono Nerd Font Mono";
     show-icons:                     false;
-    icon-theme: 		    "Arc-X-D";
+    icon-theme: 		    "nordzy-dark";
     scroll-method:                  0;
     disable-history:                false;
     sidebar-mode: 		    false;

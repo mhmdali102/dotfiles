@@ -23,13 +23,13 @@ function mygit() {
   if [[ "$(git config --get oh-my-zsh.hide-status)" != "1" ]]; then
     ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
     ref=$(command git rev-parse --short HEAD 2> /dev/null) || return
-    echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$(git_prompt_short_sha)$(git_prompt_status)%{$fg_bold[blue]%}$ZSH_THEME_GIT_PROMPT_SUFFIX "
+    echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$(git_prompt_short_sha)$(git_prompt_status)%{$fg_bold[blue]%}$ZSH_THEME_GIT_PROMPT_SUFFIX"
   fi
 }
 
 function retcode() {}
 
 # alternate prompt with git & hg
-PROMPT=$'%{$fg_bold[blue]%}┌─[%{$fg_bold[green]%}%n%b%{$fg[magenta]%}@%{$fg[cyan]%}%m%{$fg_bold[blue]%}] - <$(mygit)$(hg_prompt_info)%{$reset_color%} -  %{$fg_bold[blue]%}[%b%{$fg[yellow]%}'%D{"%I:%M:%S"}%b$'%{$fg_bold[blue]%}]
+PROMPT=$'%{$fg_bold[blue]%}┌─[%{$fg_bold[green]%}%n%b%{$fg[magenta]%}@%{$fg[cyan]%}%m%{$fg_bold[blue]%}] - <$(mygit)>$(hg_prompt_info)%{$reset_color%} -  %{$fg_bold[blue]%}[%b%{$fg[yellow]%}'%D{"%I:%M:%S"}%b$'%{$fg_bold[blue]%}]
 %{$fg_bold[blue]%}└─[%{$fg_bold[magenta]%}%?$(retcode)%{$fg_bold[blue]%}] %{$fg_bold[blue]%}[%{$fg_bold[default]%}%~%{$fg_bold[blue]%}] > %{$reset_color%}'
 PS2=$' \e[0;34m%}%B>%{\e[0m%}%b '

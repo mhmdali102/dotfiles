@@ -12,7 +12,9 @@
     "repeat": "r",
     "view": "v",
     "favourates_add": "a",
-    "favourates_remove": "u"
+    "favourates_remove": "u",
+    "vol_increase": "=",
+    "vol_decrease": "-"
   },
   "Colors": {
     "border_idle": [
@@ -87,7 +89,8 @@
       "music:",
       "playlist:",
       "artist:"
-    ]
+    ],
+  "volume_step": 5
   },
   "MpvOptions": {
     "config_path": "/home/mhmdali102/.config/ytui_music"

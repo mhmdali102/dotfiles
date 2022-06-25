@@ -69,12 +69,11 @@ return packer.startup(function(use)
       require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
     end
   }
-  use {
-
-    "iamcco/markdown-preview.nvim",
-    run = "cd app && yarn install",
-    ft = "markdown",
-  }
+--  use {
+--    "iamcco/markdown-preview.nvim",
+--    run = "cd app && yarn install",
+--    ft = "markdown",
+--  }
 
   -- Colorschemes
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out

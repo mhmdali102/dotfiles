@@ -112,14 +112,15 @@ alias ytmp4="mpv --ytdl --ytdl-format='bestvideo[height=480]+bestaudio' --tls-ve
 alias ytmp3="mpv --ytdl --ytdl-format='bestvideo[height=480]+bestaudio' --tls-verify --no-video"
 alias :q="exit"
 
-pacman-colorscript
+$HOME/.bin/pacman-colorscript
+
 # Enable colors and change prompt:
 autoload -U colors && colors
 
 # History in cache directory:
 HISTSIZE=10000
 SAVEHIST=10000
-HISTFILE=~/.cache/zsh/history
+HISTFILE=~/.zsh_history
 
 # Basic auto/tab complete:
 autoload -U compinit
@@ -138,6 +139,8 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
+bindkey '^j' autosuggest-execute
+bindkey '^l' autosuggest-accept
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select {

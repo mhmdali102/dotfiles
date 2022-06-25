@@ -22,8 +22,7 @@ fi
 # Prepend a custom font path to Xorg's list of known font paths
 xset +fp $HOME/.fonts 
 
-feh --bg-fill $HOME/Pictures/Wallpapers/landscape/nasa-HWIOLU7_O6w-unsplash.jpg &
-/* ~/.config/i3/scripts/live-wallpaper/wallpaper-wrap & */
+feh --bg-fill $HOME/Pictures/night-mountain.jpg &
 dbus-launch dunst --config ~/.config/dunst/dunstrc &
 $HOME/.bin/battery-notify &
 mpd &
@@ -38,11 +37,11 @@ setxkbmap -option caps:swapescape
 
 while true 
 do
-  R1=`cat /sys/class/net/wlan0/statistics/rx_bytes`
-  T1=`cat /sys/class/net/wlan0/statistics/tx_bytes`
+  R1=`cat /sys/class/net/wlp0s20f3/statistics/rx_bytes`
+  T1=`cat /sys/class/net/wlp0s20f3/statistics/tx_bytes`
   sleep 1
-  R2=`cat /sys/class/net/wlan0/statistics/rx_bytes`
-  T2=`cat /sys/class/net/wlan0/statistics/tx_bytes`
+  R2=`cat /sys/class/net/wlp0s20f3/statistics/rx_bytes`
+  T2=`cat /sys/class/net/wlp0s20f3/statistics/tx_bytes`
   BC=`cat /sys/class/power_supply/BAT0/capacity`
   BS=`cat /sys/class/power_supply/BAT0/status`
   TBPS=`expr $T2 - $T1`

@@ -1,3 +1,0 @@
-#!/bin/sh
-
-python3 $HOME/.config/i3/scripts/pomodoro/pomodoro.py

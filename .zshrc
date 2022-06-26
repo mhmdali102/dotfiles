@@ -111,16 +111,6 @@ alias nvd="__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia"
 alias ytmp4="mpv --ytdl --ytdl-format='bestvideo[height=480]+bestaudio' --tls-verify"
 alias ytmp3="mpv --ytdl --ytdl-format='bestvideo[height=480]+bestaudio' --tls-verify --no-video"
 alias :q="exit"
-alias gst="git status"
-alias gad="git add"
-alias gcm="git commit -m"
-alias gph="git push"
-alias gpl="git pull"
-alias pup="sudo pacman -Syu"
-alias pin="sudo pacman -S"
-alias psh="pacman -Ss"
-alias ysh="yay -Ss"
-alias yin="yay -S"
 
 $HOME/.bin/pacman-colorscript
 

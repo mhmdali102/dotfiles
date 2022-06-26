@@ -1,0 +1,5 @@
+#!/bin/sh
+
+clr=$(grabc)
+echo $clr | tr -d '\n'| xsel -ib
+notify-send "Copied to clipboard $clr"

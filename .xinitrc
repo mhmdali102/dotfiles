@@ -22,8 +22,9 @@ fi
 # Prepend a custom font path to Xorg's list of known font paths
 xset +fp $HOME/.fonts 
 
-feh --bg-fill $HOME/Pictures/night-mountain.jpg &
+feh --bg-fill --randomize --recursive $HOME/Pictures/cars/ &
 dbus-launch dunst --config ~/.config/dunst/dunstrc &
+/usr/bin/gnome-keyring-daemon --start &
 $HOME/.bin/battery-notify &
 redshift &
 mpd &

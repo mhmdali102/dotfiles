@@ -44,7 +44,7 @@ selection:
 live_config_reload: true
 
 key_bindings:
-  - { key: N, mods: Control|Shift, command: { program: "/bin/bash", args: ["-c", "/usr/local/bin/spawn-alacritty-cwd"] } }
+  - { key: N, mods: Control|Shift, command: { program: "/bin/bash", args: ["-c", "~/.bin/spawn-alacritty-cwd"] } }
 
 schemes:
   ### Gruvbox dark ###

@@ -53,7 +53,7 @@ do
   RBPS=`expr $R2 - $R1`
   TKBPS=`expr $TBPS / 1024`
   RKBPS=`expr $RBPS / 1024`
-  xsetroot -name "$RKBPS ⇵ $TKBPS | $(xkblayout) | $BC ${BS:0:1} | $(date '+%H:%M') |"
+  xsetroot -name "$RKBPS ⇵ $TKBPS │ $(xkblayout) │ $BC ${BS:0:1} │ $(date '+%H:%M')"
   sleep 1
 done & 
 

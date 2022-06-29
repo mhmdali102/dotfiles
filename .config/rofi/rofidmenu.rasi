@@ -3,9 +3,9 @@
  * Maintainer: joekamprad <joekamprad@endeavouros.com>
  *******************************************************/
 configuration {
-    font:				"Sourcecode Pro Regular 10";
+    font:				"JetBrainsMono Nerd Font Mono 10";
     show-icons:				true;
-    icon-theme:				"Tela-circle-blue-dark";
+    icon-theme:				"nordzy-dark";
     display-drun:			"Apps";
     drun-display-format:		"{name}";
     scroll-method:			1;
@@ -17,6 +17,7 @@ window {
     background-color: @background;
     border:           2px;
     border-color:  @foreground;
+    border-radius:    8px;
     padding:          25;
 }
 listview {
@@ -45,11 +46,14 @@ listview {
 }
 element {
     border:  0;
+    border-radius: 8px;
     padding: 1.5px 2px ;
 }
 element-text {
     background-color: inherit;
     text-color:       inherit;
+    margin: 0 0 0 5px;
+    padding: 3px;
 }
 element.normal.normal {
     background-color: @normal-background;
@@ -121,6 +125,7 @@ entry {
 }
 prompt {
     spacing:    0;
+    padding: 2px;
     text-color: @normal-foreground;
 }
 inputbar {

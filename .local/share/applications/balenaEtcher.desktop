@@ -4,5 +4,6 @@ Version=1.0
 Type=Application
 Terminal=false
 Exec=sudo /home/mhmdali102/Applications/balenaEtcher-1.5.115-x64.AppImage
+Icon=/usr/local/share/icons/balenaEtcher.ico
 Name=balenaEtcher
 Comment=Flash OS images to SD cards & USB drives, safely and easily

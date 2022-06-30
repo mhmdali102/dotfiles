@@ -64,7 +64,6 @@ return packer.startup(function(use)
   use "nyngwang/NeoZoom.lua"
   use { "SmiteshP/nvim-gps", requires = "nvim-treesitter/nvim-treesitter" }
   use "rcarriga/nvim-notify"
-  use "wakatime/vim-wakatime"
   use { "phaazon/hop.nvim",
     config = function()
       require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }

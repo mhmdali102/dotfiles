@@ -33,7 +33,7 @@ redshift &
 mpd &
 /* kdeconnect-indicator & */
 nm-applet &
-picom --experimental-backends &
+picom &
 
 xset r rate 300 50
 numlockx on

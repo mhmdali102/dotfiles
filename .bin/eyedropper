@@ -1,5 +1,5 @@
 #!/bin/sh
 
-clr=$(grabc)
+clr=$(gpick -pso)
 echo $clr | tr -d '\n'| xsel -ib
 notify-send "Copied to clipboard $clr"

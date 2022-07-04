@@ -34,13 +34,15 @@ while true; do
     # If critical and discharging
     if ["$last" != "CRITICAL"] && [ "$status" = "Discharging" ] && \
       [ $capacity -le $critical ]; then
-      notify-send -u critical "Battery very low: $capacity%"
+      notify-send -u critical "Battery low: $capacity%"
+      mpv --no-video ~/.local/share/sounds/alert.mp3
       last=CRITICAL
     fi
 
     # If danger and discharging
     if [ "$status" = "Discharging" ] && [ $capacity -le $danger ]; then
       notify-send -u critical "Battery very low: $capacity%" "Shutting Down in 60 seconds!"
+      mpv --no-video ~/.local/share/sounds/alert.mp3
       sleep 60
       shutdown -h now
       last=DANGER

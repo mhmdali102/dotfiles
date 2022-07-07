@@ -2,4 +2,6 @@
 
 clr=$(gpick -pso)
 echo $clr | tr -d '\n'| xsel -ib
-notify-send "Copied to clipboard $clr"
+if [ $clr ]; then
+  notify-send "Copied to clipboard $clr"
+fi

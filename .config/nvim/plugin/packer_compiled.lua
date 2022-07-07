@@ -144,6 +144,11 @@ _G.packer_plugins = {
     path = "/home/mhmdali102/.local/share/nvim/site/pack/packer/start/diffview.nvim",
     url = "https://github.com/sindrets/diffview.nvim"
   },
+  ["dressing.nvim"] = {
+    loaded = true,
+    path = "/home/mhmdali102/.local/share/nvim/site/pack/packer/start/dressing.nvim",
+    url = "https://github.com/stevearc/dressing.nvim"
+  },
   everforest = {
     loaded = true,
     path = "/home/mhmdali102/.local/share/nvim/site/pack/packer/start/everforest",
@@ -174,6 +179,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mhmdali102/.local/share/nvim/site/pack/packer/start/hop.nvim",
     url = "https://github.com/phaazon/hop.nvim"
+  },
+  ["icon-picker.nvim"] = {
+    loaded = true,
+    path = "/home/mhmdali102/.local/share/nvim/site/pack/packer/start/icon-picker.nvim",
+    url = "https://github.com/ziontee113/icon-picker.nvim"
   },
   ["impatient.nvim"] = {
     loaded = true,

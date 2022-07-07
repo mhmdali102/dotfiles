@@ -65,6 +65,8 @@ return packer.startup(function(use)
   use { "SmiteshP/nvim-gps", requires = "nvim-treesitter/nvim-treesitter" }
   use "rcarriga/nvim-notify"
   use "ziontee113/color-picker.nvim"
+  use "stevearc/dressing.nvim"
+  use "ziontee113/icon-picker.nvim"
   use { "phaazon/hop.nvim",
     config = function()
       require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }

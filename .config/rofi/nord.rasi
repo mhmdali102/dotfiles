@@ -44,6 +44,7 @@ window {
     padding: 0px;
     border:  0px;
     border-radius: 8px;
+    width: 650px;
 
     spacing: 0;
     children:  [mainbox];
@@ -57,7 +58,7 @@ mainbox {
 
 message {
     color: @nord0;
-    padding: 5;
+    padding: 10px;
     border-color: @foreground;
     border:  0px 2px 2px 2px;
     background-color: @nord7;
@@ -65,7 +66,7 @@ message {
 
 inputbar {
     color: @nord6;
-    padding: 11px;
+    padding: 15px;
     background-color: #3b4252;
 
     border: 2px;
@@ -83,17 +84,18 @@ prompt {
 }
 
 listview {
-    padding: 8px;
+    padding: 10px;
     border-radius: 0px 0px 6px 6px;
     border-color: @nord9;
     border: 0px 2px 2px 2px;
     background-color: rgba(46,52,64,0.9);
     dynamic: false;
-    lines: 10;
+    lines: 7;
 }
 
 element {
     padding: 6px;
+    margin: 1px 0;
     vertical-align: 1;
     border-radius: 8px;
     background-color: transparent;
@@ -102,7 +104,7 @@ element {
 }
 
 element-text {
-  padding: 0px 0px 0px 6px;
+  padding: 0px 0px 0px 10px;
 }
 
 element selected.normal {
@@ -116,7 +118,7 @@ element-text, element-icon {
 }
 
 button {
-    padding: 6px;
+    padding: 8px;
     color: @foreground;
     horizontal-align: 0.5;
 

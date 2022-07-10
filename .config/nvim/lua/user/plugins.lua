@@ -68,16 +68,11 @@ return packer.startup(function(use)
   use "stevearc/dressing.nvim"
   use "ziontee113/icon-picker.nvim"
   use "wakatime/vim-wakatime"
-  use { "phaazon/hop.nvim",
-    config = function()
-      require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
-    end
+  use {
+    "iamcco/markdown-preview.nvim",
+    run = "cd app && yarn install",
+    ft = "markdown",
   }
- use {
-   "iamcco/markdown-preview.nvim",
-   run = "cd app && yarn install",
-   ft = "markdown",
- }
 
   -- Colorschemes
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
@@ -119,6 +114,7 @@ return packer.startup(function(use)
   }
   use "p00f/nvim-ts-rainbow"
   use 'JoosepAlviste/nvim-ts-context-commentstring'
+  use "windwp/nvim-ts-autotag"
 
   -- Git
   use "lewis6991/gitsigns.nvim"

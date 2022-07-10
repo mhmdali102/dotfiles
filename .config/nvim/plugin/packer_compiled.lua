@@ -342,6 +342,11 @@ _G.packer_plugins = {
     path = "/home/mhmdali102/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
   },
+  ["vim-wakatime"] = {
+    loaded = true,
+    path = "/home/mhmdali102/.local/share/nvim/site/pack/packer/start/vim-wakatime",
+    url = "https://github.com/wakatime/vim-wakatime"
+  },
   ["which-key.nvim"] = {
     loaded = true,
     path = "/home/mhmdali102/.local/share/nvim/site/pack/packer/start/which-key.nvim",

@@ -5,6 +5,6 @@ end
 
 local opts = { noremap = true, silent = true }
 
-vim.keymap.set("n", "<C-i>", "<cmd>PickIcons<cr>", opts)
+-- vim.keymap.set("n", "<C-i>", "<cmd>PickIcons<cr>", opts)
 vim.keymap.set("i", "<C-i>", "<cmd>PickInsert<cr>", opts)
 vim.keymap.set("i", "<A-i>", "<cmd>PickAltFontAndSymbolsInsert<cr>", opts)

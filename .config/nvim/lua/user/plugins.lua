@@ -67,6 +67,7 @@ return packer.startup(function(use)
   use "ziontee113/color-picker.nvim"
   use "stevearc/dressing.nvim"
   use "ziontee113/icon-picker.nvim"
+  use "wakatime/vim-wakatime"
   use { "phaazon/hop.nvim",
     config = function()
       require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }

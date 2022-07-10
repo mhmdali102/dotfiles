@@ -69,6 +69,7 @@ return packer.startup(function(use)
   use "ziontee113/icon-picker.nvim"
   use "wakatime/vim-wakatime"
   use "gbprod/yanky.nvim"
+  use 'sunjon/shade.nvim'
   use {
     "iamcco/markdown-preview.nvim",
     run = "cd app && yarn install",

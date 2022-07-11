@@ -69,7 +69,15 @@ return packer.startup(function(use)
   use "ziontee113/icon-picker.nvim"
   use "wakatime/vim-wakatime"
   use "gbprod/yanky.nvim"
-  use 'sunjon/shade.nvim'
+  use "sunjon/shade.nvim"
+  use "folke/twilight.nvim"
+  use "saifulapm/chartoggle.nvim"
+  use {
+    "sitiom/nvim-numbertoggle",
+    config = function()
+      require("numbertoggle").setup()
+    end
+  }
   use {
     "iamcco/markdown-preview.nvim",
     run = "cd app && yarn install",
@@ -86,6 +94,8 @@ return packer.startup(function(use)
   use "sainnhe/everforest"
   use "sainnhe/sonokai"
   use "rebelot/kanagawa.nvim"
+  use "frenzyexists/aquarium-vim"
+  use "titanzero/zephyrium"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin

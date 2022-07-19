@@ -1,6 +1,8 @@
 *
-**/node_modules
-!./.config/nvim/
-!./config/i3
-.mozilla
-**/forecast.xml
+**/*
+!.config/nvim/*
+!.gitignore
+!.zshrc
+!.bin/*
+!.fonts/*
+!.xinitrc

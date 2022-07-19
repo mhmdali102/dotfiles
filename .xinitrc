@@ -35,6 +35,10 @@ mpd &
 nm-applet &
 picom --experimental-backends  &!
 
+xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
+xrandr -s 1920x1080
+
 xset r rate 300 50
 numlockx on
 setxkbmap -layout 'us,ara' -variant altgr-intl,qwerty -option 'grp:alt_shift_toggle'

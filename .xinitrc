@@ -37,7 +37,7 @@ picom --experimental-backends  &!
 
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
-xrandr -s 1920x1080
+xrandr -s 1920x1080+0+0
 
 xset r rate 300 50
 numlockx on

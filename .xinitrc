@@ -1,5 +1,6 @@
 userresources=$HOME/.Xresources
 export BROWSER=/usr/bin/firefox-developer-edition
+export EDITOR=/usr/bin/nvim
 
 if [ -f "$userresources" ]; then
     xrdb -merge "$userresources"
@@ -33,7 +34,7 @@ redshift &
 mpd &
 /* kdeconnect-indicator & */
 nm-applet &
-picom --experimental-backends  &!
+picom --experimental-backends  &
 
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto

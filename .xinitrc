@@ -27,7 +27,7 @@ fi
 # Prepend a custom font path to Xorg's list of known font paths
 xset +fp $HOME/.fonts 
 
-feh --bg-fill --randomize --recursive $HOME/Pictures/cars/ &
+feh --bg-fill --randomize --recursive $HOME/Pictures/Nord/space-mars-4480x2520-nordified.jpg &
 dbus-launch dunst --config ~/.config/dunst/dunstrc &
 $HOME/.bin/battery-notify &
 redshift &

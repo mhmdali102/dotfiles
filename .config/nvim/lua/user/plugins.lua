@@ -66,7 +66,6 @@ return packer.startup(function(use)
   use "rcarriga/nvim-notify"
   use "ziontee113/color-picker.nvim"
   use "stevearc/dressing.nvim"
-  use "ziontee113/icon-picker.nvim"
   use "wakatime/vim-wakatime"
   use "gbprod/yanky.nvim"
   use "folke/twilight.nvim"
@@ -104,6 +103,7 @@ return packer.startup(function(use)
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-nvim-lua"
+  use "hrsh7th/cmp-emoji"
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine

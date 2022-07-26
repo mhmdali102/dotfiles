@@ -116,6 +116,7 @@ cmp.setup {
     { name = "nvim_lua" },
     { name = "buffer" },
     { name = "path" },
+    { name = 'emoji' },
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,

@@ -1,3 +1,4 @@
 Sxiv.background: #2e3440
 Sxiv.foreground: #81a1c1
 Sxiv.font: Hack-9
+Xft.dpi: 100

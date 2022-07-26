@@ -204,6 +204,11 @@ _G.packer_plugins = {
     path = "/home/mhmdali102/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
     url = "https://github.com/rebelot/kanagawa.nvim"
   },
+  ["lsp_signature.nvim"] = {
+    loaded = true,
+    path = "/home/mhmdali102/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
+    url = "https://github.com/ray-x/lsp_signature.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/mhmdali102/.local/share/nvim/site/pack/packer/start/lualine.nvim",

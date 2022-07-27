@@ -71,6 +71,8 @@ return packer.startup(function(use)
   use "folke/twilight.nvim"
   use "saifulapm/chartoggle.nvim"
   use "lalitmee/browse.nvim"
+  use "tversteeg/registers.nvim"
+  use "jinh0/eyeliner.nvim"
   use {
     "sitiom/nvim-numbertoggle",
     config = function()
@@ -119,6 +121,7 @@ return packer.startup(function(use)
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use "ray-x/lsp_signature.nvim"
   use "simrat39/symbols-outline.nvim"
+  use "rmagatti/goto-preview"
   use {
     "jose-elias-alvarez/typescript.nvim",
     config = function()
@@ -145,6 +148,7 @@ return packer.startup(function(use)
 
   -- Git
   use "lewis6991/gitsigns.nvim"
+  use "f-person/git-blame.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

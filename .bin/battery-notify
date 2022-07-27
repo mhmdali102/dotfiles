@@ -35,7 +35,7 @@ while true; do
     if [ "$last" != "CRI" ] && [ "$status" = "Discharging" ] && \
       [ $capacity -le $critical ] && [ "$capacity" -ge $danger ]; then
       notify-send -u critical "Battery low: $capacity%"
-      last="CRI"
+      last=CRI
       mpv --no-video ~/.local/share/sounds/alert.mp3
     fi
 

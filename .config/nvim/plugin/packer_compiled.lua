@@ -234,6 +234,11 @@ _G.packer_plugins = {
     path = "/home/mhmdali102/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
     url = "https://github.com/rebelot/kanagawa.nvim"
   },
+  ["lab.nvim"] = {
+    loaded = true,
+    path = "/home/mhmdali102/.local/share/nvim/site/pack/packer/start/lab.nvim",
+    url = "https://github.com/0x100101/lab.nvim"
+  },
   ["lsp_signature.nvim"] = {
     loaded = true,
     path = "/home/mhmdali102/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
@@ -446,14 +451,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-numbertoggle
-time([[Config for nvim-numbertoggle]], true)
-try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\17numbertoggle\frequire\0", "config", "nvim-numbertoggle")
-time([[Config for nvim-numbertoggle]], false)
 -- Config for: typescript.nvim
 time([[Config for typescript.nvim]], true)
 try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15typescript\frequire\0", "config", "typescript.nvim")
 time([[Config for typescript.nvim]], false)
+-- Config for: nvim-numbertoggle
+time([[Config for nvim-numbertoggle]], true)
+try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\17numbertoggle\frequire\0", "config", "nvim-numbertoggle")
+time([[Config for nvim-numbertoggle]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads

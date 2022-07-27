@@ -84,6 +84,9 @@ return packer.startup(function(use)
     run = "cd app && yarn install",
     ft = "markdown",
   }
+  use { '0x100101/lab.nvim',
+    run = 'cd js && npm ci',
+  }
 
   -- Colorschemes
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out

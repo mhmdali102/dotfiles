@@ -106,6 +106,8 @@ cmp.setup {
         nvim_lua = "[LUA_LSP]",
         buffer = "[Buffer]",
         path = "[Path]",
+        emoji = "[EMOJI]",
+        calc = "[CALC]"
       })[entry.source.name]
       return vim_item
     end,
@@ -116,6 +118,7 @@ cmp.setup {
     { name = "nvim_lua" },
     { name = "buffer" },
     { name = "path" },
+    { name = 'calc' },
     { name = 'emoji' },
   },
   confirm_opts = {

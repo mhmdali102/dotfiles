@@ -70,6 +70,7 @@ return packer.startup(function(use)
   use "gbprod/yanky.nvim"
   use "folke/twilight.nvim"
   use "saifulapm/chartoggle.nvim"
+  use "lalitmee/browse.nvim"
   use {
     "sitiom/nvim-numbertoggle",
     config = function()
@@ -104,6 +105,8 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-nvim-lua"
   use "hrsh7th/cmp-emoji"
+  use "hrsh7th/cmp-calc"
+  use "j-hui/fidget.nvim"
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -115,6 +118,13 @@ return packer.startup(function(use)
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use "ray-x/lsp_signature.nvim"
+  use "simrat39/symbols-outline.nvim"
+  use {
+    "jose-elias-alvarez/typescript.nvim",
+    config = function()
+      require("typescript").setup()
+    end
+  }
 
   -- Mason
   use "williamboman/mason.nvim"
@@ -131,6 +141,7 @@ return packer.startup(function(use)
   use "p00f/nvim-ts-rainbow"
   use 'JoosepAlviste/nvim-ts-context-commentstring'
   use "windwp/nvim-ts-autotag"
+  use "abecodes/tabout.nvim"
 
   -- Git
   use "lewis6991/gitsigns.nvim"

@@ -26,16 +26,16 @@ while true; do
 
     # If low and discharging
     if [ "$last" != "LOW" ] && [ "$status" = "Discharging" ] && \
-       [ $capacity -le $low ] && [ "$capacity" -ge $critical ]; then
+       [ $capacity -le $low ]; then
       notify-send "Battery low: $capacity%"
       last=LOW
     fi
 
     # If critical and discharging
     if [ "$last" != "CRI" ] && [ "$status" = "Discharging" ] && \
-      [ $capacity -le $critical ] && [ "$capacity" -ge $danger ]; then
-      notify-send -u critical "Battery low: $capacity%"
+      [ $capacity -le $critical ]; then
       last=CRI
+      notify-send -u critical "Battery low: $capacity%"
       mpv --no-video ~/.local/share/sounds/alert.mp3
     fi
 

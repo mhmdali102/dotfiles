@@ -22,6 +22,9 @@ fi
 if [ -d "$HOME/Applications" ] ; then
     PATH="$HOME/Applications:$PATH"
 fi
+if [ -d "$HOME/.cargo/bin" ] ; then
+    PATH="$HOME/.cargo/bin:$PATH"
+fi
 
 
 # Prepend a custom font path to Xorg's list of known font paths

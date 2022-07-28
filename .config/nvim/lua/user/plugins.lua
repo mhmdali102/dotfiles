@@ -73,6 +73,7 @@ return packer.startup(function(use)
   use "lalitmee/browse.nvim"
   use "tversteeg/registers.nvim"
   use "jinh0/eyeliner.nvim"
+  use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
   use {
     "sitiom/nvim-numbertoggle",
     config = function()
